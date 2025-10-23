@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check } from "lucide-react";
+import { Check, Search } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -11,24 +11,89 @@ import ProofChip from "@/components/ProofChip";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
-  const [socialPosts, setSocialPosts] = useState(3); // 0, 1, 2, 3 (0=off, 1=1/wk, 2=5/wk, 3=5+Scout)
-  const [socialAds, setSocialAds] = useState(0); // 0, 1, 2, 3 (0=none, 1=2D, 2=2D+Video, 3=Full)
-  const [voiceMinutes, setVoiceMinutes] = useState(2); // 0, 1, 2, 3 (0=off, 1=600, 2=1600, 3=3000)
-  const [leadDetect, setLeadDetect] = useState(0); // 0, 1, 2, 3 (0=off, 1=250, 2=250+alerts, 3=2500+CRM)
-
-  const socialPostsPrices = [0, 297, 497, 797];
-  const socialAdsPrices = [0, 200, 400, 600];
-  const voicePrices = [0, 200, 500, 1000];
-  const leadPrices = [0, 100, 250, 500];
-
-  const calculateTotal = () => {
-    const monthly = socialPostsPrices[socialPosts] + socialAdsPrices[socialAds] + voicePrices[voiceMinutes] + leadPrices[leadDetect];
-    return isAnnual ? Math.round(monthly * 12 * 0.83) : monthly;
-  };
-
-  const getMonthlyPrice = () => {
-    return socialPostsPrices[socialPosts] + socialAdsPrices[socialAds] + voicePrices[voiceMinutes] + leadPrices[leadDetect];
-  };
+  
+  const plans = [
+    {
+      name: "SILVER",
+      monthly: 295,
+      annual: 3000,
+      description: "Perfect for growing businesses",
+      features: {
+        leadDetect: {
+          price: 100,
+          leads: "250",
+          instantTracker: true,
+          instantNotification: false,
+          bootcamp: false,
+          crmSync: false,
+        },
+        aiVoice: {
+          price: 200,
+          calls: "600",
+          features: [
+            "24/7 Inbound Support",
+            "Business Information FAQs",
+            "After Call Summary",
+          ],
+        },
+      },
+    },
+    {
+      name: "GOLD",
+      monthly: 595,
+      annual: 6000,
+      description: "Most popular for scaling teams",
+      isPopular: true,
+      features: {
+        leadDetect: {
+          price: 250,
+          leads: "250",
+          instantTracker: true,
+          instantNotification: true,
+          bootcamp: true,
+          crmSync: false,
+        },
+        aiVoice: {
+          price: 500,
+          calls: "1,600",
+          features: [
+            "Everything in Silver",
+            "Call Recording",
+            "Smart Lead Qualification",
+            "Spam Detection",
+          ],
+        },
+      },
+    },
+    {
+      name: "PLATINUM",
+      monthly: 1485,
+      annual: 15000,
+      description: "Enterprise-grade solution",
+      features: {
+        leadDetect: {
+          price: 500,
+          leads: "2,500",
+          instantTracker: true,
+          instantNotification: true,
+          bootcamp: true,
+          crmSync: true,
+        },
+        aiVoice: {
+          price: 1000,
+          calls: "3,000",
+          features: [
+            "Everything in Gold",
+            "Customized Knowledge Base",
+            "Outbound Voice & Text",
+            "Appointment Setting",
+            "Automated Intake Process",
+            "CRM Integration",
+          ],
+        },
+      },
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -38,10 +103,10 @@ const Pricing = () => {
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Build Your <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Perfect Plan</span>
+              Choose Your <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Alli Plan</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Choose exactly what you need. Scale as you grow.
+              White-glove onboarding, priority support, cancel anytime. 30-day money-back guarantee on annual subscriptions.
             </p>
 
             {/* Annual Toggle */}
@@ -53,196 +118,130 @@ const Pricing = () => {
                 onCheckedChange={setIsAnnual}
               />
               <Label htmlFor="annual-toggle" className={isAnnual ? "font-semibold" : ""}>
-                Annual <span className="text-secondary">(Save 17%)</span>
+                Annual <span className="text-accent">(Save 17%)</span>
               </Label>
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Configuration Panel */}
-            <div className="lg:col-span-2 space-y-6">
-              {/* Social Media */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Social Media Management</CardTitle>
-                  <CardDescription>Consistent content without the headache</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <Label>Posts per week</Label>
-                      <ProofChip metric="+62%" label="profile visits (28 days)" variant="success" />
-                    </div>
-                    <Slider
-                      value={[socialPosts]}
-                      onValueChange={(value) => setSocialPosts(value[0])}
-                      max={3}
-                      step={1}
-                      className="mb-2"
-                    />
-                    <div className="flex justify-between text-sm text-muted-foreground">
-                      <span>Off</span>
-                      <span>1/week</span>
-                      <span>5/week</span>
-                      <span>5 + Scout</span>
-                    </div>
+          {/* Pricing Cards */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {plans.map((plan) => (
+              <Card key={plan.name} className={`relative ${plan.isPopular ? 'border-primary shadow-xl' : ''}`}>
+                {plan.isPopular && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <span className="px-4 py-1 bg-gradient-to-r from-primary to-primary-glow text-primary-foreground text-sm font-semibold rounded-full">
+                      Most Popular
+                    </span>
                   </div>
-
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <Label>Ad creative level</Label>
-                    </div>
-                    <Slider
-                      value={[socialAds]}
-                      onValueChange={(value) => setSocialAds(value[0])}
-                      max={3}
-                      step={1}
-                      className="mb-2"
-                    />
-                    <div className="flex justify-between text-sm text-muted-foreground">
-                      <span>None</span>
-                      <span>2D</span>
-                      <span>2D+Video</span>
-                      <span>Full Stack</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* AI Voice */}
-              <Card>
+                )}
                 <CardHeader>
-                  <CardTitle>AI Voice (Receptionist)</CardTitle>
-                  <CardDescription>24/7 answering and qualification</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <Label>Monthly minutes</Label>
-                      <ProofChip metric="+46%" label="answer rate (30 days)" variant="success" />
+                  <CardTitle className="text-2xl">{plan.name}</CardTitle>
+                  <CardDescription>{plan.description}</CardDescription>
+                  <div className="mt-4">
+                    <div className="text-4xl font-bold mb-2">
+                      ${isAnnual ? plan.annual.toLocaleString() : plan.monthly}
                     </div>
-                    <Slider
-                      value={[voiceMinutes]}
-                      onValueChange={(value) => setVoiceMinutes(value[0])}
-                      max={3}
-                      step={1}
-                      className="mb-2"
-                    />
-                    <div className="flex justify-between text-sm text-muted-foreground">
-                      <span>Off</span>
-                      <span>600</span>
-                      <span>1,600</span>
-                      <span>3,000</span>
-                    </div>
-                  </div>
-
-                  {voiceMinutes > 0 && (
-                    <div className="mt-6 p-4 bg-muted/50 rounded-lg">
-                      <p className="text-sm font-medium mb-2">Includes:</p>
-                      <ul className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
-                        {["24/7 inbound", "Business FAQs", "Call summaries", "Call recording", "Smart qualification", "Spam detection", "Custom routing", "Appointment setting"].map((feature) => (
-                          <li key={feature} className="flex items-center gap-2">
-                            <Check className="w-4 h-4 text-accent" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-
-              {/* Lead Detection */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>AI Lead Detection</CardTitle>
-                  <CardDescription>Identify anonymous visitors and turn them into pipeline</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <Label>Leads identified per month</Label>
-                      <ProofChip metric="7" label="booked calls per 250 IDs" />
-                    </div>
-                    <Slider
-                      value={[leadDetect]}
-                      onValueChange={(value) => setLeadDetect(value[0])}
-                      max={3}
-                      step={1}
-                      className="mb-2"
-                    />
-                    <div className="flex justify-between text-sm text-muted-foreground">
-                      <span>Off</span>
-                      <span>250</span>
-                      <span>250+alerts</span>
-                      <span>2500+CRM</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Summary Card */}
-            <div className="lg:col-span-1">
-              <Card className="sticky top-24 border-primary/20">
-                <CardHeader>
-                  <CardTitle>Your Plan Summary</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  {socialPosts > 0 && (
-                    <div className="flex justify-between text-sm">
-                      <span>Social Media</span>
-                      <span className="font-semibold">${socialPostsPrices[socialPosts] + socialAdsPrices[socialAds]}/mo</span>
-                    </div>
-                  )}
-                  {voiceMinutes > 0 && (
-                    <div className="flex justify-between text-sm">
-                      <span>AI Voice</span>
-                      <span className="font-semibold">${voicePrices[voiceMinutes]}/mo</span>
-                    </div>
-                  )}
-                  {leadDetect > 0 && (
-                    <div className="flex justify-between text-sm">
-                      <span>Lead Detection</span>
-                      <span className="font-semibold">${leadPrices[leadDetect]}/mo</span>
-                    </div>
-                  )}
-                  
-                  <div className="pt-4 border-t border-border">
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm text-muted-foreground">Monthly</span>
-                      <span className="font-semibold">${getMonthlyPrice()}/mo</span>
+                    <div className="text-sm text-muted-foreground">
+                      {isAnnual ? 'per year' : 'per month'}
                     </div>
                     {isAnnual && (
-                      <>
-                        <div className="flex justify-between mb-2">
-                          <span className="text-sm text-muted-foreground">Annual (17% off)</span>
-                          <span className="font-semibold text-secondary">${calculateTotal()}/yr</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-sm text-accent">You save</span>
-                          <span className="font-semibold text-accent">${getMonthlyPrice() * 12 - calculateTotal()}/yr</span>
-                        </div>
-                      </>
+                      <div className="text-sm text-accent mt-1">
+                        Save ${(plan.monthly * 12 - plan.annual).toLocaleString()}
+                      </div>
                     )}
                   </div>
-
-                  <div className="pt-4">
-                    <div className="text-3xl font-bold mb-1">
-                      ${isAnnual ? calculateTotal() : getMonthlyPrice()}
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  {/* AI Lead Detect Features */}
+                  <div>
+                    <h4 className="font-semibold mb-3 flex items-center gap-2">
+                      <Search className="w-4 h-4 text-primary" />
+                      AI Lead Detection
+                    </h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex items-center gap-2">
+                        <Check className="w-4 h-4 text-accent" />
+                        <span>{plan.features.leadDetect.leads} leads per month</span>
+                      </div>
+                      {plan.features.leadDetect.instantTracker && (
+                        <div className="flex items-center gap-2">
+                          <Check className="w-4 h-4 text-accent" />
+                          <span>Instant Lead Tracker</span>
+                        </div>
+                      )}
+                      {plan.features.leadDetect.instantNotification && (
+                        <div className="flex items-center gap-2">
+                          <Check className="w-4 h-4 text-accent" />
+                          <span>Instant Notifications</span>
+                        </div>
+                      )}
+                      {plan.features.leadDetect.bootcamp && (
+                        <div className="flex items-center gap-2">
+                          <Check className="w-4 h-4 text-accent" />
+                          <span>Bootcamp & Guide</span>
+                        </div>
+                      )}
+                      {plan.features.leadDetect.crmSync && (
+                        <div className="flex items-center gap-2">
+                          <Check className="w-4 h-4 text-accent" />
+                          <span>CRM Sync</span>
+                        </div>
+                      )}
                     </div>
-                    <div className="text-sm text-muted-foreground mb-4">
-                      {isAnnual ? "per year" : "per month"}
-                    </div>
-                    <Button className="w-full bg-gradient-to-r from-primary to-primary-glow" size="lg">
-                      Get Started
-                    </Button>
-                    <p className="text-xs text-center text-muted-foreground mt-3">
-                      30-day money-back guarantee
-                    </p>
                   </div>
+
+                  {/* AI Voice Features */}
+                  <div>
+                    <h4 className="font-semibold mb-3 flex items-center gap-2">
+                      <Check className="w-4 h-4 text-primary" />
+                      AI Voice
+                    </h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex items-center gap-2">
+                        <Check className="w-4 h-4 text-accent" />
+                        <span>{plan.features.aiVoice.calls} calls per month</span>
+                      </div>
+                      {plan.features.aiVoice.features.map((feature) => (
+                        <div key={feature} className="flex items-center gap-2">
+                          <Check className="w-4 h-4 text-accent" />
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <Button 
+                    className={`w-full ${plan.isPopular ? 'bg-gradient-to-r from-primary to-primary-glow' : ''}`}
+                    variant={plan.isPopular ? 'default' : 'outline'}
+                    size="lg"
+                  >
+                    Get Started
+                  </Button>
                 </CardContent>
               </Card>
+            ))}
+          </div>
+
+          {/* Custom Package CTA */}
+          <Card className="bg-gradient-to-br from-primary/5 to-primary-glow/5 border-primary/20">
+            <CardContent className="p-8 md:p-12 text-center">
+              <h2 className="text-3xl font-bold mb-4">Need a Custom Package?</h2>
+              <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+                Looking for unlimited leads, custom integrations, or enterprise features? Let's build a plan that fits your needs.
+              </p>
+              <Button size="lg" variant="outline" className="text-lg">
+                Call for Pricing
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Guarantee Section */}
+          <div className="mt-16 text-center max-w-3xl mx-auto">
+            <div className="p-8 rounded-2xl bg-secondary/10 border border-secondary/20">
+              <h3 className="text-2xl font-bold mb-4">30-Day Money-Back Guarantee</h3>
+              <p className="text-muted-foreground">
+                Try Alli risk-free for 30 days. If you don't feel it paid for itself in new business, get a full refund. No questions asked.
+              </p>
             </div>
           </div>
         </div>
