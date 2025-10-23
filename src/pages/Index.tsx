@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ProofChip from "@/components/ProofChip";
 import RoleCard from "@/components/RoleCard";
+import alliHeadshot from "@/assets/alli-headshot.jpg";
 
 const Index = () => {
   const problems = [
@@ -29,23 +30,24 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary-glow/5 pointer-events-none" />
         
         <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
-              <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              Live Demo Available Now
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              SMBs book <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">40% more</span><br />
-              qualified prospects in 30 days<br />
-              with Alli—<span className="text-secondary">no new hires</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Alli runs your reception, detects hidden buyers, and ships content—so you add pipeline without adding payroll.
-            </p>
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
+            <div className="text-center md:text-left order-2 md:order-1">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+                <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                Live Demo Available Now
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                SMBs book <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">40% more</span><br />
+                qualified prospects in 30 days<br />
+                with Alli—<span className="text-secondary">no new hires</span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+                Alli runs your reception, detects hidden buyers, and ships content—so you add pipeline without adding payroll.
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-6">
               <Button size="lg" className="bg-gradient-to-r from-primary to-primary-glow text-lg" asChild>
                 <a href="tel:+1234567890">
                   <Phone className="w-5 h-5 mr-2" />
@@ -60,14 +62,26 @@ const Index = () => {
               </Button>
             </div>
 
-            <p className="text-sm text-muted-foreground mb-8">
-              Try Alli for 30 days. If you don't feel it paid for itself in new business, get a full refund.
-            </p>
+              <p className="text-sm text-muted-foreground mb-8">
+                Try Alli for 30 days. If you don't feel it paid for itself in new business, get a full refund.
+              </p>
 
-            <div className="flex flex-wrap gap-4 justify-center">
-              <ProofChip metric="+46%" label="avg answer rate" variant="success" />
-              <ProofChip metric="7" label="booked calls per 250 IDs" />
-              <ProofChip metric="+62%" label="profile visits" variant="success" />
+              <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                <ProofChip metric="+46%" label="avg answer rate" variant="success" />
+                <ProofChip metric="7" label="booked calls per 250 IDs" />
+                <ProofChip metric="+62%" label="profile visits" variant="success" />
+              </div>
+            </div>
+
+            <div className="order-1 md:order-2 flex justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-glow/20 rounded-2xl blur-2xl" />
+                <img 
+                  src={alliHeadshot} 
+                  alt="Meet Alli - Your AI Team Member" 
+                  className="relative rounded-2xl shadow-2xl max-w-sm w-full"
+                />
+              </div>
             </div>
           </div>
         </div>
