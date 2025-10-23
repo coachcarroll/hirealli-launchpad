@@ -34,9 +34,25 @@ const SocialMedia = () => {
     "Custom content calendar aligned with your business",
     "1-5 posts per week, on-brand and consistent",
     "Optional Brand Scout for on-site content capture",
-    "2D graphics, video editing, and retargeting ads",
+    "2D graphics, video editing, and AI-powered ads",
+    "Facebook & Instagram story ads for retargeting",
     "Performance dashboard and monthly reporting",
     "Social Media Bootcamp & training guides",
+  ];
+
+  const adsBenefits = [
+    {
+      title: "Get in Front of New Eyes",
+      description: "Your ideal customers aren't searching for you yet—they don't even know you exist. AI Ads put you in their feed, introducing your business to people who need what you offer but haven't found you yet.",
+    },
+    {
+      title: "The Rule of 7 Works",
+      description: "It takes an average of 7 exposures before someone remembers your brand. Our AI Ads ensure you reach that recognition threshold by appearing throughout their day—morning coffee, lunch break, evening scroll.",
+    },
+    {
+      title: "Retargeting Closes the Deal",
+      description: "97% of first-time visitors leave without converting. Retargeting ads bring them back by showing your message to people who already visited your site or engaged with your content—turning browsers into buyers.",
+    },
   ];
 
   const tiers = [
@@ -137,16 +153,90 @@ const SocialMedia = () => {
         </div>
       </section>
 
-      {/* Key Features */}
+      {/* Why AI Ads Matter */}
       <section className="py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why AI Ads Are a Game-Changer for Small Businesses
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Organic reach is dead. Only 2-3% of your followers see your posts. Ads put you in front of everyone else—the people who don't know you yet.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {adsBenefits.map((benefit) => (
+              <Card key={benefit.title} className="border-primary/20">
+                <CardContent className="pt-6">
+                  <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
+                  <p className="text-muted-foreground">{benefit.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="bg-primary/5 rounded-2xl p-8 md:p-12">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center">
+              The Power of Retargeting
+            </h3>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <p className="text-lg text-muted-foreground mb-6">
+                  Think of retargeting as your business following up with prospects automatically. Someone visits your website, checks out your services, then leaves. With retargeting ads, your business stays top-of-mind—appearing in their feed over the next days and weeks.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <Check className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                    <span>10x higher conversion rates than cold traffic</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                    <span>Brings back 97% of visitors who left without buying</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                    <span>Works while you sleep—automated follow-up 24/7</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-card rounded-xl p-6 border border-border">
+                <div className="text-center mb-4">
+                  <div className="text-5xl font-bold text-primary mb-2">7x</div>
+                  <p className="text-sm text-muted-foreground">People need to see your brand before they remember you</p>
+                </div>
+                <div className="border-t border-border pt-4 mt-4">
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                      <div className="text-2xl font-bold">97%</div>
+                      <div className="text-xs text-muted-foreground">Leave without buying</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold">10x</div>
+                      <div className="text-xs text-muted-foreground">Higher conversion</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold">24/7</div>
+                      <div className="text-xs text-muted-foreground">Auto follow-up</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features */}
+      <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Everything You Need to Stay Visible
+                Organic Posts + Paid Ads = Complete Visibility
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Social media shouldn't be an afterthought. Alli ensures your brand stays top-of-mind with consistent, high-quality content—without hiring a full-time social media manager.
+                Organic content keeps your current followers engaged. Paid ads introduce you to everyone else. Together, they build a complete social media presence that grows your business without hiring a full-time team.
               </p>
               <ul className="space-y-4">
                 {features.map((feature) => (

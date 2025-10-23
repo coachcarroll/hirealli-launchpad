@@ -240,10 +240,6 @@ const Pricing = () => {
                             </li>
                             <li className="flex items-center gap-2">
                               <Check className="w-4 h-4 text-primary" />
-                              <span>Outbound voice/text</span>
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-primary" />
                               <span>CRM integration</span>
                             </li>
                           </>

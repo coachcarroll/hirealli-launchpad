@@ -37,7 +37,6 @@ const Receptionist = () => {
     "After-call summaries delivered via email/text",
     "Appointment setting with calendar integration",
     "Call recording and transcription for compliance",
-    "Outbound calling and SMS (Professional tier)",
   ];
 
   const tiers = [
@@ -57,7 +56,7 @@ const Receptionist = () => {
       name: "Professional",
       price: "$1,000/mo",
       calls: "3,000 calls/month",
-      features: ["Everything in Growth", "Custom routing", "Appointment setting", "CRM integration", "Outbound voice/text"],
+      features: ["Everything in Growth", "Custom routing", "Appointment setting", "CRM integration"],
     },
   ];
 
