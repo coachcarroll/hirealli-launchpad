@@ -63,7 +63,7 @@ const Results = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Real Results from <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Real Businesses</span>
+              Real Results from <span className="text-primary">Real Businesses</span>
             </h1>
             <p className="text-xl text-muted-foreground">
               Raw proof. No actors. No edits. Just measurable outcomes.
@@ -116,7 +116,7 @@ const Results = () => {
                     <p className="text-sm text-muted-foreground mb-4">{item.description}</p>
                   </div>
                   <div className="flex items-baseline gap-2 pt-4 border-t border-border">
-                    <span className="text-3xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                    <span className="text-3xl font-bold text-primary">
                       {item.metric}
                     </span>
                     <span className="text-sm text-muted-foreground">{item.timeframe}</span>

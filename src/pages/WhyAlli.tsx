@@ -45,7 +45,7 @@ const WhyAlli = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Why Choose <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Alli</span>
+              Why Choose <span className="text-primary">Alli</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Not just another AI tool. A real teammate that grows your business without growing your payroll.

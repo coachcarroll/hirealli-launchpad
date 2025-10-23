@@ -38,7 +38,7 @@ const Index = () => {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                SMBs book <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">40% more</span><br />
+                SMBs book <span className="text-primary">40% more</span><br />
                 qualified prospects in 30 days<br />
                 with Alli—<span className="text-secondary">no new hires</span>
               </h1>

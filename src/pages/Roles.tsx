@@ -12,7 +12,7 @@ const Roles = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Don't Buy Features—<span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Hire a Role</span>
+              Don't Buy Features—<span className="text-primary">Hire a Role</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Each role works 24/7 to grow your business without adding headcount. Choose the teammates you need.
