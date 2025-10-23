@@ -11,79 +11,24 @@ import ProofChip from "@/components/ProofChip";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
-  const [organicPosts, setOrganicPosts] = useState(0); // 0=off, 1=industry, 2=custom
+  const [socialPosts, setSocialPosts] = useState(0); // 0=off, 1=1/wk, 2=5/wk industry, 3=5/wk custom, 4=5/wk + scout
   const [adsLevel, setAdsLevel] = useState(0); // 0=off, 1=standard, 2=deluxe, 3=premium
   const [voiceLevel, setVoiceLevel] = useState(0); // 0=off, 1=600 calls, 2=1600 calls, 3=3000 calls
   const [leadLevel, setLeadLevel] = useState(0); // 0=off, 1=250 leads, 2=250+alerts, 3=2500+CRM
 
   // Pricing from Sheet 2
-  const organicPrices = [0, 200, 400]; // Off, Industry content, Custom content
+  const socialPostsPrices = [0, 150, 200, 400, 600]; // Off, 1/wk, 5/wk industry, 5/wk custom, 5/wk + scout
   const adsPrices = [0, 397, 897, 1497]; // Off, Standard, Deluxe, Premium
   const voicePrices = [0, 200, 500, 1000]; // Off, 600 calls, 1600 calls, 3000 calls
   const leadPrices = [0, 100, 250, 500]; // Off, 250 leads, 250+alerts, 2500+CRM
 
-  const organicLabels = ["Off", "Industry (5/wk)", "Custom (5/wk)"];
-  const adsLabels = ["Off", "Standard", "Deluxe", "Premium"];
-  const voiceLabels = ["Off", "600 calls", "1,600 calls", "3,000 calls"];
-  const leadLabels = ["Off", "250 leads", "250 + alerts", "2,500 + CRM"];
+  const calculateTotal = () => {
+    const monthly = socialPostsPrices[socialPosts] + adsPrices[adsLevel] + voicePrices[voiceLevel] + leadPrices[leadLevel];
+    return isAnnual ? Math.round(monthly * 12 * 0.83) : monthly;
+  };
 
   const getMonthlyPrice = () => {
-    return organicPrices[organicPosts] + adsPrices[adsLevel] + voicePrices[voiceLevel] + leadPrices[leadLevel];
-  };
-
-  const calculateAnnualPrice = () => {
-    const monthly = getMonthlyPrice();
-    return Math.round(monthly * 12 * 0.83); // 17% discount
-  };
-
-  const getAdsFeatures = () => {
-    if (adsLevel === 0) return [];
-    const features = [];
-    if (adsLevel >= 1) {
-      features.push("3 Branded 2D Ads (per quarter)");
-      features.push(`$${adsLevel === 1 ? 100 : adsLevel === 2 ? 400 : 500} monthly ad spend`);
-      features.push("Social Media Bootcamp & Guide");
-      features.push("Analytics Dashboard");
-    }
-    if (adsLevel >= 2) {
-      features.push("2 Branded Video Ads (per quarter)");
-      features.push("Facebook & Instagram Story Ads");
-    }
-    return features;
-  };
-
-  const getVoiceFeatures = () => {
-    if (voiceLevel === 0) return [];
-    const features = [
-      "24/7 Inbound Support",
-      "Business Information FAQs",
-      "After Call Summary",
-    ];
-    if (voiceLevel >= 2) {
-      features.push("Call Recording");
-      features.push("Smart Lead Qualification");
-      features.push("Spam Detection");
-    }
-    if (voiceLevel >= 3) {
-      features.push("Customized Knowledge Base");
-      features.push("Outbound Voice & Text");
-      features.push("Appointment Setting");
-      features.push("CRM Integration");
-    }
-    return features;
-  };
-
-  const getLeadFeatures = () => {
-    if (leadLevel === 0) return [];
-    const features = ["Instant Lead Tracker Update"];
-    if (leadLevel >= 2) {
-      features.push("Instant Notification (Email/Text)");
-      features.push("AI Lead Detect Bootcamp & Guide");
-    }
-    if (leadLevel >= 3) {
-      features.push("CRM Sync");
-    }
-    return features;
+    return socialPostsPrices[socialPosts] + adsPrices[adsLevel] + voicePrices[voiceLevel] + leadPrices[leadLevel];
   };
 
   return (
@@ -117,44 +62,37 @@ const Pricing = () => {
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Configuration Panel */}
             <div className="lg:col-span-2 space-y-6">
-              {/* Organic Content */}
+              {/* Social Media */}
               <Card>
                 <CardHeader>
-                  <CardTitle>Organic Social Media Posts</CardTitle>
-                  <CardDescription>Consistent organic content to keep your brand visible</CardDescription>
+                  <CardTitle>Social Media Management</CardTitle>
+                  <CardDescription>Consistent content without the headache</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <Label>Content level</Label>
-                      {organicPosts > 0 && <ProofChip metric="+62%" label="profile visits" variant="success" />}
+                      <Label>Posts per week</Label>
+                      <ProofChip metric="+62%" label="profile visits (28 days)" variant="success" />
                     </div>
                     <Slider
-                      value={[organicPosts]}
-                      onValueChange={(value) => setOrganicPosts(value[0])}
-                      max={2}
+                      value={[socialPosts]}
+                      onValueChange={(value) => setSocialPosts(value[0])}
+                      max={4}
                       step={1}
                       className="mb-2"
                     />
                     <div className="flex justify-between text-sm text-muted-foreground">
-                      {organicLabels.map((label) => (
-                        <span key={label}>{label}</span>
-                      ))}
+                      <span>Off</span>
+                      <span>1/week</span>
+                      <span>5/week</span>
+                      <span>5/wk Custom</span>
+                      <span>5 + Scout</span>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
 
-              {/* Paid Ads */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>AI Ads (Social Media Advertising)</CardTitle>
-                  <CardDescription>Branded ad creative and media buying</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <Label>Ad package level</Label>
+                      <Label>Ad creative level</Label>
                     </div>
                     <Slider
                       value={[adsLevel]}
@@ -164,22 +102,67 @@ const Pricing = () => {
                       className="mb-2"
                     />
                     <div className="flex justify-between text-sm text-muted-foreground">
-                      {adsLabels.map((label) => (
-                        <span key={label}>{label}</span>
-                      ))}
+                      <span>None</span>
+                      <span>2D</span>
+                      <span>2D+Video</span>
+                      <span>Full Stack</span>
                     </div>
                   </div>
 
-                  {adsLevel > 0 && (
+                  {(socialPosts > 0 || adsLevel > 0) && (
                     <div className="p-4 bg-muted/50 rounded-lg">
                       <p className="text-sm font-medium mb-2">Includes:</p>
                       <ul className="grid gap-2 text-sm text-muted-foreground">
-                        {getAdsFeatures().map((feature) => (
-                          <li key={feature} className="flex items-center gap-2">
-                            <Check className="w-4 h-4 text-primary" />
-                            {feature}
-                          </li>
-                        ))}
+                        {socialPosts > 0 && (
+                          <>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>{socialPosts === 1 ? '1 post per week' : '5 posts per week'}</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>{socialPosts >= 3 ? 'Custom branded content' : 'Industry content'}</span>
+                            </li>
+                            {socialPosts === 4 && (
+                              <li className="flex items-center gap-2">
+                                <Check className="w-4 h-4 text-primary" />
+                                <span>Brand Scout for on-site content capture</span>
+                              </li>
+                            )}
+                          </>
+                        )}
+                        {adsLevel >= 1 && (
+                          <>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>3 Branded 2D Ads (per quarter)</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>${adsLevel === 1 ? 100 : adsLevel === 2 ? 400 : 500} monthly ad spend</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Social Media Bootcamp & Guide</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Analytics Dashboard</span>
+                            </li>
+                          </>
+                        )}
+                        {adsLevel >= 2 && (
+                          <>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>2 Branded Video Ads (per quarter)</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Facebook & Instagram Story Ads</span>
+                            </li>
+                          </>
+                        )}
                       </ul>
                     </div>
                   )}
@@ -192,11 +175,11 @@ const Pricing = () => {
                   <CardTitle>AI Voice (Receptionist)</CardTitle>
                   <CardDescription>24/7 answering and qualification</CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-6">
+                <CardContent>
                   <div>
                     <div className="flex items-center justify-between mb-4">
                       <Label>Monthly call volume</Label>
-                      {voiceLevel > 0 && <ProofChip metric="+46%" label="answer rate" variant="success" />}
+                      <ProofChip metric="+46%" label="answer rate (30 days)" variant="success" />
                     </div>
                     <Slider
                       value={[voiceLevel]}
@@ -206,22 +189,65 @@ const Pricing = () => {
                       className="mb-2"
                     />
                     <div className="flex justify-between text-sm text-muted-foreground">
-                      {voiceLabels.map((label) => (
-                        <span key={label}>{label}</span>
-                      ))}
+                      <span>Off</span>
+                      <span>600</span>
+                      <span>1,600</span>
+                      <span>3,000</span>
                     </div>
                   </div>
 
                   {voiceLevel > 0 && (
-                    <div className="p-4 bg-muted/50 rounded-lg">
+                    <div className="mt-6 p-4 bg-muted/50 rounded-lg">
                       <p className="text-sm font-medium mb-2">Includes:</p>
                       <ul className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
-                        {getVoiceFeatures().map((feature) => (
-                          <li key={feature} className="flex items-center gap-2">
-                            <Check className="w-4 h-4 text-primary" />
-                            {feature}
-                          </li>
-                        ))}
+                        <li className="flex items-center gap-2">
+                          <Check className="w-4 h-4 text-primary" />
+                          <span>24/7 inbound</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <Check className="w-4 h-4 text-primary" />
+                          <span>Business FAQs</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <Check className="w-4 h-4 text-primary" />
+                          <span>Call summaries</span>
+                        </li>
+                        {voiceLevel >= 2 && (
+                          <>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Call recording</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Smart qualification</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Spam detection</span>
+                            </li>
+                          </>
+                        )}
+                        {voiceLevel >= 3 && (
+                          <>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Custom routing</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Appointment setting</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Outbound voice/text</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>CRM integration</span>
+                            </li>
+                          </>
+                        )}
                       </ul>
                     </div>
                   )}
@@ -234,11 +260,11 @@ const Pricing = () => {
                   <CardTitle>AI Lead Detection</CardTitle>
                   <CardDescription>Identify anonymous visitors and turn them into pipeline</CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-6">
+                <CardContent>
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <Label>Monthly leads identified</Label>
-                      {leadLevel > 0 && <ProofChip metric="7" label="booked calls per 250 IDs" />}
+                      <Label>Leads identified per month</Label>
+                      <ProofChip metric="7" label="booked calls per 250 IDs" />
                     </div>
                     <Slider
                       value={[leadLevel]}
@@ -248,22 +274,39 @@ const Pricing = () => {
                       className="mb-2"
                     />
                     <div className="flex justify-between text-sm text-muted-foreground">
-                      {leadLabels.map((label) => (
-                        <span key={label}>{label}</span>
-                      ))}
+                      <span>Off</span>
+                      <span>250</span>
+                      <span>250+alerts</span>
+                      <span>2500+CRM</span>
                     </div>
                   </div>
 
                   {leadLevel > 0 && (
-                    <div className="p-4 bg-muted/50 rounded-lg">
+                    <div className="mt-6 p-4 bg-muted/50 rounded-lg">
                       <p className="text-sm font-medium mb-2">Includes:</p>
                       <ul className="grid gap-2 text-sm text-muted-foreground">
-                        {getLeadFeatures().map((feature) => (
-                          <li key={feature} className="flex items-center gap-2">
+                        <li className="flex items-center gap-2">
+                          <Check className="w-4 h-4 text-primary" />
+                          <span>Instant Lead Tracker</span>
+                        </li>
+                        {leadLevel >= 2 && (
+                          <>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Email/Text Notifications</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Bootcamp & Guide</span>
+                            </li>
+                          </>
+                        )}
+                        {leadLevel >= 3 && (
+                          <li className="flex items-center gap-2">
                             <Check className="w-4 h-4 text-primary" />
-                            {feature}
+                            <span>CRM Sync</span>
                           </li>
-                        ))}
+                        )}
                       </ul>
                     </div>
                   )}
@@ -278,16 +321,10 @@ const Pricing = () => {
                   <CardTitle>Your Plan Summary</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  {organicPosts > 0 && (
+                  {socialPosts > 0 && (
                     <div className="flex justify-between text-sm">
-                      <span>Organic Posts</span>
-                      <span className="font-semibold">${organicPrices[organicPosts]}/mo</span>
-                    </div>
-                  )}
-                  {adsLevel > 0 && (
-                    <div className="flex justify-between text-sm">
-                      <span>AI Ads</span>
-                      <span className="font-semibold">${adsPrices[adsLevel]}/mo</span>
+                      <span>Social Media</span>
+                      <span className="font-semibold">${socialPostsPrices[socialPosts] + adsPrices[adsLevel]}/mo</span>
                     </div>
                   )}
                   {voiceLevel > 0 && (
@@ -312,11 +349,11 @@ const Pricing = () => {
                       <>
                         <div className="flex justify-between mb-2">
                           <span className="text-sm text-muted-foreground">Annual (17% off)</span>
-                          <span className="font-semibold text-primary">${calculateAnnualPrice().toLocaleString()}/yr</span>
+                          <span className="font-semibold text-secondary">${calculateTotal().toLocaleString()}/yr</span>
                         </div>
                         <div className="flex justify-between">
                           <span className="text-sm text-primary">You save</span>
-                          <span className="font-semibold text-primary">${(getMonthlyPrice() * 12 - calculateAnnualPrice()).toLocaleString()}/yr</span>
+                          <span className="font-semibold text-primary">${(getMonthlyPrice() * 12 - calculateTotal()).toLocaleString()}/yr</span>
                         </div>
                       </>
                     )}
@@ -324,7 +361,7 @@ const Pricing = () => {
 
                   <div className="pt-4">
                     <div className="text-3xl font-bold mb-1">
-                      ${isAnnual ? calculateAnnualPrice().toLocaleString() : getMonthlyPrice()}
+                      ${isAnnual ? calculateTotal().toLocaleString() : getMonthlyPrice()}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
                       {isAnnual ? "per year" : "per month"}
