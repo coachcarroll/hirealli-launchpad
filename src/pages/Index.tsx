@@ -1,6 +1,8 @@
-import { ArrowRight, Phone, CheckCircle2, Headphones, Search, Share2 } from "lucide-react";
+import { ArrowRight, Phone, CheckCircle2, Headphones, Search, Share2, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ProofChip from "@/components/ProofChip";
@@ -8,6 +10,48 @@ import RoleCard from "@/components/RoleCard";
 import alliHeadshot from "@/assets/alli-headshot.jpg";
 
 const Index = () => {
+  const [industryDialogOpen, setIndustryDialogOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
+
+  const industries = {
+    "Professional Services": [
+      "Legal Services",
+      "Accounting & Tax",
+      "Business Consulting",
+      "Marketing & Advertising",
+      "IT & Tech Support",
+      "Financial Planning",
+      "Human Resources",
+      "Architecture & Engineering"
+    ],
+    "Home Services": [
+      "Plumbing",
+      "Electrical",
+      "HVAC (Heating & Cooling)",
+      "Cleaning & Housekeeping",
+      "Landscaping & Lawn Care",
+      "Pest Control",
+      "Home Remodeling",
+      "Handyman Services"
+    ]
+  };
+
+  const handleCategorySelect = (category: string) => {
+    setSelectedCategory(category);
+  };
+
+  const handleIndustrySelect = (industry: string) => {
+    setSelectedIndustry(industry);
+    // Here you could navigate to pricing with the selected industry
+    // or store it in state/context for use elsewhere
+    setIndustryDialogOpen(false);
+    setSelectedCategory(null);
+  };
+
+  const handleBack = () => {
+    setSelectedCategory(null);
+  };
   const problems = [
     "Missed calls and slow follow-ups → lost revenue",
     "Anonymous site traffic you can't monetize",
@@ -54,11 +98,14 @@ const Index = () => {
                   Call Alli Live (no edits)
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="text-lg" asChild>
-                <Link to="/pricing">
-                  Build Your Plan
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="text-lg"
+                onClick={() => setIndustryDialogOpen(true)}
+              >
+                Select Your Industry
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
 
@@ -232,6 +279,58 @@ const Index = () => {
       </section>
 
       <Footer />
+
+      {/* Industry Selector Dialog */}
+      <Dialog open={industryDialogOpen} onOpenChange={setIndustryDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>
+              {selectedCategory ? selectedCategory : "Select Your Industry"}
+            </DialogTitle>
+            <DialogDescription>
+              {selectedCategory 
+                ? "Choose your specific service type" 
+                : "Choose your industry category to get started"}
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="space-y-3 mt-4">
+            {!selectedCategory ? (
+              // Step 1: Category Selection
+              Object.keys(industries).map((category) => (
+                <button
+                  key={category}
+                  onClick={() => handleCategorySelect(category)}
+                  className="w-full p-4 rounded-lg border-2 border-border hover:border-primary hover:bg-primary/5 transition-all text-left flex items-center justify-between group"
+                >
+                  <span className="font-medium text-lg">{category}</span>
+                  <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                </button>
+              ))
+            ) : (
+              // Step 2: Industry Selection
+              <>
+                <button
+                  onClick={handleBack}
+                  className="text-sm text-muted-foreground hover:text-foreground flex items-center gap-1 mb-2"
+                >
+                  <ChevronRight className="w-4 h-4 rotate-180" />
+                  Back to categories
+                </button>
+                {industries[selectedCategory as keyof typeof industries].map((industry) => (
+                  <button
+                    key={industry}
+                    onClick={() => handleIndustrySelect(industry)}
+                    className="w-full p-3 rounded-lg border border-border hover:border-primary hover:bg-primary/5 transition-all text-left"
+                  >
+                    <span className="text-base">{industry}</span>
+                  </button>
+                ))}
+              </>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
