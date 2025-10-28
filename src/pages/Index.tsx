@@ -88,20 +88,55 @@ const Index = () => {
       </section>
 
       {/* Problems Section */}
-      <section className="py-16 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-            The Problems Alli Solves
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {problems.map((problem, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors"
-              >
-                <p className="text-lg text-center">{problem}</p>
+      <section className="py-20 px-4 bg-gradient-to-b from-destructive/5 via-muted/30 to-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-destructive/10 via-transparent to-transparent opacity-50" />
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-12">
+            <div className="inline-block px-4 py-2 rounded-full bg-destructive/10 border border-destructive/20 text-destructive text-sm font-medium mb-4">
+              The Hidden Revenue Drains
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Stop Losing Money to These Silent Killers
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Every day without Alli, you're bleeding opportunities
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="group relative p-8 rounded-2xl bg-card border-2 border-destructive/20 hover:border-destructive/40 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-destructive to-destructive/50 rounded-t-2xl" />
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Phone className="w-7 h-7 text-destructive-foreground" />
               </div>
-            ))}
+              <h3 className="text-xl font-bold mb-3">Missed Calls = Lost Revenue</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Every unanswered call is a prospect choosing your competitor. Slow follow-ups kill deals before they start.
+              </p>
+            </div>
+
+            <div className="group relative p-8 rounded-2xl bg-card border-2 border-destructive/20 hover:border-destructive/40 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-destructive to-destructive/50 rounded-t-2xl" />
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Search className="w-7 h-7 text-destructive-foreground" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Ghost Traffic You Can't Capture</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                97% of your website visitors leave anonymous. That's pipeline walking away because you can't identify ready buyers.
+              </p>
+            </div>
+
+            <div className="group relative p-8 rounded-2xl bg-card border-2 border-destructive/20 hover:border-destructive/40 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-destructive to-destructive/50 rounded-t-2xl" />
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Share2 className="w-7 h-7 text-destructive-foreground" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Invisible When Buyers Are Looking</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Inconsistent content means prospects never see you. Your team's too busy to post, so deals go to whoever stayed visible.
+              </p>
+            </div>
           </div>
         </div>
       </section>
