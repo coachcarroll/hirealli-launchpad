@@ -12,6 +12,22 @@ import SocialMedia from "./pages/roles/SocialMedia";
 import LeadDetection from "./pages/roles/LeadDetection";
 import Receptionist from "./pages/roles/Receptionist";
 import NotFound from "./pages/NotFound";
+import LegalServices from "./pages/industries/LegalServices";
+import AccountingTax from "./pages/industries/AccountingTax";
+import BusinessConsulting from "./pages/industries/BusinessConsulting";
+import MarketingAdvertising from "./pages/industries/MarketingAdvertising";
+import ITTechSupport from "./pages/industries/ITTechSupport";
+import FinancialPlanning from "./pages/industries/FinancialPlanning";
+import HumanResources from "./pages/industries/HumanResources";
+import ArchitectureEngineering from "./pages/industries/ArchitectureEngineering";
+import Plumbing from "./pages/industries/Plumbing";
+import Electrical from "./pages/industries/Electrical";
+import HVAC from "./pages/industries/HVAC";
+import Cleaning from "./pages/industries/Cleaning";
+import Landscaping from "./pages/industries/Landscaping";
+import PestControl from "./pages/industries/PestControl";
+import HomeRemodeling from "./pages/industries/HomeRemodeling";
+import Handyman from "./pages/industries/Handyman";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +46,22 @@ const App = () => (
           <Route path="/roles/receptionist" element={<Receptionist />} />
           <Route path="/results" element={<Results />} />
           <Route path="/why-alli" element={<WhyAlli />} />
+          <Route path="/industries/legal-services" element={<LegalServices />} />
+          <Route path="/industries/accounting-tax" element={<AccountingTax />} />
+          <Route path="/industries/business-consulting" element={<BusinessConsulting />} />
+          <Route path="/industries/marketing-advertising" element={<MarketingAdvertising />} />
+          <Route path="/industries/it-tech-support" element={<ITTechSupport />} />
+          <Route path="/industries/financial-planning" element={<FinancialPlanning />} />
+          <Route path="/industries/human-resources" element={<HumanResources />} />
+          <Route path="/industries/architecture-engineering" element={<ArchitectureEngineering />} />
+          <Route path="/industries/plumbing" element={<Plumbing />} />
+          <Route path="/industries/electrical" element={<Electrical />} />
+          <Route path="/industries/hvac" element={<HVAC />} />
+          <Route path="/industries/cleaning" element={<Cleaning />} />
+          <Route path="/industries/landscaping" element={<Landscaping />} />
+          <Route path="/industries/pest-control" element={<PestControl />} />
+          <Route path="/industries/home-remodeling" element={<HomeRemodeling />} />
+          <Route path="/industries/handyman" element={<Handyman />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
