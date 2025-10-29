@@ -14,7 +14,7 @@ const Pricing = () => {
   const [socialPosts, setSocialPosts] = useState(0); // 0=off, 1=1/wk, 2=5/wk industry, 3=5/wk custom, 4=5/wk + scout
   const [adsLevel, setAdsLevel] = useState(0); // 0=off, 1=standard, 2=deluxe, 3=premium
   const [voiceLevel, setVoiceLevel] = useState(0); // 0=off, 1=600 calls, 2=1600 calls, 3=3000 calls
-  const [leadLevel, setLeadLevel] = useState(0); // 0=off, 1=250 leads, 2=250+alerts, 3=2500+CRM
+  const [leadLevel, setLeadLevel] = useState(1); // 0=off, 1=250 leads (freemium - 10 free leads), 2=250+alerts, 3=2500+CRM
 
   // Updated pricing to match carroll.media
   const socialPostsPrices = [0, 150, 200, 400, 600]; // Off, 1/wk, 5/wk industry, 5/wk custom, 5/wk + scout
