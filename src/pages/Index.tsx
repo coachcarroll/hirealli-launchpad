@@ -105,7 +105,7 @@ const Index = () => {
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 Book <span className="text-primary">40% more</span> qualified leads in 30 days—<br />
-                hire Alli, your first AI team member,<br />
+                hire Alli, <span className="text-accent">your first AI team member</span>,<br />
                 and watch your <span className="text-secondary">small business grow</span>
               </h1>
               
