@@ -16,19 +16,48 @@ const Pricing = () => {
   const [voiceLevel, setVoiceLevel] = useState(0); // 0=off, 1=600 calls, 2=1600 calls, 3=3000 calls
   const [leadLevel, setLeadLevel] = useState(0); // 0=off, 1=250 leads, 2=250+alerts, 3=2500+CRM
 
-  // Pricing from Sheet 2
+  // Updated pricing to match carroll.media
   const socialPostsPrices = [0, 150, 200, 400, 600]; // Off, 1/wk, 5/wk industry, 5/wk custom, 5/wk + scout
-  const adsPrices = [0, 397, 897, 1497]; // Off, Standard, Deluxe, Premium
-  const voicePrices = [0, 200, 500, 1000]; // Off, 600 calls, 1600 calls, 3000 calls
-  const leadPrices = [0, 100, 250, 500]; // Off, 250 leads, 250+alerts, 2500+CRM
+  const adsPrices = [0, 397, 797, 1497]; // Off, Standard (2D), Deluxe (2D+Video), Premium (Full Stack)
+  const voicePrices = [0, 197, 500, 1000]; // Off, Base (197), Mid, Premium
+  const leadPrices = [0, 97, 297, 497]; // Off, Starter (97), Pro (297), Enterprise (497)
 
+  // Bundle logic: Full Stack ads includes free AI Voice (base) + AI Lead Detection (starter)
+  const isPremiumBundle = adsLevel === 3;
+  
   const calculateTotal = () => {
-    const monthly = socialPostsPrices[socialPosts] + adsPrices[adsLevel] + voicePrices[voiceLevel] + leadPrices[leadLevel];
+    let voiceCost = voicePrices[voiceLevel];
+    let leadCost = leadPrices[leadLevel];
+    
+    // If Premium bundle selected, first tier of Voice and Lead Detection is FREE
+    if (isPremiumBundle) {
+      if (voiceLevel === 1) voiceCost = 0;
+      if (leadLevel === 1) leadCost = 0;
+    }
+    
+    const monthly = socialPostsPrices[socialPosts] + adsPrices[adsLevel] + voiceCost + leadCost;
     return isAnnual ? Math.round(monthly * 12 * 0.83) : monthly;
   };
 
   const getMonthlyPrice = () => {
-    return socialPostsPrices[socialPosts] + adsPrices[adsLevel] + voicePrices[voiceLevel] + leadPrices[leadLevel];
+    let voiceCost = voicePrices[voiceLevel];
+    let leadCost = leadPrices[leadLevel];
+    
+    // If Premium bundle selected, first tier of Voice and Lead Detection is FREE
+    if (isPremiumBundle) {
+      if (voiceLevel === 1) voiceCost = 0;
+      if (leadLevel === 1) leadCost = 0;
+    }
+    
+    return socialPostsPrices[socialPosts] + adsPrices[adsLevel] + voiceCost + leadCost;
+  };
+
+  const getBundleSavings = () => {
+    if (!isPremiumBundle) return 0;
+    let savings = 0;
+    if (voiceLevel === 1) savings += voicePrices[1];
+    if (leadLevel === 1) savings += leadPrices[1];
+    return savings;
   };
 
   return (
@@ -101,13 +130,27 @@ const Pricing = () => {
                       step={1}
                       className="mb-2"
                     />
-                    <div className="flex justify-between text-sm text-muted-foreground">
+                     <div className="flex justify-between text-sm text-muted-foreground">
                       <span>None</span>
-                      <span>2D</span>
-                      <span>2D+Video</span>
-                      <span>Full Stack</span>
+                      <span>Standard</span>
+                      <span>Deluxe</span>
+                      <span>Premium</span>
                     </div>
                   </div>
+
+                  {/* Premium Bundle Badge */}
+                  {isPremiumBundle && (
+                    <div className="p-4 bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 rounded-lg">
+                      <p className="font-semibold text-primary mb-2">🎁 Premium Bundle Unlocked!</p>
+                      <p className="text-sm text-muted-foreground">
+                        Get AI Voice (Base) + AI Lead Detection (Starter) FREE
+                        {isAnnual && " + One-time Brand Scout Visit"}
+                      </p>
+                      <p className="text-xs text-primary mt-2">
+                        Saving ${getBundleSavings()}/mo included
+                      </p>
+                    </div>
+                  )}
 
                   {(socialPosts > 0 || adsLevel > 0) && (
                     <div className="p-4 bg-muted/50 rounded-lg">
@@ -317,22 +360,46 @@ const Pricing = () => {
                   <CardTitle>Your Plan Summary</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
+                {adsLevel > 0 && (
+                    <div className="flex justify-between text-sm">
+                      <span>Ad Creative ({adsLevel === 1 ? 'Standard' : adsLevel === 2 ? 'Deluxe' : 'Premium'})</span>
+                      <span className="font-semibold">${adsPrices[adsLevel]}/mo</span>
+                    </div>
+                  )}
                   {socialPosts > 0 && (
                     <div className="flex justify-between text-sm">
-                      <span>Social Media</span>
-                      <span className="font-semibold">${socialPostsPrices[socialPosts] + adsPrices[adsLevel]}/mo</span>
+                      <span>Social Posts</span>
+                      <span className="font-semibold">${socialPostsPrices[socialPosts]}/mo</span>
                     </div>
                   )}
                   {voiceLevel > 0 && (
                     <div className="flex justify-between text-sm">
                       <span>AI Voice</span>
-                      <span className="font-semibold">${voicePrices[voiceLevel]}/mo</span>
+                      <span className={`font-semibold ${isPremiumBundle && voiceLevel === 1 ? 'line-through text-muted-foreground' : ''}`}>
+                        ${voicePrices[voiceLevel]}/mo
+                      </span>
+                      {isPremiumBundle && voiceLevel === 1 && (
+                        <span className="text-primary font-semibold">FREE</span>
+                      )}
                     </div>
                   )}
                   {leadLevel > 0 && (
                     <div className="flex justify-between text-sm">
                       <span>Lead Detection</span>
-                      <span className="font-semibold">${leadPrices[leadLevel]}/mo</span>
+                      <span className={`font-semibold ${isPremiumBundle && leadLevel === 1 ? 'line-through text-muted-foreground' : ''}`}>
+                        ${leadPrices[leadLevel]}/mo
+                      </span>
+                      {isPremiumBundle && leadLevel === 1 && (
+                        <span className="text-primary font-semibold">FREE</span>
+                      )}
+                    </div>
+                  )}
+                  
+                  {/* Show bundle savings */}
+                  {isPremiumBundle && getBundleSavings() > 0 && (
+                    <div className="flex justify-between text-sm text-primary">
+                      <span>Bundle Savings</span>
+                      <span className="font-semibold">-${getBundleSavings()}/mo</span>
                     </div>
                   )}
                   
@@ -362,7 +429,15 @@ const Pricing = () => {
                     <div className="text-sm text-muted-foreground mb-4">
                       {isAnnual ? "per year" : "per month"}
                     </div>
-                    <Button className="w-full" size="lg">
+                    <Button 
+                      className="w-full" 
+                      size="lg"
+                      onClick={() => {
+                        // For now, open the demo scheduler
+                        // TODO: Add Stripe checkout integration
+                        window.open('https://go.oncehub.com/cmcsalesteam', '_blank');
+                      }}
+                    >
                       Get Started
                     </Button>
                     <p className="text-xs text-center text-muted-foreground mt-3">
