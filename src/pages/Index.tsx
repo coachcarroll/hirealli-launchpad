@@ -276,16 +276,35 @@ const Index = () => {
       </section>
 
       {/* Outcomes */}
-      <section className="py-20 px-4 bg-gradient-to-br from-primary/5 to-primary-glow/5">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-            Outcomes That Matter
-          </h2>
+      <section className="py-24 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary-glow/5 to-accent/5" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl opacity-30" />
+        
+        <div className="container mx-auto max-w-5xl relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium mb-4">
+              <CheckCircle2 className="w-4 h-4" />
+              Proven Results
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
+              Outcomes That Matter
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Real metrics that transform your business
+            </p>
+          </div>
+          
           <div className="grid md:grid-cols-2 gap-6">
             {outcomes.map((outcome, index) => (
-              <div key={index} className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border">
-                <outcome.icon className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                <p className="text-lg">{outcome.text}</p>
+              <div 
+                key={index} 
+                className="group relative flex items-start gap-5 p-8 rounded-2xl bg-card/80 backdrop-blur-sm border-2 border-accent/20 hover:border-accent/50 transition-all duration-500 hover:shadow-[0_20px_50px_-12px_hsl(var(--accent)/0.25)] hover:-translate-y-1 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-accent/70 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
+                  <outcome.icon className="w-6 h-6 text-accent-foreground" />
+                </div>
+                <p className="relative text-lg font-medium leading-relaxed pt-2">{outcome.text}</p>
               </div>
             ))}
           </div>
