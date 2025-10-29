@@ -104,13 +104,13 @@ const Index = () => {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                SMBs book <span className="text-primary">40% more</span><br />
-                qualified prospects in 30 days<br />
-                with Alli—<span className="text-secondary">no new hires</span>
+                Book <span className="text-primary">40% more</span> qualified leads in 30 days—<br />
+                hire Alli, your first AI team member,<br />
+                and watch your <span className="text-secondary">small business grow</span>
               </h1>
               
               <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-                Alli runs your reception, detects hidden buyers, and ships content—so you add pipeline without adding payroll.
+                AI Voice, Lead Detection, and Social Media that help small businesses convert every contact into revenue.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-6">
@@ -136,9 +136,9 @@ const Index = () => {
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                <ProofChip metric="+46%" label="avg answer rate" variant="success" />
-                <ProofChip metric="7" label="booked calls per 250 IDs" />
-                <ProofChip metric="+62%" label="profile visits" variant="success" />
+                <ProofChip metric="40%" label="more qualified prospects in 30 days" variant="success" />
+                <ProofChip metric="30%" label="junk calls eliminated" />
+                <ProofChip metric="60%" label="increase in profile visits" variant="success" />
               </div>
             </div>
 
@@ -185,8 +185,11 @@ const Index = () => {
                   <Phone className="w-8 h-8 text-destructive-foreground" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">Missed Calls = Lost Revenue</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Every unanswered call is a prospect choosing your competitor. Slow follow-ups kill deals before they start.
+                <p className="text-muted-foreground leading-relaxed mb-3">
+                  Every unanswered call is a prospect choosing your competitor. Most small businesses lose up to 40% of potential leads because of missed calls or slow follow-up.
+                </p>
+                <p className="text-sm font-semibold text-primary">
+                  Alli makes sure that never happens.
                 </p>
               </div>
             </div>
@@ -198,9 +201,12 @@ const Index = () => {
                 <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
                   <Search className="w-8 h-8 text-destructive-foreground" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">Ghost Traffic You Can't Capture</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  97% of your website visitors leave anonymous. That's pipeline walking away because you can't identify ready buyers.
+                <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">Ghost Traffic You Can&apos;t Capture</h3>
+                <p className="text-muted-foreground leading-relaxed mb-3">
+                  97% of your website visitors leave anonymous. That&apos;s pipeline walking away because you can&apos;t identify ready buyers.
+                </p>
+                <p className="text-sm font-semibold text-primary">
+                  Alli turns web traffic into real opportunities.
                 </p>
               </div>
             </div>
@@ -213,8 +219,11 @@ const Index = () => {
                   <Share2 className="w-8 h-8 text-destructive-foreground" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">Invisible When Buyers Are Looking</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Inconsistent content means prospects never see you. Your team's too busy to post, so deals go to whoever stayed visible.
+                <p className="text-muted-foreground leading-relaxed mb-3">
+                  Inconsistent content means prospects never see you. Your team&apos;s too busy to post, so deals go to whoever stayed visible.
+                </p>
+                <p className="text-sm font-semibold text-primary">
+                  Alli keeps your business top-of-mind when customers are ready to buy.
                 </p>
               </div>
             </div>
@@ -237,36 +246,36 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <RoleCard
               icon={Headphones}
-              title="Receptionist"
-              description="Answer, qualify, and route—24/7."
+              title="Voice — Your 24/7 Receptionist"
+              description="Answers every call, qualifies leads, books appointments."
               features={[
-                "Never miss a call again",
+                "Sounds human, never misses a call",
+                "Screens out the junk",
                 "Smart qualification & routing",
-                "After-call summaries",
-                "Appointment setting & CRM sync",
+                "After-call summaries & appointment setting",
               ]}
               link="/roles/receptionist"
             />
             <RoleCard
               icon={Search}
-              title="Lead Detection"
-              description="Turn anonymous clicks into names, alerts, and CRM records."
+              title="Lead Detection — See Who's Interested"
+              description="Identifies anonymous website visitors and alerts you when high-value leads are browsing."
               features={[
+                "Turns web traffic into real opportunities",
                 "Identify anonymous visitors",
                 "Instant alerts for hot leads",
                 "CRM integration",
-                "Track hidden buyers",
               ]}
               link="/roles/lead-detection"
             />
             <RoleCard
               icon={Share2}
-              title="Social Media"
-              description="Plan, capture, publish, and optimize—optionally with a Brand Scout on-site."
+              title="Social Media — Automatic Brand Awareness"
+              description="Consistent posting, engagement, and brand voice—without the hassle."
               features={[
+                "Keep your business top-of-mind when customers are ready to buy",
                 "Consistent posting cadence",
                 "On-brand creative",
-                "Optional on-site capture",
                 "Performance reporting",
               ]}
               link="/roles/social-media"
