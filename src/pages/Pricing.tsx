@@ -15,20 +15,20 @@ const Pricing = () => {
   const [socialPosts, setSocialPosts] = useState(0); // 0=off, 1=1/wk, 2=5/wk industry, 3=5/wk custom, 4=5/wk + scout
   const [adsLevel, setAdsLevel] = useState(0); // 0=off, 1=standard, 2=deluxe, 3=premium
   const [voiceLevel, setVoiceLevel] = useState(0); // 0=off, 1=600 calls, 2=1600 calls, 3=3000 calls
-  const [leadLevel, setLeadLevel] = useState(1); // 0=off, 1=250 leads (freemium - 10 free leads), 2=250+alerts, 3=2500+CRM
+  const [leadLevel, setLeadLevel] = useState(0); // 0=freemium (10 free leads), 1=250 leads, 2=250+alerts, 3=2500+CRM
   const [showFreemiumModal, setShowFreemiumModal] = useState(false);
 
   // Updated pricing to match carroll.media
   const socialPostsPrices = [0, 150, 200, 400, 600]; // Off, 1/wk, 5/wk industry, 5/wk custom, 5/wk + scout
   const adsPrices = [0, 397, 797, 1497]; // Off, Standard (2D), Deluxe (2D+Video), Premium (Full Stack)
   const voicePrices = [0, 197, 500, 1000]; // Off, Base (197), Mid, Premium
-  const leadPrices = [0, 97, 297, 497]; // Off, Starter (97), Pro (297), Enterprise (497)
+  const leadPrices = [0, 97, 297, 497]; // Freemium (10 free leads), Starter (97), Pro (297), Enterprise (497)
 
   // Bundle logic: Full Stack ads includes free AI Voice (base) + AI Lead Detection (starter)
   const isPremiumBundle = adsLevel === 3;
   
-  // Freemium logic: Only AI Lead Detection at level 1, everything else off
-  const isFreemiumOnly = leadLevel === 1 && adsLevel === 0 && voiceLevel === 0 && socialPosts === 0;
+  // Freemium logic: Only AI Lead Detection at freemium level (0), everything else off
+  const isFreemiumOnly = leadLevel === 0 && adsLevel === 0 && voiceLevel === 0 && socialPosts === 0;
   
   const calculateTotal = () => {
     let voiceCost = voicePrices[voiceLevel];
@@ -39,6 +39,9 @@ const Pricing = () => {
       if (voiceLevel === 1) voiceCost = 0;
       if (leadLevel === 1) leadCost = 0;
     }
+    
+    // Freemium is always free
+    if (leadLevel === 0) leadCost = 0;
     
     const monthly = socialPostsPrices[socialPosts] + adsPrices[adsLevel] + voiceCost + leadCost;
     return isAnnual ? Math.round(monthly * 12 * 0.83) : monthly;
@@ -53,6 +56,9 @@ const Pricing = () => {
       if (voiceLevel === 1) voiceCost = 0;
       if (leadLevel === 1) leadCost = 0;
     }
+    
+    // Freemium is always free
+    if (leadLevel === 0) leadCost = 0;
     
     return socialPostsPrices[socialPosts] + adsPrices[adsLevel] + voiceCost + leadCost;
   };
@@ -116,21 +122,39 @@ const Pricing = () => {
                       className="mb-2"
                     />
                     <div className="flex justify-between text-sm text-muted-foreground">
-                      <span>Off</span>
+                      <span>Freemium</span>
                       <span>250</span>
                       <span>250+alerts</span>
                       <span>2500+CRM</span>
                     </div>
                   </div>
 
-                  {leadLevel > 0 && (
+                  {leadLevel >= 0 && (
                     <div className="mt-6 p-4 bg-muted/50 rounded-lg">
                       <p className="text-sm font-medium mb-2">Includes:</p>
                       <ul className="grid gap-2 text-sm text-muted-foreground">
-                        <li className="flex items-center gap-2">
-                          <Check className="w-4 h-4 text-primary" />
-                          <span>Instant Lead Tracker</span>
-                        </li>
+                        {leadLevel === 0 && (
+                          <>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>10 Free Leads per Month</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>See Who&apos;s On Your Website</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Basic Lead Tracker</span>
+                            </li>
+                          </>
+                        )}
+                        {leadLevel >= 1 && (
+                          <li className="flex items-center gap-2">
+                            <Check className="w-4 h-4 text-primary" />
+                            <span>Instant Lead Tracker</span>
+                          </li>
+                        )}
                         {leadLevel >= 2 && (
                           <>
                             <li className="flex items-center gap-2">
@@ -370,7 +394,7 @@ const Pricing = () => {
                       <div className="flex-1">
                         <h3 className="font-semibold text-lg mb-1">Freemium Trial Unlocked! 🎉</h3>
                         <p className="text-sm text-muted-foreground">
-                          Get started with 10 free leads per month - no credit card required. Perfect for testing our AI lead detection system.
+                          Get started with 10 free leads per month - no credit card required. See who&apos;s on your website and turn anonymous visitors into real opportunities.
                         </p>
                       </div>
                     </div>
