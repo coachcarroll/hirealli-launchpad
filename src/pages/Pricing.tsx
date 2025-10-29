@@ -99,8 +99,8 @@ const Pricing = () => {
               {/* Lead Detection */}
               <Card>
                 <CardHeader>
-                  <CardTitle>AI Lead Detection</CardTitle>
-                  <CardDescription>Identify anonymous visitors and turn them into pipeline</CardDescription>
+                  <CardTitle>Lead Detection</CardTitle>
+                  <CardDescription>Turn anonymous clicks into names, alerts, and CRM records</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div>
@@ -158,8 +158,8 @@ const Pricing = () => {
               {/* AI Voice */}
               <Card>
                 <CardHeader>
-                  <CardTitle>AI Voice (Receptionist)</CardTitle>
-                  <CardDescription>24/7 answering and qualification</CardDescription>
+                  <CardTitle>Receptionist</CardTitle>
+                  <CardDescription>Answer, qualify, and route—24/7</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div>
@@ -239,8 +239,8 @@ const Pricing = () => {
               {/* Social Media */}
               <Card>
                 <CardHeader>
-                  <CardTitle>Social Media Management</CardTitle>
-                  <CardDescription>Consistent content without the headache</CardDescription>
+                  <CardTitle>Social Media</CardTitle>
+                  <CardDescription>Plan, capture, publish, and optimize—optionally with a Brand Scout on-site</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div>
