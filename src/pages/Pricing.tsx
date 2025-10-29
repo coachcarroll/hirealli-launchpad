@@ -91,6 +91,146 @@ const Pricing = () => {
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Configuration Panel */}
             <div className="lg:col-span-2 space-y-6">
+              {/* Lead Detection */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>AI Lead Detection</CardTitle>
+                  <CardDescription>Identify anonymous visitors and turn them into pipeline</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <Label>Leads identified per month</Label>
+                      <ProofChip metric="7" label="booked calls per 250 IDs" />
+                    </div>
+                    <Slider
+                      value={[leadLevel]}
+                      onValueChange={(value) => setLeadLevel(value[0])}
+                      max={3}
+                      step={1}
+                      className="mb-2"
+                    />
+                    <div className="flex justify-between text-sm text-muted-foreground">
+                      <span>Off</span>
+                      <span>250</span>
+                      <span>250+alerts</span>
+                      <span>2500+CRM</span>
+                    </div>
+                  </div>
+
+                  {leadLevel > 0 && (
+                    <div className="mt-6 p-4 bg-muted/50 rounded-lg">
+                      <p className="text-sm font-medium mb-2">Includes:</p>
+                      <ul className="grid gap-2 text-sm text-muted-foreground">
+                        <li className="flex items-center gap-2">
+                          <Check className="w-4 h-4 text-primary" />
+                          <span>Instant Lead Tracker</span>
+                        </li>
+                        {leadLevel >= 2 && (
+                          <>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Email/Text Notifications</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Bootcamp & Guide</span>
+                            </li>
+                          </>
+                        )}
+                        {leadLevel >= 3 && (
+                          <li className="flex items-center gap-2">
+                            <Check className="w-4 h-4 text-primary" />
+                            <span>CRM Sync</span>
+                          </li>
+                        )}
+                      </ul>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+
+              {/* AI Voice */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>AI Voice (Receptionist)</CardTitle>
+                  <CardDescription>24/7 answering and qualification</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <Label>Monthly call volume</Label>
+                      <ProofChip metric="+46%" label="answer rate (30 days)" variant="success" />
+                    </div>
+                    <Slider
+                      value={[voiceLevel]}
+                      onValueChange={(value) => setVoiceLevel(value[0])}
+                      max={3}
+                      step={1}
+                      className="mb-2"
+                    />
+                    <div className="flex justify-between text-sm text-muted-foreground">
+                      <span>Off</span>
+                      <span>600</span>
+                      <span>1,600</span>
+                      <span>3,000</span>
+                    </div>
+                  </div>
+
+                  {voiceLevel > 0 && (
+                    <div className="mt-6 p-4 bg-muted/50 rounded-lg">
+                      <p className="text-sm font-medium mb-2">Includes:</p>
+                      <ul className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
+                        <li className="flex items-center gap-2">
+                          <Check className="w-4 h-4 text-primary" />
+                          <span>24/7 inbound</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <Check className="w-4 h-4 text-primary" />
+                          <span>Business FAQs</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <Check className="w-4 h-4 text-primary" />
+                          <span>Call summaries</span>
+                        </li>
+                        {voiceLevel >= 2 && (
+                          <>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Call recording</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Smart qualification</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Spam detection</span>
+                            </li>
+                          </>
+                        )}
+                        {voiceLevel >= 3 && (
+                          <>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Custom routing</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>Appointment setting</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <Check className="w-4 h-4 text-primary" />
+                              <span>CRM integration</span>
+                            </li>
+                          </>
+                        )}
+                      </ul>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+
               {/* Social Media */}
               <Card>
                 <CardHeader>
@@ -211,146 +351,6 @@ const Pricing = () => {
                   )}
                 </CardContent>
               </Card>
-
-              {/* AI Voice */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>AI Voice (Receptionist)</CardTitle>
-                  <CardDescription>24/7 answering and qualification</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <Label>Monthly call volume</Label>
-                      <ProofChip metric="+46%" label="answer rate (30 days)" variant="success" />
-                    </div>
-                    <Slider
-                      value={[voiceLevel]}
-                      onValueChange={(value) => setVoiceLevel(value[0])}
-                      max={3}
-                      step={1}
-                      className="mb-2"
-                    />
-                    <div className="flex justify-between text-sm text-muted-foreground">
-                      <span>Off</span>
-                      <span>600</span>
-                      <span>1,600</span>
-                      <span>3,000</span>
-                    </div>
-                  </div>
-
-                  {voiceLevel > 0 && (
-                    <div className="mt-6 p-4 bg-muted/50 rounded-lg">
-                      <p className="text-sm font-medium mb-2">Includes:</p>
-                      <ul className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
-                        <li className="flex items-center gap-2">
-                          <Check className="w-4 h-4 text-primary" />
-                          <span>24/7 inbound</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <Check className="w-4 h-4 text-primary" />
-                          <span>Business FAQs</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <Check className="w-4 h-4 text-primary" />
-                          <span>Call summaries</span>
-                        </li>
-                        {voiceLevel >= 2 && (
-                          <>
-                            <li className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-primary" />
-                              <span>Call recording</span>
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-primary" />
-                              <span>Smart qualification</span>
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-primary" />
-                              <span>Spam detection</span>
-                            </li>
-                          </>
-                        )}
-                        {voiceLevel >= 3 && (
-                          <>
-                            <li className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-primary" />
-                              <span>Custom routing</span>
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-primary" />
-                              <span>Appointment setting</span>
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-primary" />
-                              <span>CRM integration</span>
-                            </li>
-                          </>
-                        )}
-                      </ul>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-
-              {/* Lead Detection */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>AI Lead Detection</CardTitle>
-                  <CardDescription>Identify anonymous visitors and turn them into pipeline</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <Label>Leads identified per month</Label>
-                      <ProofChip metric="7" label="booked calls per 250 IDs" />
-                    </div>
-                    <Slider
-                      value={[leadLevel]}
-                      onValueChange={(value) => setLeadLevel(value[0])}
-                      max={3}
-                      step={1}
-                      className="mb-2"
-                    />
-                    <div className="flex justify-between text-sm text-muted-foreground">
-                      <span>Off</span>
-                      <span>250</span>
-                      <span>250+alerts</span>
-                      <span>2500+CRM</span>
-                    </div>
-                  </div>
-
-                  {leadLevel > 0 && (
-                    <div className="mt-6 p-4 bg-muted/50 rounded-lg">
-                      <p className="text-sm font-medium mb-2">Includes:</p>
-                      <ul className="grid gap-2 text-sm text-muted-foreground">
-                        <li className="flex items-center gap-2">
-                          <Check className="w-4 h-4 text-primary" />
-                          <span>Instant Lead Tracker</span>
-                        </li>
-                        {leadLevel >= 2 && (
-                          <>
-                            <li className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-primary" />
-                              <span>Email/Text Notifications</span>
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-primary" />
-                              <span>Bootcamp & Guide</span>
-                            </li>
-                          </>
-                        )}
-                        {leadLevel >= 3 && (
-                          <li className="flex items-center gap-2">
-                            <Check className="w-4 h-4 text-primary" />
-                            <span>CRM Sync</span>
-                          </li>
-                        )}
-                      </ul>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
             </div>
 
             {/* Summary Card */}
@@ -360,16 +360,15 @@ const Pricing = () => {
                   <CardTitle>Your Plan Summary</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                {adsLevel > 0 && (
+                  {leadLevel > 0 && (
                     <div className="flex justify-between text-sm">
-                      <span>Ad Creative ({adsLevel === 1 ? 'Standard' : adsLevel === 2 ? 'Deluxe' : 'Premium'})</span>
-                      <span className="font-semibold">${adsPrices[adsLevel]}/mo</span>
-                    </div>
-                  )}
-                  {socialPosts > 0 && (
-                    <div className="flex justify-between text-sm">
-                      <span>Social Posts</span>
-                      <span className="font-semibold">${socialPostsPrices[socialPosts]}/mo</span>
+                      <span>Lead Detection</span>
+                      <span className={`font-semibold ${isPremiumBundle && leadLevel === 1 ? 'line-through text-muted-foreground' : ''}`}>
+                        ${leadPrices[leadLevel]}/mo
+                      </span>
+                      {isPremiumBundle && leadLevel === 1 && (
+                        <span className="text-primary font-semibold">FREE</span>
+                      )}
                     </div>
                   )}
                   {voiceLevel > 0 && (
@@ -383,15 +382,16 @@ const Pricing = () => {
                       )}
                     </div>
                   )}
-                  {leadLevel > 0 && (
+                  {adsLevel > 0 && (
                     <div className="flex justify-between text-sm">
-                      <span>Lead Detection</span>
-                      <span className={`font-semibold ${isPremiumBundle && leadLevel === 1 ? 'line-through text-muted-foreground' : ''}`}>
-                        ${leadPrices[leadLevel]}/mo
-                      </span>
-                      {isPremiumBundle && leadLevel === 1 && (
-                        <span className="text-primary font-semibold">FREE</span>
-                      )}
+                      <span>Ad Creative ({adsLevel === 1 ? 'Standard' : adsLevel === 2 ? 'Deluxe' : 'Premium'})</span>
+                      <span className="font-semibold">${adsPrices[adsLevel]}/mo</span>
+                    </div>
+                  )}
+                  {socialPosts > 0 && (
+                    <div className="flex justify-between text-sm">
+                      <span>Social Posts</span>
+                      <span className="font-semibold">${socialPostsPrices[socialPosts]}/mo</span>
                     </div>
                   )}
                   
