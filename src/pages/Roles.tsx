@@ -21,20 +21,6 @@ const Roles = () => {
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <RoleCard
-              icon={Share2}
-              title="Social Media Manager"
-              description="Posting shouldn't be a full-time job. Alli keeps your content moving."
-              features={[
-                "Plan → Capture → Approve → Publish",
-                "1-5 posts per week, on-brand",
-                "Optional Brand Scout for on-site content",
-                "2D graphics, video, and retargeting ads",
-                "Performance dashboard & reporting",
-              ]}
-              link="/roles/social-media"
-            />
-
-            <RoleCard
               icon={Search}
               title="Lead Detective"
               description="Turn anonymous clicks into named opportunities."
@@ -60,6 +46,20 @@ const Roles = () => {
                 "Appointment setting & CRM sync",
               ]}
               link="/roles/receptionist"
+            />
+
+            <RoleCard
+              icon={Share2}
+              title="Social Media Manager"
+              description="Posting shouldn't be a full-time job. Alli keeps your content moving."
+              features={[
+                "Plan → Capture → Approve → Publish",
+                "1-5 posts per week, on-brand",
+                "Optional Brand Scout for on-site content",
+                "2D graphics, video, and retargeting ads",
+                "Performance dashboard & reporting",
+              ]}
+              link="/roles/social-media"
             />
           </div>
 
