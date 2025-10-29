@@ -44,7 +44,7 @@ const Navigation = () => {
 
             <div className="hidden md:flex items-center space-x-3">
               <Button variant="outline" size="sm" asChild>
-                <Link to="/login">Login</Link>
+                <a href="https://app.carroll.media" target="_blank" rel="noopener noreferrer">Login</a>
               </Button>
               <Button size="sm" className="bg-gradient-to-r from-primary to-primary-glow" asChild>
                 <a href="tel:+1234567890">
@@ -84,7 +84,7 @@ const Navigation = () => {
               ))}
               <div className="pt-2 space-y-2">
                 <Button variant="outline" size="sm" className="w-full" asChild>
-                  <Link to="/login">Login</Link>
+                  <a href="https://app.carroll.media" target="_blank" rel="noopener noreferrer">Login</a>
                 </Button>
                 <Button size="sm" className="w-full bg-gradient-to-r from-primary to-primary-glow" asChild>
                   <a href="tel:+1234567890">
