@@ -91,8 +91,9 @@ const Index = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary-glow/5 pointer-events-none" />
+      <section className="pt-32 pb-20 px-4 relative overflow-hidden bg-gradient-to-b from-background via-primary/5 to-background">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-primary-glow/5 to-transparent pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl opacity-20 pointer-events-none" />
         
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
@@ -142,12 +143,13 @@ const Index = () => {
             </div>
 
             <div className="order-1 md:order-2 flex justify-center">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-glow/20 rounded-2xl blur-2xl" />
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary via-primary-glow to-primary rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-primary-glow/30 rounded-2xl blur-xl animate-pulse" />
                 <img 
                   src={alliHeadshot} 
                   alt="Meet Alli - Your AI Team Member" 
-                  className="relative rounded-2xl shadow-2xl max-w-sm w-full"
+                  className="relative rounded-2xl shadow-2xl max-w-sm w-full ring-1 ring-primary/10 transition-transform duration-300 group-hover:scale-[1.02]"
                 />
               </div>
             </div>
@@ -156,8 +158,10 @@ const Index = () => {
       </section>
 
       {/* Problems Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-destructive/5 via-muted/30 to-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-destructive/10 via-transparent to-transparent opacity-50" />
+      <section className="py-24 px-4 bg-gradient-to-b from-muted/20 via-destructive/5 to-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-destructive/10 via-destructive/5 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-destructive/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-destructive/30 to-transparent" />
         
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-12">
@@ -173,37 +177,46 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="group relative p-8 rounded-2xl bg-card border-2 border-destructive/20 hover:border-destructive/40 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-destructive to-destructive/50 rounded-t-2xl" />
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Phone className="w-7 h-7 text-destructive-foreground" />
+            <div className="group relative p-8 rounded-2xl bg-card/50 backdrop-blur-sm border-2 border-destructive/20 hover:border-destructive/50 transition-all duration-500 hover:shadow-[0_20px_50px_-12px_hsl(var(--destructive)/0.3)] hover:-translate-y-2 overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-destructive via-destructive to-destructive/50 rounded-t-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-destructive/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
+                  <Phone className="w-8 h-8 text-destructive-foreground" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">Missed Calls = Lost Revenue</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Every unanswered call is a prospect choosing your competitor. Slow follow-ups kill deals before they start.
+                </p>
               </div>
-              <h3 className="text-xl font-bold mb-3">Missed Calls = Lost Revenue</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Every unanswered call is a prospect choosing your competitor. Slow follow-ups kill deals before they start.
-              </p>
             </div>
 
-            <div className="group relative p-8 rounded-2xl bg-card border-2 border-destructive/20 hover:border-destructive/40 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-destructive to-destructive/50 rounded-t-2xl" />
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Search className="w-7 h-7 text-destructive-foreground" />
+            <div className="group relative p-8 rounded-2xl bg-card/50 backdrop-blur-sm border-2 border-destructive/20 hover:border-destructive/50 transition-all duration-500 hover:shadow-[0_20px_50px_-12px_hsl(var(--destructive)/0.3)] hover:-translate-y-2 overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-destructive via-destructive to-destructive/50 rounded-t-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-destructive/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
+                  <Search className="w-8 h-8 text-destructive-foreground" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">Ghost Traffic You Can't Capture</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  97% of your website visitors leave anonymous. That's pipeline walking away because you can't identify ready buyers.
+                </p>
               </div>
-              <h3 className="text-xl font-bold mb-3">Ghost Traffic You Can't Capture</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                97% of your website visitors leave anonymous. That's pipeline walking away because you can't identify ready buyers.
-              </p>
             </div>
 
-            <div className="group relative p-8 rounded-2xl bg-card border-2 border-destructive/20 hover:border-destructive/40 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-destructive to-destructive/50 rounded-t-2xl" />
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Share2 className="w-7 h-7 text-destructive-foreground" />
+            <div className="group relative p-8 rounded-2xl bg-card/50 backdrop-blur-sm border-2 border-destructive/20 hover:border-destructive/50 transition-all duration-500 hover:shadow-[0_20px_50px_-12px_hsl(var(--destructive)/0.3)] hover:-translate-y-2 overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-destructive via-destructive to-destructive/50 rounded-t-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-destructive/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
+                  <Share2 className="w-8 h-8 text-destructive-foreground" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">Invisible When Buyers Are Looking</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Inconsistent content means prospects never see you. Your team's too busy to post, so deals go to whoever stayed visible.
+                </p>
               </div>
-              <h3 className="text-xl font-bold mb-3">Invisible When Buyers Are Looking</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Inconsistent content means prospects never see you. Your team's too busy to post, so deals go to whoever stayed visible.
-              </p>
             </div>
           </div>
         </div>
