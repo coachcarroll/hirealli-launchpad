@@ -182,14 +182,14 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-destructive/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative">
                 <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-                  <Phone className="w-8 h-8 text-destructive-foreground" />
+                  <Search className="w-8 h-8 text-destructive-foreground" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">Missed Calls = Lost Revenue</h3>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">Ghost Traffic You Can&apos;t Capture</h3>
                 <p className="text-muted-foreground leading-relaxed mb-3">
-                  Every unanswered call is a prospect choosing your competitor. Most small businesses lose up to 40% of potential leads because of missed calls or slow follow-up.
+                  97% of your website visitors leave anonymous. That&apos;s pipeline walking away because you can&apos;t identify ready buyers.
                 </p>
                 <p className="text-sm font-semibold text-primary">
-                  Alli makes sure that never happens.
+                  Alli turns web traffic into real opportunities.
                 </p>
               </div>
             </div>
@@ -199,14 +199,14 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-destructive/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative">
                 <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-                  <Search className="w-8 h-8 text-destructive-foreground" />
+                  <Phone className="w-8 h-8 text-destructive-foreground" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">Ghost Traffic You Can&apos;t Capture</h3>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">Missed Calls = Lost Revenue</h3>
                 <p className="text-muted-foreground leading-relaxed mb-3">
-                  97% of your website visitors leave anonymous. That&apos;s pipeline walking away because you can&apos;t identify ready buyers.
+                  Every unanswered call is a prospect choosing your competitor. Most small businesses lose up to 40% of potential leads because of missed calls or slow follow-up.
                 </p>
                 <p className="text-sm font-semibold text-primary">
-                  Alli turns web traffic into real opportunities.
+                  Alli makes sure that never happens.
                 </p>
               </div>
             </div>
@@ -245,18 +245,6 @@ const Index = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             <RoleCard
-              icon={Headphones}
-              title="Voice — Your 24/7 Receptionist"
-              description="Answers every call, qualifies leads, books appointments."
-              features={[
-                "Sounds human, never misses a call",
-                "Screens out the junk",
-                "Smart qualification & routing",
-                "After-call summaries & appointment setting",
-              ]}
-              link="/roles/receptionist"
-            />
-            <RoleCard
               icon={Search}
               title="Lead Detection — See Who's Interested"
               description="Identifies anonymous website visitors and alerts you when high-value leads are browsing."
@@ -267,6 +255,18 @@ const Index = () => {
                 "CRM integration",
               ]}
               link="/roles/lead-detection"
+            />
+            <RoleCard
+              icon={Headphones}
+              title="Voice — Your 24/7 Receptionist"
+              description="Answers every call, qualifies leads, books appointments."
+              features={[
+                "Sounds human, never misses a call",
+                "Screens out the junk",
+                "Smart qualification & routing",
+                "After-call summaries & appointment setting",
+              ]}
+              link="/roles/receptionist"
             />
             <RoleCard
               icon={Share2}
