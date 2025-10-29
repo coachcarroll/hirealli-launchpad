@@ -77,6 +77,16 @@ const Pricing = () => {
 
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto max-w-7xl">
+          {/* Freemium Badge at Top */}
+          {isFreemiumOnly && (
+            <div className="mb-8 p-6 bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/30 rounded-lg text-center">
+              <p className="font-bold text-xl text-primary mb-2">Freemium Trial Unlocked! 🎉</p>
+              <p className="text-muted-foreground">
+                Get started with 10 free leads per month - no credit card required. See who&apos;s on your website and turn anonymous visitors into real opportunities.
+              </p>
+            </div>
+          )}
+
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Choose Your Alli Plan
@@ -382,29 +392,8 @@ const Pricing = () => {
               </Card>
             </div>
 
-            {/* Freemium Badge */}
-            {isFreemiumOnly && (
-              <div className="lg:col-span-2 mb-4">
-                <Card className="border-primary/50 bg-primary/5">
-                  <CardContent className="pt-6">
-                    <div className="flex items-start gap-3">
-                      <div className="bg-primary/10 rounded-full p-2">
-                        <Check className="h-5 w-5 text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-lg mb-1">Freemium Trial Unlocked! 🎉</h3>
-                        <p className="text-sm text-muted-foreground">
-                          Get started with 10 free leads per month - no credit card required. See who&apos;s on your website and turn anonymous visitors into real opportunities.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            )}
-
             {/* Summary Card */}
-            <div className="lg:col-span-1">
+            <div className="lg:col-span-1 lg:row-start-1">
               <Card className="sticky top-24 border-primary/20">
                 <CardHeader>
                   <CardTitle>Your Plan Summary</CardTitle>
