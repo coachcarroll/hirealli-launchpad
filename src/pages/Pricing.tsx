@@ -8,6 +8,7 @@ import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import ProofChip from "@/components/ProofChip";
+import { FreemiumModal } from "@/components/FreemiumModal";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -15,6 +16,7 @@ const Pricing = () => {
   const [adsLevel, setAdsLevel] = useState(0); // 0=off, 1=standard, 2=deluxe, 3=premium
   const [voiceLevel, setVoiceLevel] = useState(0); // 0=off, 1=600 calls, 2=1600 calls, 3=3000 calls
   const [leadLevel, setLeadLevel] = useState(1); // 0=off, 1=250 leads (freemium - 10 free leads), 2=250+alerts, 3=2500+CRM
+  const [showFreemiumModal, setShowFreemiumModal] = useState(false);
 
   // Updated pricing to match carroll.media
   const socialPostsPrices = [0, 150, 200, 400, 600]; // Off, 1/wk, 5/wk industry, 5/wk custom, 5/wk + scout
@@ -24,6 +26,9 @@ const Pricing = () => {
 
   // Bundle logic: Full Stack ads includes free AI Voice (base) + AI Lead Detection (starter)
   const isPremiumBundle = adsLevel === 3;
+  
+  // Freemium logic: Only AI Lead Detection at level 1, everything else off
+  const isFreemiumOnly = leadLevel === 1 && adsLevel === 0 && voiceLevel === 0 && socialPosts === 0;
   
   const calculateTotal = () => {
     let voiceCost = voicePrices[voiceLevel];
@@ -353,6 +358,27 @@ const Pricing = () => {
               </Card>
             </div>
 
+            {/* Freemium Badge */}
+            {isFreemiumOnly && (
+              <div className="lg:col-span-2 mb-4">
+                <Card className="border-primary/50 bg-primary/5">
+                  <CardContent className="pt-6">
+                    <div className="flex items-start gap-3">
+                      <div className="bg-primary/10 rounded-full p-2">
+                        <Check className="h-5 w-5 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-lg mb-1">Freemium Trial Unlocked! 🎉</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Get started with 10 free leads per month - no credit card required. Perfect for testing our AI lead detection system.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            )}
+
             {/* Summary Card */}
             <div className="lg:col-span-1">
               <Card className="sticky top-24 border-primary/20">
@@ -433,12 +459,15 @@ const Pricing = () => {
                       className="w-full" 
                       size="lg"
                       onClick={() => {
-                        // For now, open the demo scheduler
-                        // TODO: Add Stripe checkout integration
-                        window.open('https://go.oncehub.com/cmcsalesteam', '_blank');
+                        if (isFreemiumOnly) {
+                          setShowFreemiumModal(true);
+                        } else {
+                          // TODO: Add dynamic Stripe checkout based on selected options
+                          window.open('https://go.oncehub.com/cmcsalesteam', '_blank');
+                        }
                       }}
                     >
-                      Get Started
+                      {isFreemiumOnly ? "Start Free Trial" : "Get Started"}
                     </Button>
                     <p className="text-xs text-center text-muted-foreground mt-3">
                       30-day money-back guarantee
@@ -477,6 +506,7 @@ const Pricing = () => {
       </section>
 
       <Footer />
+      <FreemiumModal open={showFreemiumModal} onOpenChange={setShowFreemiumModal} />
     </div>
   );
 };
