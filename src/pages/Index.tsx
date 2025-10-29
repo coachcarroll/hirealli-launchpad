@@ -1,5 +1,5 @@
 import { ArrowRight, Phone, CheckCircle2, Headphones, Search, Share2, ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -10,6 +10,7 @@ import RoleCard from "@/components/RoleCard";
 import alliHeadshot from "@/assets/alli-headshot.jpg";
 
 const Index = () => {
+  const navigate = useNavigate();
   const [industryDialogOpen, setIndustryDialogOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
@@ -43,10 +44,30 @@ const Index = () => {
 
   const handleIndustrySelect = (industry: string) => {
     setSelectedIndustry(industry);
-    // Here you could navigate to pricing with the selected industry
-    // or store it in state/context for use elsewhere
     setIndustryDialogOpen(false);
     setSelectedCategory(null);
+    
+    // Map industry names to routes
+    const industryRoutes: { [key: string]: string } = {
+      "Legal Services": "/industries/legal-services",
+      "Accounting & Tax": "/industries/accounting-tax",
+      "Business Consulting": "/industries/business-consulting",
+      "Marketing & Advertising": "/industries/marketing-advertising",
+      "IT & Tech Support": "/industries/it-tech-support",
+      "Financial Planning": "/industries/financial-planning",
+      "Human Resources": "/industries/human-resources",
+      "Architecture & Engineering": "/industries/architecture-engineering",
+      "Plumbing": "/industries/plumbing",
+      "Electrical": "/industries/electrical",
+      "HVAC (Heating & Cooling)": "/industries/hvac",
+      "Cleaning & Housekeeping": "/industries/cleaning",
+      "Landscaping & Lawn Care": "/industries/landscaping",
+      "Pest Control": "/industries/pest-control",
+      "Home Remodeling": "/industries/home-remodeling",
+      "Handyman Services": "/industries/handyman"
+    };
+    
+    navigate(industryRoutes[industry]);
   };
 
   const handleBack = () => {
