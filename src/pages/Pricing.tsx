@@ -463,10 +463,10 @@ const Pricing = () => {
 
                   <div className="pt-4">
                     <div className="text-3xl font-bold mb-1">
-                      ${isAnnual ? calculateTotal().toLocaleString() : getMonthlyPrice()}
+                      ${getMonthlyPrice().toLocaleString()}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
-                      {isAnnual ? "per year" : "per month"}
+                      {isAnnual ? "per month, billed annually" : "per month"}
                     </div>
                     <Button 
                       className="w-full" 
