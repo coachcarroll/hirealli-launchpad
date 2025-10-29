@@ -133,9 +133,9 @@ const Pricing = () => {
                     />
                     <div className="flex justify-between text-sm text-muted-foreground">
                       <span>Freemium</span>
-                      <span>250</span>
-                      <span>250+alerts</span>
-                      <span>2500+CRM</span>
+                      <span>Starter</span>
+                      <span>Growth</span>
+                      <span>Pro</span>
                     </div>
                   </div>
 
@@ -210,9 +210,9 @@ const Pricing = () => {
                     />
                     <div className="flex justify-between text-sm text-muted-foreground">
                       <span>Off</span>
-                      <span>600</span>
-                      <span>1,600</span>
-                      <span>3,000</span>
+                      <span>Starter</span>
+                      <span>Growth</span>
+                      <span>Pro</span>
                     </div>
                   </div>
 
