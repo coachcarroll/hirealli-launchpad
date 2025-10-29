@@ -104,7 +104,7 @@ const Index = () => {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                7‑figure service businesses: Book <span className="text-primary">40% more</span> qualified leads in 30 days by hiring Alli—<span className="text-accent">your always‑on AI team member</span>.
+                Service Businesses: Book <span className="text-primary">40% more</span> qualified leads in 30 days by hiring Alli—<span className="text-accent">your always‑on AI team member</span>.
               </h1>
               
               <p className="text-xl md:text-2xl text-muted-foreground mb-8">
