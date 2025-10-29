@@ -3,22 +3,58 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check, Leaf, Camera, TrendingUp } from "lucide-react";
+import { Check, Leaf, Camera, TrendingUp, ArrowRight, Phone } from "lucide-react";
+import alliTeam from "@/assets/alli-team.png";
+import djCarroll from "@/assets/dj-carroll.jpg";
 
 const Landscaping = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <Navigation />
       
-      <section className="pt-32 pb-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              AI Marketing for <span className="text-primary">Landscaping Services</span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Grow your business with AI that showcases your transformations and fills your schedule year-round.
-            </p>
+      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary-glow/5 pointer-events-none" />
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+                <Leaf className="w-4 h-4" />
+                Landscaping Services
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Grow Your <span className="text-primary">Landscape Business</span> Fast
+              </h1>
+              
+              <p className="text-xl text-muted-foreground mb-8">
+                Landscapers using Alli achieve 1500% brand visibility boost and land 300+ new clients per year. Turn seasonal work into year-round revenue.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <Button size="lg" className="bg-gradient-to-r from-primary to-primary-glow" asChild>
+                  <a href="tel:+1234567890">
+                    <Phone className="w-5 h-5 mr-2" />
+                    Try Alli Live
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <Link to="/pricing">
+                    View Pricing
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-glow/20 rounded-2xl blur-2xl" />
+              <img 
+                src={alliTeam} 
+                alt="Landscaping marketing success" 
+                className="relative rounded-2xl shadow-2xl"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -86,22 +122,42 @@ const Landscaping = () => {
         </div>
       </section>
 
-      <section className="py-16 px-4 bg-muted/20">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Success Story</h2>
-          <Card>
-            <CardContent className="p-8">
-              <blockquote className="text-lg italic mb-6">
-                "Alli helped us achieve a 1500% boost in brand visibility. We went from mowing lawns to winning high-end landscape design projects. The AI marketing positions us as premium professionals, not just another lawn service."
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div>
-                  <div className="font-semibold">Jake Morrison</div>
-                  <div className="text-sm text-muted-foreground">Owner, Morrison Landscapes</div>
+      <section className="py-20 px-4 bg-gradient-to-br from-muted/30 to-muted/10">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold text-center mb-12">Landscape Business Growth</h2>
+          
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary-glow/10 rounded-2xl blur-xl" />
+              <img 
+                src={djCarroll} 
+                alt="Landscaping success story" 
+                className="relative rounded-2xl shadow-xl"
+              />
+            </div>
+            
+            <Card className="border-primary/20">
+              <CardContent className="p-8">
+                <div className="mb-6">
+                  <div className="text-4xl font-bold text-primary mb-2">1500%</div>
+                  <div className="text-sm text-muted-foreground uppercase tracking-wider">Brand Visibility Increase</div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+                
+                <blockquote className="text-lg mb-6 leading-relaxed">
+                  "Alli helped us achieve a 1500% boost in brand visibility. We went from mowing lawns to winning high-end landscape design projects. The AI marketing positions us as premium professionals, not just another lawn service."
+                </blockquote>
+                
+                <div className="pt-6 border-t border-border">
+                  <div className="font-semibold text-lg">Jake Morrison</div>
+                  <div className="text-muted-foreground">Owner, Morrison Landscapes</div>
+                </div>
+                
+                <Button className="w-full mt-6" variant="outline" asChild>
+                  <Link to="/results">View More Results</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 

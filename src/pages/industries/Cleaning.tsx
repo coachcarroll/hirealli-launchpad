@@ -3,22 +3,58 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check, Sparkles, Calendar, Users } from "lucide-react";
+import { Check, Sparkles, Calendar, Users, ArrowRight, Phone } from "lucide-react";
+import alliTeam from "@/assets/alli-team.png";
+import djCarroll from "@/assets/dj-carroll.jpg";
 
 const Cleaning = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <Navigation />
       
-      <section className="pt-32 pb-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              AI Marketing for <span className="text-primary">Cleaning Services</span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Fill your schedule with recurring clients who value professional cleaning.
-            </p>
+      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary-glow/5 pointer-events-none" />
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+                <Sparkles className="w-4 h-4" />
+                Cleaning Services
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Build a <span className="text-primary">Fully Booked</span> Cleaning Business
+              </h1>
+              
+              <p className="text-xl text-muted-foreground mb-8">
+                Cleaning companies using Alli book 8x more recurring clients with 90% retention. Fill your schedule with loyal customers on autopilot.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <Button size="lg" className="bg-gradient-to-r from-primary to-primary-glow" asChild>
+                  <a href="tel:+1234567890">
+                    <Phone className="w-5 h-5 mr-2" />
+                    Try Alli Live
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <Link to="/pricing">
+                    View Pricing
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-glow/20 rounded-2xl blur-2xl" />
+              <img 
+                src={alliTeam} 
+                alt="Cleaning business growth" 
+                className="relative rounded-2xl shadow-2xl"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -86,22 +122,42 @@ const Cleaning = () => {
         </div>
       </section>
 
-      <section className="py-16 px-4 bg-muted/20">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Real Results</h2>
-          <Card>
-            <CardContent className="p-8">
-              <blockquote className="text-lg italic mb-6">
-                "We grew from 20 one-time clients to 150 recurring customers in less than a year. The automated marketing brings in leads constantly, and the online booking makes it easy for clients to say yes."
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div>
-                  <div className="font-semibold">Maria Gonzalez</div>
-                  <div className="text-sm text-muted-foreground">Owner, Sparkle Clean Services</div>
+      <section className="py-20 px-4 bg-gradient-to-br from-muted/30 to-muted/10">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold text-center mb-12">Real Cleaning Business Growth</h2>
+          
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary-glow/10 rounded-2xl blur-xl" />
+              <img 
+                src={djCarroll} 
+                alt="Cleaning business success" 
+                className="relative rounded-2xl shadow-xl"
+              />
+            </div>
+            
+            <Card className="border-primary/20">
+              <CardContent className="p-8">
+                <div className="mb-6">
+                  <div className="text-4xl font-bold text-primary mb-2">150</div>
+                  <div className="text-sm text-muted-foreground uppercase tracking-wider">Recurring Customers</div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+                
+                <blockquote className="text-lg mb-6 leading-relaxed">
+                  "We grew from 20 one-time clients to 150 recurring customers in less than a year. The automated marketing brings in leads constantly, and the online booking makes it easy for clients to say yes."
+                </blockquote>
+                
+                <div className="pt-6 border-t border-border">
+                  <div className="font-semibold text-lg">Maria Gonzalez</div>
+                  <div className="text-muted-foreground">Owner, Sparkle Clean Services</div>
+                </div>
+                
+                <Button className="w-full mt-6" variant="outline" asChild>
+                  <Link to="/results">View More Results</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 

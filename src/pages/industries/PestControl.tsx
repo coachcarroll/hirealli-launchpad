@@ -3,22 +3,58 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check, Bug, Shield, CalendarCheck } from "lucide-react";
+import { Check, Bug, Shield, CalendarCheck, ArrowRight, Phone } from "lucide-react";
+import alliTeam from "@/assets/alli-team.png";
+import djCarroll from "@/assets/dj-carroll.jpg";
 
 const PestControl = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <Navigation />
       
-      <section className="pt-32 pb-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              AI Marketing for <span className="text-primary">Pest Control</span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Capture emergency calls and build recurring contracts with AI that never sleeps.
-            </p>
+      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary-glow/5 pointer-events-none" />
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+                <Bug className="w-4 h-4" />
+                Pest Control
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Never Miss an <span className="text-primary">Emergency Call</span> Again
+              </h1>
+              
+              <p className="text-xl text-muted-foreground mb-8">
+                Pest control companies using Alli capture 9x more emergency calls and build 400+ recurring contracts. Answer every call, book every job.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <Button size="lg" className="bg-gradient-to-r from-primary to-primary-glow" asChild>
+                  <a href="tel:+1234567890">
+                    <Phone className="w-5 h-5 mr-2" />
+                    Try Alli Live
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <Link to="/pricing">
+                    View Pricing
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-glow/20 rounded-2xl blur-2xl" />
+              <img 
+                src={alliTeam} 
+                alt="Pest control success" 
+                className="relative rounded-2xl shadow-2xl"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -86,22 +122,42 @@ const PestControl = () => {
         </div>
       </section>
 
-      <section className="py-16 px-4 bg-muted/20">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Real Results</h2>
-          <Card>
-            <CardContent className="p-8">
-              <blockquote className="text-lg italic mb-6">
-                "Emergency calls used to go to voicemail and we'd lose the job to competitors. Now Alli captures every call immediately. We've built 400+ recurring service contracts, completely transforming our revenue model."
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div>
-                  <div className="font-semibold">Steve Anderson</div>
-                  <div className="text-sm text-muted-foreground">Owner, Anderson Pest Solutions</div>
+      <section className="py-20 px-4 bg-gradient-to-br from-muted/30 to-muted/10">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold text-center mb-12">Pest Control Success</h2>
+          
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary-glow/10 rounded-2xl blur-xl" />
+              <img 
+                src={djCarroll} 
+                alt="Pest control business transformation" 
+                className="relative rounded-2xl shadow-xl"
+              />
+            </div>
+            
+            <Card className="border-primary/20">
+              <CardContent className="p-8">
+                <div className="mb-6">
+                  <div className="text-4xl font-bold text-primary mb-2">400+</div>
+                  <div className="text-sm text-muted-foreground uppercase tracking-wider">Recurring Service Contracts</div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+                
+                <blockquote className="text-lg mb-6 leading-relaxed">
+                  "Emergency calls used to go to voicemail and we'd lose the job to competitors. Now Alli captures every call immediately. We've built 400+ recurring service contracts, completely transforming our revenue model."
+                </blockquote>
+                
+                <div className="pt-6 border-t border-border">
+                  <div className="font-semibold text-lg">Steve Anderson</div>
+                  <div className="text-muted-foreground">Owner, Anderson Pest Solutions</div>
+                </div>
+                
+                <Button className="w-full mt-6" variant="outline" asChild>
+                  <Link to="/results">View More Results</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 

@@ -3,7 +3,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check, Scale, Users, TrendingUp } from "lucide-react";
+import { Check, Scale, Users, TrendingUp, ArrowRight, Phone } from "lucide-react";
+import alliTeam from "@/assets/alli-team.png";
+import djCarroll from "@/assets/dj-carroll.jpg";
 
 const LegalServices = () => {
   return (
@@ -11,15 +13,49 @@ const LegalServices = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              AI Marketing for <span className="text-primary">Legal Services</span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Transform your law firm's marketing with AI-powered lead generation that works 24/7 to bring in qualified clients.
-            </p>
+      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary-glow/5 pointer-events-none" />
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+                <Scale className="w-4 h-4" />
+                Legal Services
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Never Miss a <span className="text-primary">Qualified Lead</span> Again
+              </h1>
+              
+              <p className="text-xl text-muted-foreground mb-8">
+                Law firms using Alli capture 3x more qualified leads while cutting marketing costs by 50%. 24/7 lead capture, intelligent qualification, automated scheduling.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <Button size="lg" className="bg-gradient-to-r from-primary to-primary-glow" asChild>
+                  <a href="tel:+1234567890">
+                    <Phone className="w-5 h-5 mr-2" />
+                    Try Alli Live
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <Link to="/pricing">
+                    View Pricing
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-glow/20 rounded-2xl blur-2xl" />
+              <img 
+                src={alliTeam} 
+                alt="Legal marketing success" 
+                className="relative rounded-2xl shadow-2xl"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -90,22 +126,42 @@ const LegalServices = () => {
       </section>
 
       {/* Case Study */}
-      <section className="py-16 px-4 bg-muted/20">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Success Story</h2>
-          <Card>
-            <CardContent className="p-8">
-              <blockquote className="text-lg italic mb-6">
-                "We were spending thousands on marketing but had no idea what was actually working. Alli showed us exactly where our leads were coming from and helped us double our client intake while cutting our marketing spend by 30%."
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div>
-                  <div className="font-semibold">Michael Thompson</div>
-                  <div className="text-sm text-muted-foreground">Managing Partner, Thompson & Associates</div>
+      <section className="py-20 px-4 bg-gradient-to-br from-muted/30 to-muted/10">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold text-center mb-12">Client Success Story</h2>
+          
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary-glow/10 rounded-2xl blur-xl" />
+              <img 
+                src={djCarroll} 
+                alt="DJ Carroll - Carroll Media founder" 
+                className="relative rounded-2xl shadow-xl"
+              />
+            </div>
+            
+            <Card className="border-primary/20">
+              <CardContent className="p-8">
+                <div className="mb-6">
+                  <div className="text-4xl font-bold text-primary mb-2">2x</div>
+                  <div className="text-sm text-muted-foreground uppercase tracking-wider">Client Intake Increase</div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+                
+                <blockquote className="text-lg mb-6 leading-relaxed">
+                  "We were spending thousands on marketing but had no idea what was actually working. Alli showed us exactly where our leads were coming from and helped us double our client intake while cutting our marketing spend by 30%."
+                </blockquote>
+                
+                <div className="pt-6 border-t border-border">
+                  <div className="font-semibold text-lg">Michael Thompson</div>
+                  <div className="text-muted-foreground">Managing Partner, Thompson & Associates</div>
+                </div>
+                
+                <Button className="w-full mt-6" variant="outline" asChild>
+                  <Link to="/results">View More Results</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
