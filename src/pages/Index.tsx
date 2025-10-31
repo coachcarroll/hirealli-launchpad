@@ -80,7 +80,7 @@ const Index = () => {
   ];
 
   const outcomes = [
-    { icon: CheckCircle2, text: "40% more qualified prospects in 30 days" },
+    { icon: CheckCircle2, text: "30% more qualified leads in 30 days" },
     { icon: CheckCircle2, text: "24/7 reception with zero missed calls" },
     { icon: CheckCircle2, text: "Hidden buyers turned into pipeline" },
     { icon: CheckCircle2, text: "Consistent content without hiring" },
@@ -104,7 +104,7 @@ const Index = () => {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Service Businesses: Book <span className="text-primary">40% more</span> qualified leads in 30 days by hiring Alli—<span className="text-accent">your always‑on AI team member</span>.
+                Service Businesses: Book <span className="text-primary">30% more</span> qualified leads in 30 days by hiring Alli—<span className="text-accent">your always‑on AI team member</span>.
               </h1>
               
               <p className="text-xl md:text-2xl text-muted-foreground mb-8">
@@ -134,7 +134,7 @@ const Index = () => {
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                <ProofChip metric="40%" label="more qualified prospects in 30 days" variant="success" />
+                <ProofChip metric="30%" label="more qualified leads in 30 days" variant="success" />
                 <ProofChip metric="30%" label="junk calls eliminated" />
                 <ProofChip metric="60%" label="increase in profile visits" variant="success" />
               </div>
