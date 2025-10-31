@@ -115,7 +115,7 @@ const Index = () => {
               <Button size="lg" className="bg-gradient-to-r from-primary to-primary-glow text-lg" asChild>
                 <a href="tel:+1234567890">
                   <Phone className="w-5 h-5 mr-2" />
-                  Call Alli Live (no edits)
+                  Call Alli Live
                 </a>
               </Button>
               <Button 
