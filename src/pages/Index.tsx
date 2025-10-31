@@ -34,7 +34,7 @@ const Index = () => {
       "Landscaping & Lawn Care",
       "Pest Control",
       "Home Remodeling",
-      "Handyman Services"
+      "Roofing"
     ]
   };
 
@@ -64,7 +64,7 @@ const Index = () => {
       "Landscaping & Lawn Care": "/industries/landscaping",
       "Pest Control": "/industries/pest-control",
       "Home Remodeling": "/industries/home-remodeling",
-      "Handyman Services": "/industries/handyman"
+      "Roofing": "/industries/roofing"
     };
     
     navigate(industryRoutes[industry]);

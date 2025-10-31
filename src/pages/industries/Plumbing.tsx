@@ -125,16 +125,16 @@ const Plumbing = () => {
         </div>
       </section>
 
-      {/* Case Study Section */}
+      {/* Case Study Section - Albert Services */}
       <section className="py-16 px-4 bg-gradient-to-br from-muted/50 to-background">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium mb-4">
               Real Results
             </div>
-            <h2 className="text-3xl font-bold mb-4">Case Study: Davis Plumbing</h2>
+            <h2 className="text-3xl font-bold mb-4">Case Study: Albert Services</h2>
             <p className="text-xl text-muted-foreground">
-              How we built their entire brand from scratch
+              Plumbing company in Dayton, OH
             </p>
           </div>
           <Card className="overflow-hidden">
@@ -142,23 +142,26 @@ const Plumbing = () => {
               <div className="grid md:grid-cols-2">
                 <div className="p-10 flex flex-col justify-center bg-gradient-to-br from-primary/5 to-transparent">
                   <blockquote className="text-xl italic mb-6 leading-relaxed">
-                    "We built our entire brand from scratch with Alli and generated 122 leads in just 6 months. Every call is answered, every lead is captured. It's like having a full office staff for a fraction of the cost."
+                    "We've been burned by agencies before. This is the first time we've seen real ROI. The cost per click is incredible and we're getting quality leads consistently."
                   </blockquote>
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-2xl font-bold text-primary">
-                      TD
+                      TA
                     </div>
                     <div>
-                      <div className="font-semibold text-lg">Tom Davis</div>
-                      <div className="text-sm text-muted-foreground">Owner, Davis Plumbing Services</div>
+                      <div className="font-semibold text-lg">Tim Albert</div>
+                      <div className="text-sm text-muted-foreground">Owner, Albert Services - Dayton, OH</div>
                     </div>
                   </div>
                 </div>
-                <div className="bg-primary/10 flex items-center justify-center p-10">
+                <div className="bg-primary/10 flex flex-col items-center justify-center p-10">
+                  <div className="text-center mb-6">
+                    <div className="text-5xl font-bold text-primary mb-2">$0.30</div>
+                    <div className="text-lg font-medium">Cost Per Click</div>
+                  </div>
                   <div className="text-center">
-                    <div className="text-6xl font-bold text-primary mb-2">122</div>
-                    <div className="text-xl font-medium mb-4">Leads Generated</div>
-                    <div className="text-sm text-muted-foreground">in just 6 months</div>
+                    <div className="text-4xl font-bold text-primary mb-2">3,570</div>
+                    <div className="text-sm text-muted-foreground">Link Clicks in 3 Months</div>
                   </div>
                 </div>
               </div>

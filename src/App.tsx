@@ -27,7 +27,7 @@ import Cleaning from "./pages/industries/Cleaning";
 import Landscaping from "./pages/industries/Landscaping";
 import PestControl from "./pages/industries/PestControl";
 import HomeRemodeling from "./pages/industries/HomeRemodeling";
-import Handyman from "./pages/industries/Handyman";
+import Roofing from "./pages/industries/Roofing";
 
 const queryClient = new QueryClient();
 
@@ -61,7 +61,7 @@ const App = () => (
           <Route path="/industries/landscaping" element={<Landscaping />} />
           <Route path="/industries/pest-control" element={<PestControl />} />
           <Route path="/industries/home-remodeling" element={<HomeRemodeling />} />
-          <Route path="/industries/handyman" element={<Handyman />} />
+          <Route path="/industries/roofing" element={<Roofing />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

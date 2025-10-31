@@ -144,16 +144,16 @@ const HVAC = () => {
         </div>
       </section>
 
-      {/* Case Study Section */}
+      {/* Case Study Section - Summers */}
       <section className="py-16 px-4 bg-gradient-to-br from-muted/50 to-background">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium mb-4">
               Success Story
             </div>
-            <h2 className="text-3xl font-bold mb-4">Johnson Heating & Air</h2>
+            <h2 className="text-3xl font-bold mb-4">Summers Plumbing Heating & Cooling</h2>
             <p className="text-xl text-muted-foreground">
-              From seasonal gaps to year-round revenue
+              New Albany, IN - From seasonal gaps to consistent growth
             </p>
           </div>
           <Card className="overflow-hidden">
@@ -161,24 +161,27 @@ const HVAC = () => {
               <div className="grid md:grid-cols-5">
                 <div className="md:col-span-3 p-10 flex flex-col justify-center bg-gradient-to-br from-primary/5 to-transparent">
                   <blockquote className="text-xl italic mb-6 leading-relaxed">
-                    "We went from scrambling for work in the off-season to having steady income all year. Alli helped us build 200+ maintenance contracts that keep our technicians busy even in mild weather."
+                    "We've had great results... a very, very big increase in our Facebook following, a lot more revenue, online bookings... just really, really had great success and been very pleased."
                   </blockquote>
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-2xl font-bold text-primary">
-                      MJ
+                      AB
                     </div>
                     <div>
-                      <div className="font-semibold text-lg">Mike Johnson</div>
-                      <div className="text-sm text-muted-foreground">Owner, Johnson Heating & Air</div>
+                      <div className="font-semibold text-lg">Adam Bernd</div>
+                      <div className="text-sm text-muted-foreground">General Manager, Summers - New Albany, IN</div>
                     </div>
                   </div>
                 </div>
-                <div className="md:col-span-2 bg-primary/10 flex items-center justify-center p-10">
+                <div className="md:col-span-2 bg-primary/10 flex flex-col items-center justify-center p-10 gap-6">
                   <div className="text-center">
-                    <div className="text-6xl font-bold text-primary mb-2">200+</div>
-                    <div className="text-xl font-medium mb-2">Maintenance</div>
-                    <div className="text-lg font-medium mb-4">Contracts</div>
-                    <div className="text-sm text-muted-foreground">year-round revenue</div>
+                    <div className="text-5xl font-bold text-primary mb-2">930</div>
+                    <div className="text-lg font-medium">Leads Generated</div>
+                    <div className="text-sm text-muted-foreground">in 3 months</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-4xl font-bold text-primary mb-2">$1.08</div>
+                    <div className="text-sm text-muted-foreground">Cost Per Click</div>
                   </div>
                 </div>
               </div>

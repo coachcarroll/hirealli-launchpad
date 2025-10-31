@@ -124,14 +124,14 @@ const HomeRemodeling = () => {
 
       <section className="py-20 px-4 bg-gradient-to-br from-muted/30 to-muted/10">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Remodeling Success: Davis Renovations</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Case Study: Hometown Gutters</h2>
           
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary-glow/10 rounded-2xl blur-xl" />
               <img 
                 src={djCarroll} 
-                alt="Remodeling contractor growth" 
+                alt="Hometown Gutters success story" 
                 className="relative rounded-2xl shadow-xl"
               />
             </div>
@@ -139,17 +139,28 @@ const HomeRemodeling = () => {
             <Card className="border-primary/20">
               <CardContent className="p-8">
                 <div className="mb-6">
-                  <div className="text-4xl font-bold text-primary mb-2">122</div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wider">Quality Leads in 6 Months</div>
+                  <div className="text-4xl font-bold text-primary mb-2">250</div>
+                  <div className="text-sm text-muted-foreground uppercase tracking-wider">Leads Generated in 3 Months</div>
                 </div>
                 
                 <blockquote className="text-lg mb-6 leading-relaxed">
-                  "We built our entire brand from scratch with Alli and generated 122 high-quality leads in 6 months. The AI showcases our work beautifully and pre-qualifies homeowners so we only meet with serious buyers."
+                  "We were losing leads left and right. Now we're booked out for a month in advance. The AI marketing system generates consistent leads and we never miss a call."
                 </blockquote>
                 
                 <div className="pt-6 border-t border-border">
-                  <div className="font-semibold text-lg">Tom Davis</div>
-                  <div className="text-muted-foreground">Owner, Davis Home Renovations</div>
+                  <div className="font-semibold text-lg">Coleman Savage</div>
+                  <div className="text-muted-foreground">Owner, Hometown Gutters - Lexington, KY</div>
+                </div>
+
+                <div className="mt-6 grid grid-cols-2 gap-4 p-4 bg-primary/5 rounded-lg">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-primary">2,473</div>
+                    <div className="text-xs text-muted-foreground">Link Clicks</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-primary">$1.53</div>
+                    <div className="text-xs text-muted-foreground">Cost Per Click</div>
+                  </div>
                 </div>
                 
                 <Button className="w-full mt-6" variant="outline" asChild>
