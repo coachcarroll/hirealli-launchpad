@@ -108,7 +108,7 @@ const Index = () => {
               </h1>
               
               <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-                AI Voice, Lead Detection, and Social Media that help small businesses convert every contact into revenue.
+                Lead Detection, Voice, and Social Media that help service businesses convert every contact into revenue.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-6">
