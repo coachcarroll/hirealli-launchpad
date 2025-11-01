@@ -131,9 +131,8 @@ export const AlliChat = () => {
           className="fixed bottom-6 right-6 h-16 px-6 rounded-full shadow-lg bg-primary hover:bg-primary/90 text-white gap-3 z-50"
           size="lg"
         >
-          <img src={alliLogo} alt="Alli" className="h-8 w-8 rounded-full" />
           <span className="font-semibold">Chat with</span>
-          <MessageCircle className="h-5 w-5" />
+          <img src={alliLogo} alt="Alli" className="h-8 w-8 rounded-full" />
         </Button>
       )}
 
