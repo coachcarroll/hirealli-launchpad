@@ -132,7 +132,7 @@ export const AlliChat = () => {
           size="lg"
         >
           <img src={alliLogo} alt="Alli" className="h-8 w-8 rounded-full" />
-          <span className="font-semibold">Chat with Alli</span>
+          <span className="font-semibold">Chat with</span>
           <MessageCircle className="h-5 w-5" />
         </Button>
       )}
