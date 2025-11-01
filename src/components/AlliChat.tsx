@@ -132,7 +132,7 @@ export const AlliChat = () => {
           size="lg"
         >
           <span className="font-semibold">Chat with</span>
-          <img src={alliLogo} alt="Alli" className="h-8 w-8 rounded-full" />
+          <img src={alliLogo} alt="Alli" className="h-8 w-8" />
         </Button>
       )}
 
@@ -142,7 +142,7 @@ export const AlliChat = () => {
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b bg-primary/5">
             <div className="flex items-center gap-3">
-              <img src={alliLogo} alt="Alli" className="h-10 w-10 rounded-full" />
+              <img src={alliLogo} alt="Alli" className="h-10 w-10" />
               <div>
                 <h3 className="font-semibold text-foreground">Chat with Alli</h3>
                 <p className="text-xs text-muted-foreground">AI Assistant</p>
@@ -163,7 +163,7 @@ export const AlliChat = () => {
             <div className="space-y-4">
               {messages.length === 0 && (
                 <div className="text-center text-muted-foreground py-8">
-                  <img src={alliLogo} alt="Alli" className="h-16 w-16 mx-auto mb-4 rounded-full" />
+                  <img src={alliLogo} alt="Alli" className="h-16 w-16 mx-auto mb-4" />
                   <p className="text-sm">Hi! I'm Alli. How can I help you today?</p>
                 </div>
               )}
