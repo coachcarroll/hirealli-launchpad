@@ -394,7 +394,7 @@ const Pricing = () => {
 
             {/* Summary Card */}
             <div className="lg:col-span-1 lg:row-start-1">
-              <Card className="sticky top-24 border-primary/20">
+              <Card className="sticky top-4 md:top-24 border-primary/20 z-10">
                 <CardHeader>
                   <CardTitle>Your Plan Summary</CardTitle>
                 </CardHeader>
