@@ -78,7 +78,7 @@ const WhyAlli = () => {
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <p className="text-lg">
-                  <strong>Measurable outcomes, not vague promises.</strong> We track calls, leads, and content—not "engagement" or "impressions."
+                  <strong>Measurable outcomes, not vague promises.</strong> We track concrete metrics: calls answered, leads identified, content published, and ad impressions.
                 </p>
               </div>
               <div className="flex items-start gap-3">
