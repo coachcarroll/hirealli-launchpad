@@ -483,7 +483,7 @@ const Pricing = () => {
                             
                             // Add Lead Detection if selected
                             if (leadLevel > 0 && !(isPremiumBundle && leadLevel === 1)) {
-                              const leadPriceIds = ['', 'price_1RlaGiD8hbSdYbHs3EXxOVA9', 'price_1RjR4hD8hbSdYbHsAxCjSBX2', 'price_1S5BFkD8hbSdYbHsNDAb4uOt'];
+                              const leadPriceIds = ['', 'price_1RjR4hD8hbSdYbHsAxCjSBX2', 'price_1RlaGiD8hbSdYbHs3EXxOVA9', 'price_1S5BFkD8hbSdYbHsNDAb4uOt'];
                               if (leadPriceIds[leadLevel]) {
                                 lineItems.push({ price: leadPriceIds[leadLevel], quantity: 1 });
                               }
