@@ -94,7 +94,7 @@ const Pricing = () => {
               Choose Your Alli Plan
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              White-glove onboarding, priority support, cancel anytime. 30-day money-back guarantee on annual subscriptions.
+              White-glove onboarding, priority support, cancel anytime.{isAnnual && " 30-day money-back guarantee."}
             </p>
 
             {/* Annual Toggle */}
