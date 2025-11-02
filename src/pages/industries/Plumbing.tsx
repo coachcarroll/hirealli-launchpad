@@ -5,8 +5,21 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Wrench, Phone, TrendingUp, Play } from "lucide-react";
 import alliTeam from "@/assets/alli-team.png";
+import { supabase } from "@/integrations/supabase/client";
+import { useEffect, useState } from "react";
 
 const Plumbing = () => {
+  const [alliImage, setAlliImage] = useState<string>('');
+
+  useEffect(() => {
+    const loadImage = async () => {
+      const { data } = supabase.storage
+        .from('alli-images')
+        .getPublicUrl('plumbing.png');
+      setAlliImage(data.publicUrl);
+    };
+    loadImage();
+  }, []);
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <Navigation />
@@ -40,7 +53,7 @@ const Plumbing = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-glow/20 rounded-2xl blur-2xl" />
               <img 
-                src={alliTeam} 
+                src={alliImage || alliTeam} 
                 alt="Alli AI Assistant for Plumbing" 
                 className="relative rounded-2xl shadow-2xl w-full"
               />

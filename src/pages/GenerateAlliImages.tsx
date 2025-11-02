@@ -45,6 +45,32 @@ const GenerateAlliImages = () => {
     loadReferenceImage();
   }, []);
 
+  // Load previously generated images from storage
+  useEffect(() => {
+    const loadImages = async () => {
+      try {
+        const { data: files } = await supabase.storage
+          .from('alli-images')
+          .list('', { limit: 100 });
+
+        if (files) {
+          const imageUrls: Record<string, string> = {};
+          for (const file of files) {
+            const industryKey = file.name.replace('.png', '');
+            const { data } = supabase.storage
+              .from('alli-images')
+              .getPublicUrl(file.name);
+            imageUrls[industryKey] = data.publicUrl;
+          }
+          setImages(imageUrls);
+        }
+      } catch (error) {
+        console.error('Error loading images:', error);
+      }
+    };
+    loadImages();
+  }, []);
+
   const generateImage = async (industry: typeof industries[0]) => {
     if (!referenceImageData) {
       toast({
@@ -68,12 +94,32 @@ const GenerateAlliImages = () => {
 
       if (error) throw error;
 
-      setImages(prev => ({ ...prev, [industry.key]: data.imageUrl }));
-      
-      toast({
-        title: "Image Generated!",
-        description: `Alli as ${industry.description}`,
-      });
+      if (data?.imageUrl) {
+        // Convert base64 to blob and upload to storage
+        const base64Data = data.imageUrl.split(',')[1];
+        const blob = await fetch(`data:image/png;base64,${base64Data}`).then(r => r.blob());
+        
+        const { error: uploadError } = await supabase.storage
+          .from('alli-images')
+          .upload(`${industry.key}.png`, blob, {
+            upsert: true,
+            contentType: 'image/png'
+          });
+
+        if (uploadError) throw uploadError;
+
+        // Get public URL
+        const { data: urlData } = supabase.storage
+          .from('alli-images')
+          .getPublicUrl(`${industry.key}.png`);
+
+        setImages(prev => ({ ...prev, [industry.key]: urlData.publicUrl }));
+        
+        toast({
+          title: "Image Generated & Saved!",
+          description: `Alli as ${industry.description}`,
+        });
+      }
     } catch (error) {
       console.error('Error generating image:', error);
       toast({
