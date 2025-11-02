@@ -399,6 +399,139 @@ const SocialMedia = () => {
         </div>
       </section>
 
+      {/* See Your Industry in Action */}
+      <section className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              See Your Industry in Action
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Real ads we're running right now for businesses just like yours
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <Link to="/industries/roofing">
+              <Card className="border-primary/20 hover:border-primary transition-all duration-300 cursor-pointer hover-scale">
+                <CardContent className="pt-6">
+                  <div className="aspect-square bg-gradient-to-br from-primary/20 to-primary-glow/20 rounded-lg mb-4 flex items-center justify-center">
+                    <Camera className="w-16 h-16 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold text-center">Roofing</h3>
+                  <p className="text-sm text-muted-foreground text-center mt-2">
+                    See real campaigns for roofing contractors
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/industries/plumbing">
+              <Card className="border-primary/20 hover:border-primary transition-all duration-300 cursor-pointer hover-scale">
+                <CardContent className="pt-6">
+                  <div className="aspect-square bg-gradient-to-br from-primary/20 to-primary-glow/20 rounded-lg mb-4 flex items-center justify-center">
+                    <TrendingUp className="w-16 h-16 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold text-center">Plumbing</h3>
+                  <p className="text-sm text-muted-foreground text-center mt-2">
+                    View successful plumbing ad examples
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/industries/hvac">
+              <Card className="border-primary/20 hover:border-primary transition-all duration-300 cursor-pointer hover-scale">
+                <CardContent className="pt-6">
+                  <div className="aspect-square bg-gradient-to-br from-primary/20 to-primary-glow/20 rounded-lg mb-4 flex items-center justify-center">
+                    <BarChart3 className="w-16 h-16 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold text-center">HVAC</h3>
+                  <p className="text-sm text-muted-foreground text-center mt-2">
+                    Explore HVAC business success stories
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+
+          <Card className="bg-primary/5 border-primary/20">
+            <CardContent className="p-8 md:p-12">
+              <h3 className="text-2xl font-bold mb-6 text-center">
+                AI-Created Video Ads in Action
+              </h3>
+              <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Watch real video ads our AI has created and is currently running for businesses across different industries
+              </p>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="font-semibold mb-4 flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Camera className="w-4 h-4 text-primary" />
+                    </div>
+                    Square Format
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Perfect for Facebook and Instagram feed posts that stop the scroll
+                  </p>
+                  <div className="space-y-3">
+                    <div className="bg-background rounded-lg p-3 border border-border">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-primary"></div>
+                        <span className="text-sm font-medium">Health & Wellness campaigns</span>
+                      </div>
+                    </div>
+                    <div className="bg-background rounded-lg p-3 border border-border">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-primary"></div>
+                        <span className="text-sm font-medium">Insurance providers</span>
+                      </div>
+                    </div>
+                    <div className="bg-background rounded-lg p-3 border border-border">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-primary"></div>
+                        <span className="text-sm font-medium">Landscaping services</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-4 flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Eye className="w-4 h-4 text-primary" />
+                    </div>
+                    Vertical Format
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Optimized for Stories, Reels, and TikTok to maximize mobile engagement
+                  </p>
+                  <div className="space-y-3">
+                    <div className="bg-background rounded-lg p-3 border border-border">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-primary"></div>
+                        <span className="text-sm font-medium">Automotive dealers</span>
+                      </div>
+                    </div>
+                    <div className="bg-background rounded-lg p-3 border border-border">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-primary"></div>
+                        <span className="text-sm font-medium">Contractors & trades</span>
+                      </div>
+                    </div>
+                    <div className="bg-background rounded-lg p-3 border border-border">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-primary"></div>
+                        <span className="text-sm font-medium">Professional services</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* How It Works */}
       <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
