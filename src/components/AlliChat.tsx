@@ -59,18 +59,24 @@ export const AlliChat = () => {
       const decoder = new TextDecoder();
       let assistantMessage = '';
       let currentThreadId = threadId;
+      let buffer = '';
 
       if (reader) {
         while (true) {
           const { done, value } = await reader.read();
           if (done) break;
 
-          const chunk = decoder.decode(value);
-          const lines = chunk.split('\n').filter(line => line.trim());
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split('\n');
+          
+          // Keep the last incomplete line in the buffer
+          buffer = lines.pop() || '';
 
           for (const line of lines) {
+            if (!line.trim() || line.startsWith(':')) continue;
+            
             if (line.startsWith('data: ')) {
-              const data = line.slice(6);
+              const data = line.slice(6).trim();
               if (data === '[DONE]') continue;
 
               try {
@@ -99,7 +105,8 @@ export const AlliChat = () => {
                   }
                 }
               } catch (e) {
-                console.error('Error parsing SSE:', e);
+                // Incomplete JSON, will be completed in next chunk
+                console.log('Waiting for complete JSON chunk');
               }
             }
           }
