@@ -4,11 +4,18 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Megaphone, BarChart, Zap, Play, Rocket } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import alliTeam from "@/assets/alli-team.png";
 
 const MarketingAdvertising = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <SEO
+        title="AI for Marketing Agencies - Automate Lead Capture & Client Outreach"
+        description="Marketing agencies: Never miss a lead, automate client calls, and scale content creation with AI. Capture website visitors and stay top-of-mind without hiring more staff."
+        keywords="marketing agency automation, advertising AI, agency lead generation, marketing automation, agency growth tools"
+        canonical="/industries/marketing-advertising"
+      />
       <Navigation />
       
       {/* Hero Section */}

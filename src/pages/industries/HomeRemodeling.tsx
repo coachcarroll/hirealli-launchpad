@@ -4,12 +4,19 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Home, Camera, TrendingUp, ArrowRight, Phone } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import alliTeam from "@/assets/alli-team.png";
 import djCarroll from "@/assets/dj-carroll.jpg";
 
 const HomeRemodeling = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <SEO
+        title="AI for Home Remodeling Contractors - Book More Projects"
+        description="Home remodeling and renovation contractors: Qualify leads 24/7, schedule estimates automatically, and showcase your portfolio with AI. Capture high-value projects before competitors."
+        keywords="home remodeling AI, contractor automation, remodeling lead generation, renovation software, contractor receptionist"
+        canonical="/industries/home-remodeling"
+      />
       <Navigation />
       
       <section className="pt-32 pb-20 px-4 relative overflow-hidden">

@@ -4,11 +4,18 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Wind, Thermometer, TrendingUp, Play, Calendar } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import alliTeam from "@/assets/alli-team.png";
 
 const HVAC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <SEO
+        title="AI for HVAC Companies - Capture Every Service Call"
+        description="HVAC businesses: Answer calls 24/7 during peak season, schedule maintenance, and capture emergency heating/cooling requests. Never miss a service opportunity again."
+        keywords="HVAC AI, HVAC automation, heating cooling lead generation, HVAC receptionist, HVAC business software, air conditioning leads"
+        canonical="/industries/hvac"
+      />
       <Navigation />
       
       {/* Hero Section */}

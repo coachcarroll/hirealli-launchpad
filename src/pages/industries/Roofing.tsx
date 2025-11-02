@@ -4,12 +4,19 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Shield, Phone, Star, ArrowRight, TrendingUp } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import alliTeam from "@/assets/alli-team.png";
 import djPhoto from "@/assets/dj-photo.jpg";
 
 const Roofing = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <SEO
+        title="AI for Roofing Contractors - Never Miss a Storm Lead"
+        description="Roofing contractors: Capture emergency repair calls 24/7, schedule inspections automatically, and manage storm season demand. AI receptionist for roofing companies."
+        keywords="roofing AI, roofing contractor automation, roofing lead generation, storm damage leads, roofing software, roofer receptionist"
+        canonical="/industries/roofing"
+      />
       <Navigation />
       
       <section className="pt-32 pb-20 px-4 relative overflow-hidden">

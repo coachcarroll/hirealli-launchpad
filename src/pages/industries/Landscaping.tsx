@@ -4,12 +4,19 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Leaf, Camera, TrendingUp, ArrowRight, Phone } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import alliTeam from "@/assets/alli-team.png";
 import djCarroll from "@/assets/dj-carroll.jpg";
 
 const Landscaping = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <SEO
+        title="AI for Landscaping & Lawn Care - Grow Your Customer Base"
+        description="Landscaping and lawn care businesses: Book estimates automatically, answer seasonal calls 24/7, and showcase your work with AI-generated content. Never miss spring rush opportunities."
+        keywords="landscaping AI, lawn care automation, landscape lead generation, lawn care software, landscaping business automation"
+        canonical="/industries/landscaping"
+      />
       <Navigation />
       
       <section className="pt-32 pb-20 px-4 relative overflow-hidden">

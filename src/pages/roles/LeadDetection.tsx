@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import ProofChip from "@/components/ProofChip";
+import { SEO } from "@/components/SEO";
 
 const LeadDetection = () => {
   const workflow = [
@@ -80,6 +81,12 @@ const LeadDetection = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="AI Lead Detection - Turn Website Visitors into Leads"
+        description="Stop losing anonymous website traffic. Alli identifies visitors, reveals their contact info, and alerts you when high-value prospects are browsing. Start free with 10 leads/month."
+        keywords="lead detection, website visitor identification, lead generation, visitor tracking, B2B lead generation, identify website visitors"
+        canonical="/roles/lead-detection"
+      />
       <Navigation />
 
       {/* Hero Section */}

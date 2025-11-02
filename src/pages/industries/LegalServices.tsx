@@ -4,12 +4,19 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Scale, Users, TrendingUp, ArrowRight, Phone } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import alliTeam from "@/assets/alli-team.png";
 import djCarroll from "@/assets/dj-carroll.jpg";
 
 const LegalServices = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <SEO
+        title="AI Solutions for Law Firms - Legal Services Automation"
+        description="Help law firms capture more qualified leads with AI. 24/7 phone answering, client intake automation, and lead detection for legal practices. Never miss a potential client."
+        keywords="legal AI, law firm automation, legal receptionist, client intake, law firm lead generation, legal services marketing"
+        canonical="/industries/legal-services"
+      />
       <Navigation />
       
       {/* Hero Section */}

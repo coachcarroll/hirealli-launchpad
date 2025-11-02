@@ -4,11 +4,18 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Calculator, TrendingUp, Clock, Play, FileText } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import alliTeam from "@/assets/alli-team.png";
 
 const AccountingTax = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <SEO
+        title="AI for Accounting & Tax Firms - Automate Client Acquisition"
+        description="Accounting and tax firms: Answer every call 24/7, capture leads during tax season, and automate client intake. Free up your team to focus on billable hours."
+        keywords="accounting automation, tax firm AI, CPA lead generation, accounting receptionist, tax season automation, accounting marketing"
+        canonical="/industries/accounting-tax"
+      />
       <Navigation />
       
       {/* Hero Section */}

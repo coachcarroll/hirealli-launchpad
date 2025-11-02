@@ -4,11 +4,18 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Users, Target, TrendingUp, Play, BarChart3 } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import alliTeam from "@/assets/alli-team.png";
 
 const HumanResources = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <SEO
+        title="AI for HR Consultants - Automate Client Acquisition & Screening"
+        description="HR consultants and staffing agencies: Automate candidate screening, capture leads 24/7, and qualify prospects instantly. Scale your practice without adding headcount."
+        keywords="HR automation, recruiting AI, staffing agency automation, HR consultant lead generation, candidate screening automation"
+        canonical="/industries/human-resources"
+      />
       <Navigation />
       
       {/* Hero Section */}

@@ -4,12 +4,19 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Ruler, Lightbulb, Building, ArrowRight, Phone } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import alliTeam from "@/assets/alli-team.png";
 import djCarroll from "@/assets/dj-carroll.jpg";
 
 const ArchitectureEngineering = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <SEO
+        title="AI for Architecture & Engineering Firms - Capture Project Leads"
+        description="Architecture and engineering firms: Never miss a project inquiry. Answer calls 24/7, qualify prospects, and capture leads while your team focuses on design and delivery."
+        keywords="architecture AI, engineering firm automation, A&E lead generation, architect automation, engineering marketing"
+        canonical="/industries/architecture-engineering"
+      />
       <Navigation />
       
       <section className="pt-32 pb-20 px-4 relative overflow-hidden">

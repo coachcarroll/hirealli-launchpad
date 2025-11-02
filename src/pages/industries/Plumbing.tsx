@@ -4,11 +4,18 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Wrench, Phone, TrendingUp, Play } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import alliTeam from "@/assets/alli-team.png";
 
 const Plumbing = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <SEO
+        title="AI for Plumbers - Never Miss an Emergency Call"
+        description="Plumbing businesses: Answer every call 24/7, book appointments instantly, and capture emergency service requests. Stop losing calls to competitors. AI receptionist for plumbers."
+        keywords="plumbing AI, plumber automation, plumbing lead generation, emergency plumbing calls, plumber receptionist, plumbing business software"
+        canonical="/industries/plumbing"
+      />
       <Navigation />
       
       {/* Hero Section with Video */}

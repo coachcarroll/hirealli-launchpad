@@ -4,12 +4,19 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, DollarSign, TrendingUp, Target, ArrowRight, Phone } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import alliTeam from "@/assets/alli-team.png";
 import djCarroll from "@/assets/dj-carroll.jpg";
 
 const FinancialPlanning = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <SEO
+        title="AI for Financial Advisors - Automate Client Acquisition"
+        description="Financial planners and advisors: Capture high-value leads 24/7, automate client intake, and never miss a prospect call. Grow your AUM without adding staff."
+        keywords="financial advisor AI, wealth management automation, financial planner lead generation, AUM growth, advisor automation"
+        canonical="/industries/financial-planning"
+      />
       <Navigation />
       
       <section className="pt-32 pb-20 px-4 relative overflow-hidden">

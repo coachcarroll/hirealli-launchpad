@@ -4,12 +4,19 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Sparkles, Calendar, Users, ArrowRight, Phone } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import alliTeam from "@/assets/alli-team.png";
 import djCarroll from "@/assets/dj-carroll.jpg";
 
 const Cleaning = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <SEO
+        title="AI for Cleaning Services - Automate Booking & Client Calls"
+        description="Cleaning and housekeeping businesses: Book appointments automatically, answer inquiries 24/7, and manage scheduling without missing calls. AI receptionist for cleaning services."
+        keywords="cleaning service AI, housekeeping automation, cleaning lead generation, maid service software, cleaning business automation"
+        canonical="/industries/cleaning"
+      />
       <Navigation />
       
       <section className="pt-32 pb-20 px-4 relative overflow-hidden">

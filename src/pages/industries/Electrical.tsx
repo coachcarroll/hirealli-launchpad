@@ -4,11 +4,18 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Zap, Shield, Clock, Play, Building2 } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import alliTeam from "@/assets/alli-team.png";
 
 const Electrical = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <SEO
+        title="AI for Electricians - 24/7 Call Answering & Scheduling"
+        description="Electrical contractors: Never miss an emergency call or service request. AI receptionist answers 24/7, books jobs, and qualifies leads while you're on-site."
+        keywords="electrician AI, electrical contractor automation, electrician lead generation, emergency electrical calls, electrician receptionist"
+        canonical="/industries/electrical"
+      />
       <Navigation />
       
       {/* Hero Section */}

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import ProofChip from "@/components/ProofChip";
+import { SEO } from "@/components/SEO";
 
 const Receptionist = () => {
   const workflow = [
@@ -80,6 +81,12 @@ const Receptionist = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="AI Receptionist - 24/7 Phone Answering Service"
+        description="Never miss a call again. Alli answers every call 24/7, qualifies leads, books appointments, and routes calls to your team. Smart AI receptionist for service businesses."
+        keywords="AI receptionist, 24/7 phone answering, call answering service, virtual receptionist, automated phone system, lead qualification"
+        canonical="/roles/receptionist"
+      />
       <Navigation />
 
       {/* Hero Section */}

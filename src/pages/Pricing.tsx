@@ -9,6 +9,7 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import ProofChip from "@/components/ProofChip";
 import { FreemiumModal } from "@/components/FreemiumModal";
+import { SEO } from "@/components/SEO";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
@@ -75,6 +76,12 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Pricing - Build Your Custom AI Team"
+        description="Flexible AI solutions for service businesses. Choose from AI receptionist, lead detection, social media management, and more. Start free with 10 leads per month."
+        keywords="AI pricing, AI receptionist pricing, lead detection cost, social media management pricing, business automation pricing"
+        canonical="/pricing"
+      />
       <Navigation />
 
       <section className="pt-32 pb-20 px-4">

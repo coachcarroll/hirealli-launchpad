@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import ProofChip from "@/components/ProofChip";
+import { SEO } from "@/components/SEO";
 
 const SocialMedia = () => {
   const workflow = [
@@ -63,6 +64,12 @@ const SocialMedia = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="AI Social Media Management - Consistent Content Without the Hassle"
+        description="Stay visible when customers are ready to buy. Alli creates on-brand posts, manages your content calendar, and keeps you top-of-mind. From 1 post/week to daily with Brand Scout."
+        keywords="AI social media management, automated social media, social media marketing, content creation, brand management, social media automation"
+        canonical="/roles/social-media"
+      />
       <Navigation />
 
       {/* Hero Section */}

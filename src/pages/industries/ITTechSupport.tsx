@@ -4,12 +4,19 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Laptop, Shield, Clock, ArrowRight, Phone } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import alliTeam from "@/assets/alli-team.png";
 import djCarroll from "@/assets/dj-carroll.jpg";
 
 const ITTechSupport = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <SEO
+        title="AI for IT & Tech Support Companies - 24/7 Client Support"
+        description="IT and tech support businesses: Answer every support call 24/7, qualify leads, and capture urgent requests automatically. Scale your support without hiring more technicians."
+        keywords="IT support automation, tech support AI, MSP automation, IT lead generation, technical support automation"
+        canonical="/industries/it-tech-support"
+      />
       <Navigation />
       
       <section className="pt-32 pb-20 px-4 relative overflow-hidden">

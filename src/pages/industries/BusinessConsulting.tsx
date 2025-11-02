@@ -4,12 +4,19 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Briefcase, Target, Users, Play, Award } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import alliTeam from "@/assets/alli-team.png";
 import djCarroll from "@/assets/dj-carroll.jpg";
 
 const BusinessConsulting = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <SEO
+        title="AI for Business Consultants - Scale Your Practice"
+        description="Business consultants: Capture more leads, automate client intake, and stay visible with AI. Focus on billable work while Alli handles the rest. 24/7 availability, no extra headcount."
+        keywords="business consulting AI, consultant automation, consulting lead generation, client intake automation, consultant marketing"
+        canonical="/industries/business-consulting"
+      />
       <Navigation />
       
       {/* Hero Section */}

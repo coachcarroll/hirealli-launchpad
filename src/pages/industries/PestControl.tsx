@@ -4,12 +4,19 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Bug, Shield, CalendarCheck, ArrowRight, Phone } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import alliTeam from "@/assets/alli-team.png";
 import djCarroll from "@/assets/dj-carroll.jpg";
 
 const PestControl = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <SEO
+        title="AI for Pest Control - Capture Emergency Service Calls 24/7"
+        description="Pest control companies: Answer urgent service calls 24/7, schedule treatments automatically, and capture seasonal demand. AI receptionist that never misses an emergency request."
+        keywords="pest control AI, exterminator automation, pest control lead generation, pest control software, exterminator receptionist"
+        canonical="/industries/pest-control"
+      />
       <Navigation />
       
       <section className="pt-32 pb-20 px-4 relative overflow-hidden">

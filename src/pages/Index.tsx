@@ -7,6 +7,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ProofChip from "@/components/ProofChip";
 import RoleCard from "@/components/RoleCard";
+import { SEO } from "@/components/SEO";
+import { OrganizationSchema, LocalBusinessSchema } from "@/components/StructuredData";
 import alliHeadshot from "@/assets/alli-headshot.jpg";
 
 const Index = () => {
@@ -88,6 +90,14 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="HireAlli - Hire Your First AI Team Member | Scale Without Adding Payroll"
+        description="SMBs book 40% more qualified prospects in 30 days with Alli. AI receptionist, lead detection, and social media management—no new hires, or your money back."
+        keywords="AI receptionist, lead detection, social media management, AI team member, business automation, SMB software, lead generation"
+        canonical="/"
+      />
+      <OrganizationSchema />
+      <LocalBusinessSchema />
       <Navigation />
 
       {/* Hero Section */}
