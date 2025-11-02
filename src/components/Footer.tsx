@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import alliLogo from "@/assets/alli-logo.png";
 
 const Footer = () => {
   const footerLinks = {
@@ -26,9 +27,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <Link to="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center text-primary-foreground font-bold text-xl">
-                A
-              </div>
+              <img src={alliLogo} alt="Alli" className="h-10 w-10" />
               <span className="text-xl font-bold">HireAlli</span>
             </Link>
             <p className="text-sm text-muted-foreground">
