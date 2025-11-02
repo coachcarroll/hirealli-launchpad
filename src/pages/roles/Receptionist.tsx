@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import ProofChip from "@/components/ProofChip";
+import alliPhone from "@/assets/alli-phone.png";
 
 const Receptionist = () => {
   const workflow = [
@@ -153,13 +154,24 @@ const Receptionist = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
+              <div className="relative mb-8">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-glow/20 rounded-2xl blur-2xl" />
+                <img 
+                  src={alliPhone} 
+                  alt="Alli AI Receptionist" 
+                  className="relative rounded-2xl shadow-2xl w-full"
+                />
+              </div>
+            </div>
+
+            <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Your Front Desk, Always Covered
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Every missed call is a missed opportunity. Alli ensures your business is always available—answering, qualifying, and booking—without adding payroll.
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-4 mb-8">
                 {features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
                     <Check className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
@@ -167,22 +179,22 @@ const Receptionist = () => {
                   </li>
                 ))}
               </ul>
-            </div>
 
-            <div className="space-y-6">
-              {benefits.map((benefit) => (
-                <Card key={benefit.title} className="border-primary/20">
-                  <CardContent className="pt-6 flex gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <benefit.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-2">{benefit.title}</h4>
-                      <p className="text-sm text-muted-foreground">{benefit.description}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+              <div className="space-y-4">
+                {benefits.map((benefit) => (
+                  <Card key={benefit.title} className="border-primary/20">
+                    <CardContent className="pt-6 flex gap-4">
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <benefit.icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-2">{benefit.title}</h4>
+                        <p className="text-sm text-muted-foreground">{benefit.description}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </div>
