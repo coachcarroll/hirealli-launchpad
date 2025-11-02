@@ -11,7 +11,7 @@ serve(async (req) => {
   }
 
   try {
-    const { industry, description } = await req.json();
+    const { industry, description, referenceImage } = await req.json();
     const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
 
     if (!LOVABLE_API_KEY) {
@@ -20,7 +20,7 @@ serve(async (req) => {
 
     console.log(`Generating image for industry: ${industry}`);
 
-    const prompt = `Professional headshot portrait of Alli, a friendly female AI assistant, dressed as a ${description}. She should look approachable and professional, with a warm smile. Studio lighting, high quality, 1:1 aspect ratio, professional photography style. Ultra high resolution.`;
+    const prompt = `Transform this person's outfit to match a ${description}. Keep the person's face, hair, eye color, and overall appearance exactly the same - only change the clothing and attire to professional ${description} uniform or attire. Maintain the same friendly, approachable expression and professional headshot style. Studio lighting, high quality, 1:1 aspect ratio. Ultra high resolution.`;
 
     const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
@@ -33,7 +33,18 @@ serve(async (req) => {
         messages: [
           {
             role: "user",
-            content: prompt
+            content: [
+              {
+                type: "text",
+                text: prompt
+              },
+              {
+                type: "image_url",
+                image_url: {
+                  url: referenceImage
+                }
+              }
+            ]
           }
         ],
         modalities: ["image", "text"]

@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2, Download } from 'lucide-react';
+import alliReference from '@/assets/alli-reference.jpg';
 
 const industries = [
   { key: 'accounting', description: 'professional accountant with glasses and business attire' },
@@ -28,15 +29,40 @@ const GenerateAlliImages = () => {
   const { toast } = useToast();
   const [generating, setGenerating] = useState<string | null>(null);
   const [images, setImages] = useState<Record<string, string>>({});
+  const [referenceImageData, setReferenceImageData] = useState<string>('');
+
+  useEffect(() => {
+    // Convert the reference image to base64
+    const loadReferenceImage = async () => {
+      const response = await fetch(alliReference);
+      const blob = await response.blob();
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setReferenceImageData(reader.result as string);
+      };
+      reader.readAsDataURL(blob);
+    };
+    loadReferenceImage();
+  }, []);
 
   const generateImage = async (industry: typeof industries[0]) => {
+    if (!referenceImageData) {
+      toast({
+        title: "Loading Reference",
+        description: "Please wait for reference image to load...",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setGenerating(industry.key);
     
     try {
       const { data, error } = await supabase.functions.invoke('generate-alli-image', {
         body: { 
           industry: industry.key,
-          description: industry.description
+          description: industry.description,
+          referenceImage: referenceImageData
         }
       });
 
