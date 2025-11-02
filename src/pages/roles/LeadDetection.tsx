@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import ProofChip from "@/components/ProofChip";
+import alliMagGlass from "@/assets/alli-mag-glass.png";
 
 const LeadDetection = () => {
   const workflow = [
@@ -150,13 +151,24 @@ const LeadDetection = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
+              <div className="relative mb-8">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-glow/20 rounded-2xl blur-2xl" />
+                <img 
+                  src={alliMagGlass} 
+                  alt="Alli AI - Lead Detective" 
+                  className="relative rounded-2xl shadow-2xl w-full"
+                />
+              </div>
+            </div>
+
+            <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Stop Losing Leads to the Void
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Your website is your most expensive marketing asset. Yet 98% of visitors leave without converting. Alli turns that anonymous traffic into actionable leads—automatically.
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-4 mb-8">
                 {features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
                     <Check className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
@@ -164,22 +176,22 @@ const LeadDetection = () => {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            <div className="space-y-6">
-              {useCases.map((useCase) => (
-                <Card key={useCase.title} className="border-primary/20">
-                  <CardContent className="pt-6 flex gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <useCase.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-2">{useCase.title}</h4>
-                      <p className="text-sm text-muted-foreground">{useCase.description}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+              
+              <div className="space-y-4">
+                {useCases.map((useCase) => (
+                  <Card key={useCase.title} className="border-primary/20">
+                    <CardContent className="pt-6 flex gap-4">
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <useCase.icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-2">{useCase.title}</h4>
+                        <p className="text-sm text-muted-foreground">{useCase.description}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </div>
