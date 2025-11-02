@@ -6,6 +6,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { MessageCircle, X, Send, Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import alliLogo from '@/assets/alli-logo.png';
+import alliHeadshot from '@/assets/alli-headshot.jpg';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -163,7 +164,7 @@ export const AlliChat = () => {
             <div className="space-y-4">
               {messages.length === 0 && (
                 <div className="text-center text-muted-foreground py-8">
-                  <img src={alliLogo} alt="Alli" className="h-16 w-16 mx-auto mb-4" />
+                  <img src={alliHeadshot} alt="Alli" className="h-24 w-24 mx-auto mb-4 rounded-full object-cover" />
                   <p className="text-sm">Hi! I'm Alli. How can I help you today?</p>
                 </div>
               )}
