@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import ProofChip from "@/components/ProofChip";
+import adExampleSquare1 from "@/assets/ad-example-square-1.png";
+import adExampleSquare2 from "@/assets/ad-example-square-2.png";
+import adExampleVertical1 from "@/assets/ad-example-vertical-1.png";
 
 const SocialMedia = () => {
   const workflow = [
@@ -474,24 +477,15 @@ const SocialMedia = () => {
                   <p className="text-sm text-muted-foreground mb-4">
                     Perfect for Facebook and Instagram feed posts that stop the scroll
                   </p>
-                  <div className="space-y-3">
-                    <div className="bg-background rounded-lg p-3 border border-border">
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-primary"></div>
-                        <span className="text-sm font-medium">Health & Wellness campaigns</span>
-                      </div>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="aspect-square overflow-hidden rounded-lg border border-border">
+                      <img src={adExampleSquare1} alt="Square format ad example 1" className="w-full h-full object-cover" />
                     </div>
-                    <div className="bg-background rounded-lg p-3 border border-border">
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-primary"></div>
-                        <span className="text-sm font-medium">Insurance providers</span>
-                      </div>
+                    <div className="aspect-square overflow-hidden rounded-lg border border-border">
+                      <img src={adExampleSquare2} alt="Square format ad example 2" className="w-full h-full object-cover" />
                     </div>
-                    <div className="bg-background rounded-lg p-3 border border-border">
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-primary"></div>
-                        <span className="text-sm font-medium">Landscaping services</span>
-                      </div>
+                    <div className="aspect-square overflow-hidden rounded-lg border border-border bg-muted/50 flex items-center justify-center">
+                      <Camera className="w-8 h-8 text-muted-foreground" />
                     </div>
                   </div>
                 </div>
@@ -505,24 +499,15 @@ const SocialMedia = () => {
                   <p className="text-sm text-muted-foreground mb-4">
                     Optimized for Stories, Reels, and TikTok to maximize mobile engagement
                   </p>
-                  <div className="space-y-3">
-                    <div className="bg-background rounded-lg p-3 border border-border">
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-primary"></div>
-                        <span className="text-sm font-medium">Automotive dealers</span>
-                      </div>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="aspect-[9/16] overflow-hidden rounded-lg border border-border">
+                      <img src={adExampleVertical1} alt="Vertical format ad example 1" className="w-full h-full object-cover" />
                     </div>
-                    <div className="bg-background rounded-lg p-3 border border-border">
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-primary"></div>
-                        <span className="text-sm font-medium">Contractors & trades</span>
-                      </div>
+                    <div className="aspect-[9/16] overflow-hidden rounded-lg border border-border bg-muted/50 flex items-center justify-center">
+                      <Eye className="w-8 h-8 text-muted-foreground" />
                     </div>
-                    <div className="bg-background rounded-lg p-3 border border-border">
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-primary"></div>
-                        <span className="text-sm font-medium">Professional services</span>
-                      </div>
+                    <div className="aspect-[9/16] overflow-hidden rounded-lg border border-border bg-muted/50 flex items-center justify-center">
+                      <Camera className="w-8 h-8 text-muted-foreground" />
                     </div>
                   </div>
                 </div>
