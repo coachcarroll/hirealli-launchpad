@@ -1,1 +1,10 @@
 project_id = "iacqjjkxxcbwpkvmlojn"
+
+[functions.chat-with-alli]
+verify_jwt = false
+
+[functions.create-checkout]
+verify_jwt = false
+
+[functions.generate-alli-image]
+verify_jwt = false

@@ -30,6 +30,7 @@ import Landscaping from "./pages/industries/Landscaping";
 import PestControl from "./pages/industries/PestControl";
 import HomeRemodeling from "./pages/industries/HomeRemodeling";
 import Roofing from "./pages/industries/Roofing";
+import GenerateAlliImages from "./pages/GenerateAlliImages";
 
 const queryClient = new QueryClient();
 
@@ -66,6 +67,7 @@ const App = () => (
           <Route path="/industries/pest-control" element={<PestControl />} />
           <Route path="/industries/home-remodeling" element={<HomeRemodeling />} />
           <Route path="/industries/roofing" element={<Roofing />} />
+          <Route path="/generate-alli-images" element={<GenerateAlliImages />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
