@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { MessageCircle, X, Send, Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
+import ReactMarkdown from 'react-markdown';
 import alliLogo from '@/assets/alli-logo.png';
 import alliHeadshot from '@/assets/alli-headshot.jpg';
 
@@ -187,7 +188,11 @@ export const AlliChat = () => {
                         : 'bg-muted text-foreground'
                     }`}
                   >
-                    <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
+                    <div className="text-sm prose prose-sm max-w-none dark:prose-invert prose-p:leading-relaxed prose-pre:p-0">
+                      <ReactMarkdown>
+                        {msg.content}
+                      </ReactMarkdown>
+                    </div>
                   </div>
                 </div>
               ))}
