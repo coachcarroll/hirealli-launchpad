@@ -61,16 +61,34 @@ const Pricing = () => {
 
   // Price IDs for main tiers
   const tierPriceIds = {
-    Pro: "price_1SQbpiD8hbSdYbHsvBh5A0rx",
-    Growth: "price_1SQbqFD8hbSdYbHsugPmFVuX",
-    Starter: "price_1SQbshD8hbSdYbHszfqz8EAR",
+    Pro: {
+      monthly: "price_1SQbpiD8hbSdYbHsvBh5A0rx",
+      annual: "price_1SQc6yD8hbSdYbHsqNxD3kel"
+    },
+    Growth: {
+      monthly: "price_1SQbqFD8hbSdYbHsugPmFVuX",
+      annual: "price_1SQcFJD8hbSdYbHsPB1LTlUX"
+    },
+    Starter: {
+      monthly: "price_1SQbshD8hbSdYbHszfqz8EAR",
+      annual: "price_1SQcFUD8hbSdYbHsQWjYNRwx"
+    },
   };
 
   // Price IDs for social media add-ons
   const socialMediaPriceIds = {
-    STANDARD: "price_1SQbstD8hbSdYbHsmWlbcbll",
-    DELUXE: "price_1SQbt1D8hbSdYbHsJozS17O9",
-    PREMIUM: "price_1SQbtID8hbSdYbHshDaNvnEd",
+    STANDARD: {
+      monthly: "price_1SQbstD8hbSdYbHsmWlbcbll",
+      annual: "price_1SQcFfD8hbSdYbHsUFAgDvhO"
+    },
+    DELUXE: {
+      monthly: "price_1SQbt1D8hbSdYbHsJozS17O9",
+      annual: "price_1SQcFsD8hbSdYbHs9i5dpPxc"
+    },
+    PREMIUM: {
+      monthly: "price_1SQbtID8hbSdYbHshDaNvnEd",
+      annual: "price_1SQcG5D8hbSdYbHspJTXbJ4r"
+    },
   };
 
   const handleCheckout = async (priceId: string, tierName: string) => {
@@ -445,7 +463,10 @@ const Pricing = () => {
                           description: "Free trial signup will be available soon!",
                         });
                       } else {
-                        handleCheckout(tierPriceIds[tier.name as keyof typeof tierPriceIds], tier.name);
+                        const priceId = isAnnual 
+                          ? tierPriceIds[tier.name as keyof typeof tierPriceIds].annual
+                          : tierPriceIds[tier.name as keyof typeof tierPriceIds].monthly;
+                        handleCheckout(priceId, tier.name);
                       }
                     }}
                   >
@@ -627,11 +648,14 @@ const Pricing = () => {
                         if (tier.isCustom) {
                           handleContactSales();
                         } else {
-                          handleCheckout(socialMediaPriceIds[tier.name as keyof typeof socialMediaPriceIds], tier.name);
+                          const priceId = isAnnual
+                            ? socialMediaPriceIds[tier.name as keyof typeof socialMediaPriceIds].annual
+                            : socialMediaPriceIds[tier.name as keyof typeof socialMediaPriceIds].monthly;
+                          handleCheckout(priceId, tier.name);
                         }
                       }}
                     >
-                      {tier.isCustom ? "Contact Sales" : "Add to Plan"}
+                      {tier.isCustom ? "Contact Sales" : "Get Started"}
                     </Button>
                   </CardFooter>
                   </div>
