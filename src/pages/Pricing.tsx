@@ -339,7 +339,7 @@ const Pricing = () => {
         {/* Trust Section */}
         <div className="text-center py-12 border-t border-border">
           <h2 className="text-2xl font-bold mb-4">Every Plan Includes</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
             <div>
               <h3 className="font-semibold mb-2">White-Glove Onboarding</h3>
               <p className="text-sm text-muted-foreground">
@@ -350,12 +350,6 @@ const Pricing = () => {
               <h3 className="font-semibold mb-2">Priority Support</h3>
               <p className="text-sm text-muted-foreground">
                 In-app support with quick response times
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2">Money-Back Guarantee</h3>
-              <p className="text-sm text-muted-foreground">
-                30-day unconditional money-back guarantee on annual plans. 90-day conditional refund available (2-month build-out fee applies for early cancellation)
               </p>
             </div>
           </div>
