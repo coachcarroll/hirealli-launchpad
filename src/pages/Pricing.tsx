@@ -122,9 +122,8 @@ const Pricing = () => {
                 </CardHeader>
                 <CardContent>
                   <div>
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="mb-4">
                       <Label>Leads identified per month</Label>
-                      <ProofChip metric="7" label="booked calls per 250 IDs" />
                     </div>
                     <Slider
                       value={[leadLevel]}
@@ -199,9 +198,8 @@ const Pricing = () => {
                 </CardHeader>
                 <CardContent>
                   <div>
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="mb-4">
                       <Label>Monthly call volume</Label>
-                      <ProofChip metric="+46%" label="answer rate (30 days)" variant="success" />
                     </div>
                     <Slider
                       value={[voiceLevel]}
@@ -280,9 +278,8 @@ const Pricing = () => {
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div>
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="mb-4">
                       <Label>Posts per week</Label>
-                      <ProofChip metric="+62%" label="profile visits (28 days)" variant="success" />
                     </div>
                     <Slider
                       value={[socialPosts]}
