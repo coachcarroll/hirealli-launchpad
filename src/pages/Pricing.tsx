@@ -118,7 +118,7 @@ const Pricing = () => {
               <Card>
                 <CardHeader>
                   <CardTitle>Lead Detection</CardTitle>
-                  <CardDescription>Turn anonymous clicks into names, alerts, and CRM records</CardDescription>
+                  <CardDescription>Collect more leads from the website traffic you are already getting.</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div>
