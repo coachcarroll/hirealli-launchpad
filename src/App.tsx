@@ -7,6 +7,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import { AlliChat } from "./components/AlliChat";
 import Index from "./pages/Index";
 import Pricing from "./pages/Pricing";
+import Configurator from "./pages/Configurator";
 import Roles from "./pages/Roles";
 import Results from "./pages/Results";
 import WhyAlli from "./pages/WhyAlli";
@@ -45,6 +46,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/configurator" element={<Configurator />} />
           <Route path="/roles" element={<Roles />} />
           <Route path="/roles/social-media" element={<SocialMedia />} />
           <Route path="/roles/lead-detection" element={<LeadDetection />} />
