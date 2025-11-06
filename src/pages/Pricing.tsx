@@ -401,38 +401,33 @@ const Pricing = () => {
                   <CardTitle>Your Plan Summary</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
+                  {/* Stacked Products */}
                   {leadLevel > 0 && (
                     <div className="flex justify-between text-sm">
-                      <span>Lead Detection</span>
+                      <span>Lead Detection ({leadLevel === 1 ? 'Starter' : leadLevel === 2 ? 'Growth' : 'Pro'})</span>
                       <span className={`font-semibold ${isPremiumBundle && leadLevel === 1 ? 'line-through text-muted-foreground' : ''}`}>
-                        ${leadPrices[leadLevel]}/mo
+                        ${isPremiumBundle && leadLevel === 1 ? '0' : leadPrices[leadLevel]}/mo
                       </span>
-                      {isPremiumBundle && leadLevel === 1 && (
-                        <span className="text-primary font-semibold">FREE</span>
-                      )}
                     </div>
                   )}
                   {voiceLevel > 0 && (
                     <div className="flex justify-between text-sm">
-                      <span>AI Voice</span>
+                      <span>Receptionist ({voiceLevel === 1 ? 'Starter' : voiceLevel === 2 ? 'Growth' : 'Pro'})</span>
                       <span className={`font-semibold ${isPremiumBundle && voiceLevel === 1 ? 'line-through text-muted-foreground' : ''}`}>
-                        ${voicePrices[voiceLevel]}/mo
+                        ${isPremiumBundle && voiceLevel === 1 ? '0' : voicePrices[voiceLevel]}/mo
                       </span>
-                      {isPremiumBundle && voiceLevel === 1 && (
-                        <span className="text-primary font-semibold">FREE</span>
-                      )}
+                    </div>
+                  )}
+                  {socialPosts > 0 && (
+                    <div className="flex justify-between text-sm">
+                      <span>Social Posts ({socialPosts === 1 ? '1/week' : socialPosts === 2 ? '5/week Industry' : socialPosts === 3 ? '5/week Custom' : '5/week + Scout'})</span>
+                      <span className="font-semibold">${socialPostsPrices[socialPosts]}/mo</span>
                     </div>
                   )}
                   {adsLevel > 0 && (
                     <div className="flex justify-between text-sm">
                       <span>Ad Creative ({adsLevel === 1 ? 'Standard' : adsLevel === 2 ? 'Deluxe' : 'Premium'})</span>
                       <span className="font-semibold">${adsPrices[adsLevel]}/mo</span>
-                    </div>
-                  )}
-                  {socialPosts > 0 && (
-                    <div className="flex justify-between text-sm">
-                      <span>Social Posts</span>
-                      <span className="font-semibold">${socialPostsPrices[socialPosts]}/mo</span>
                     </div>
                   )}
                   
@@ -444,29 +439,15 @@ const Pricing = () => {
                     </div>
                   )}
                   
+                  {/* Monthly Total */}
                   <div className="pt-4 border-t border-border">
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm text-muted-foreground">Monthly</span>
-                      <span className="font-semibold">${getMonthlyPrice()}/mo</span>
+                    <div className="flex justify-between items-center">
+                      <span className="text-lg font-semibold">Monthly Total</span>
+                      <span className="text-3xl font-bold">${getMonthlyPrice().toLocaleString()}</span>
                     </div>
-                    {isAnnual && (
-                      <>
-                        <div className="flex justify-between mb-2">
-                          <span className="text-sm text-muted-foreground">Annual (17% off)</span>
-                          <span className="font-semibold text-secondary">${calculateTotal().toLocaleString()}/yr</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-sm text-primary">You save</span>
-                          <span className="font-semibold text-primary">${(getMonthlyPrice() * 12 - calculateTotal()).toLocaleString()}/yr</span>
-                        </div>
-                      </>
-                    )}
                   </div>
 
                   <div className="pt-4">
-                    <div className="text-3xl font-bold mb-1">
-                      ${getMonthlyPrice().toLocaleString()}
-                    </div>
                     <div className="text-sm text-muted-foreground mb-4">
                       {isAnnual ? "per month, billed annually" : "per month"}
                     </div>
