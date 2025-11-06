@@ -22,9 +22,9 @@ const Pricing = () => {
 
   // Updated pricing to match carroll.media
   const socialPostsPrices = [0, 150, 200, 400, 600]; // Off, 1/wk, 5/wk industry, 5/wk custom, 5/wk + scout
-  const adsPrices = [0, 397, 797, 1497]; // Off, Standard (2D), Deluxe (2D+Video), Premium (Full Stack)
-  const voicePrices = [0, 197, 500, 1000]; // Off, Base (197), Mid, Premium
-  const leadPrices = [0, 97, 297, 497]; // Freemium (10 free leads), Starter (97), Pro (297), Enterprise (497)
+  const adsPrices = [0, 400, 800, 1500]; // Off, Standard (2D), Deluxe (2D+Video), Premium (Full Stack)
+  const voicePrices = [0, 200, 500, 1000]; // Off, Base (200), Mid, Premium
+  const leadPrices = [0, 100, 300, 500]; // Freemium (10 free leads), Starter (100), Pro (300), Enterprise (500)
 
   // Bundle logic: Full Stack ads includes free AI Voice (base) + AI Lead Detection (starter)
   const isPremiumBundle = adsLevel === 3;
