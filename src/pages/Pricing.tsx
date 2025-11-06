@@ -171,7 +171,7 @@ const Pricing = () => {
             Simple, Transparent Pricing
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Every plan includes white-glove onboarding, priority support, and a 30-day money-back guarantee
+            Every plan includes white-glove onboarding and priority support
           </p>
           
           {/* Annual/Monthly Toggle */}
@@ -197,71 +197,13 @@ const Pricing = () => {
             )}
           </div>
 
-          {/* Compare Plans Link */}
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button variant="link" className="text-primary">
-                <Info className="w-4 h-4 mr-2" />
-                Need help choosing? Compare all features
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-              <DialogHeader>
-                <DialogTitle>Feature Comparison</DialogTitle>
-                <DialogDescription>
-                  Compare all features across our pricing tiers
-                </DialogDescription>
-              </DialogHeader>
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse">
-                  <thead>
-                    <tr className="border-b">
-                      <th className="text-left p-3 font-semibold">Feature</th>
-                      {tiers.map((tier) => (
-                        <th key={tier.name} className="p-3 font-semibold text-center">
-                          {tier.name}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {allFeatures.map((feature) => (
-                      <tr key={feature.key} className="border-b hover:bg-muted/50">
-                        <td className="p-3 text-sm">{feature.label}</td>
-                        {tiers.map((tier) => {
-                          const tierFeature = tier.features[feature.key];
-                          return (
-                            <td key={tier.name} className="p-3 text-center">
-                              {tierFeature?.included ? (
-                                <div className="flex flex-col items-center gap-1">
-                                  <Check className="w-5 h-5 text-primary" />
-                                  {tierFeature.detail && (
-                                    <span className="text-xs text-muted-foreground">
-                                      {tierFeature.detail}
-                                    </span>
-                                  )}
-                                </div>
-                              ) : (
-                                <X className="w-5 h-5 text-muted-foreground mx-auto" />
-                              )}
-                            </td>
-                          );
-                        })}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </DialogContent>
-          </Dialog>
-
           <p className="text-sm text-muted-foreground mt-2">
             Need custom pricing? <Link to="/configurator" className="text-primary hover:underline">Try our advanced configurator</Link>
           </p>
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {tiers.map((tier) => {
             const displayPrice = isAnnual ? Math.round(tier.annualPrice / 12) : tier.monthlyPrice;
             
@@ -334,6 +276,66 @@ const Pricing = () => {
           })}
         </div>
 
+        {/* Compare Plans Section */}
+        <div className="text-center py-8 mb-12">
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button size="lg" variant="outline" className="gap-2">
+                <Info className="w-5 h-5" />
+                Need help choosing? Compare all features
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+              <DialogHeader>
+                <DialogTitle>Feature Comparison</DialogTitle>
+                <DialogDescription>
+                  Compare all features across our pricing tiers
+                </DialogDescription>
+              </DialogHeader>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left p-3 font-semibold">Feature</th>
+                      {tiers.map((tier) => (
+                        <th key={tier.name} className="p-3 font-semibold text-center">
+                          {tier.name}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {allFeatures.map((feature) => (
+                      <tr key={feature.key} className="border-b hover:bg-muted/50">
+                        <td className="p-3 text-sm">{feature.label}</td>
+                        {tiers.map((tier) => {
+                          const tierFeature = tier.features[feature.key];
+                          return (
+                            <td key={tier.name} className="p-3 text-center">
+                              {tierFeature?.included ? (
+                                <div className="flex flex-col items-center gap-1">
+                                  <Check className="w-5 h-5 text-primary" />
+                                  {tierFeature.detail && (
+                                    <span className="text-xs text-muted-foreground">
+                                      {tierFeature.detail}
+                                    </span>
+                                  )}
+                                </div>
+                              ) : (
+                                <X className="w-5 h-5 text-muted-foreground mx-auto" />
+                              )}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </DialogContent>
+          </Dialog>
+        </div>
+
         {/* Trust Section */}
         <div className="text-center py-12 border-t border-border">
           <h2 className="text-2xl font-bold mb-4">Every Plan Includes</h2>
@@ -351,9 +353,9 @@ const Pricing = () => {
               </p>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">30-Day Money-Back</h3>
+              <h3 className="font-semibold mb-2">Money-Back Guarantee</h3>
               <p className="text-sm text-muted-foreground">
-                Full refund on annual plans, cancel anytime on monthly
+                30-day unconditional money-back guarantee on annual plans. 90-day conditional refund available (2-month build-out fee applies for early cancellation)
               </p>
             </div>
           </div>
