@@ -461,9 +461,12 @@ const Pricing = () => {
         </div>
 
         {/* Social Media Add-On Section */}
-        <div className="py-16 border-t border-border">
+        <div className="py-16 border-t border-border bg-gradient-to-br from-primary/5 via-accent/5 to-background rounded-lg">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <Badge variant="outline" className="mb-4 bg-gradient-to-r from-primary/10 to-accent/10 border-primary/30">
+              Optional Add-On
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Enrich Your Plan with Social Media Management
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-2">
@@ -483,10 +486,12 @@ const Pricing = () => {
               return (
                 <Card
                   key={tier.name}
-                  className="border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 bg-card/50 backdrop-blur-sm"
+                  className="group border-border hover:border-primary/50 hover:shadow-[0_8px_30px_hsl(var(--primary)/0.15)] transition-all duration-300 bg-gradient-to-br from-card via-card to-primary/5 backdrop-blur-sm overflow-hidden relative"
                 >
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="relative">
                   <CardHeader className="text-center pb-6">
-                    <Badge variant="outline" className="mb-3 mx-auto w-fit">
+                    <Badge variant="outline" className="mb-3 mx-auto w-fit bg-gradient-to-r from-primary/20 to-accent/20 border-primary/40 text-primary font-semibold">
                       Add-On
                     </Badge>
                     <CardTitle className="text-xl mb-2">{tier.name}</CardTitle>
@@ -559,12 +564,13 @@ const Pricing = () => {
 
                   <CardFooter className="pt-4">
                     <Button
-                      className="w-full"
+                      className="w-full group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-accent group-hover:text-primary-foreground transition-all duration-300"
                       variant="outline"
                     >
                       {tier.isCustom ? "Contact Sales" : "Add to Plan"}
                     </Button>
                   </CardFooter>
+                  </div>
                 </Card>
               );
             })}
