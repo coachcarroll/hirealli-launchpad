@@ -336,13 +336,13 @@ const Pricing = () => {
                 key={tier.name}
                 className={`relative ${
                   tier.highlighted
-                    ? "border-primary shadow-xl scale-105 z-10"
+                    ? "border-primary shadow-[0_0_40px_hsl(var(--primary)/0.3)] scale-105 z-10 bg-gradient-to-br from-primary/10 via-card to-accent/10"
                     : "border-border hover:border-primary/50 hover:shadow-lg"
                 } transition-all duration-300`}
               >
                 {tier.highlighted && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-primary text-primary-foreground px-4 py-1">
+                    <Badge className="bg-gradient-to-r from-primary to-accent text-primary-foreground px-4 py-1 shadow-lg">
                       Recommended
                     </Badge>
                   </div>
@@ -389,7 +389,11 @@ const Pricing = () => {
 
                 <CardFooter className="pt-4">
                   <Button
-                    className="w-full"
+                    className={`w-full ${
+                      tier.highlighted 
+                        ? "bg-gradient-to-r from-primary to-accent hover:shadow-lg hover:shadow-primary/50" 
+                        : ""
+                    }`}
                     variant={tier.highlighted ? "default" : "outline"}
                   >
                     {tier.cta}
