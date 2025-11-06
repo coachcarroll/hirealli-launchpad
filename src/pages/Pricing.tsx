@@ -63,15 +63,15 @@ const Pricing = () => {
   const tierPriceIds = {
     Pro: {
       monthly: "price_1SQbpiD8hbSdYbHsvBh5A0rx",
-      annual: "price_1SQc6yD8hbSdYbHsqNxD3kel"
+      annual: "price_1SQcI8D8hbSdYbHsx5B0W5QN"
     },
     Growth: {
       monthly: "price_1SQbqFD8hbSdYbHsugPmFVuX",
-      annual: "price_1SQcFJD8hbSdYbHsPB1LTlUX"
+      annual: "price_1SQcNtD8hbSdYbHsQbQCSS3i"
     },
     Starter: {
       monthly: "price_1SQbshD8hbSdYbHszfqz8EAR",
-      annual: "price_1SQcFUD8hbSdYbHsQWjYNRwx"
+      annual: "price_1SQcPMD8hbSdYbHssmczBQeS"
     },
   };
 
@@ -79,15 +79,15 @@ const Pricing = () => {
   const socialMediaPriceIds = {
     STANDARD: {
       monthly: "price_1SQbstD8hbSdYbHsmWlbcbll",
-      annual: "price_1SQcFfD8hbSdYbHsUFAgDvhO"
+      annual: "price_1SQcPcD8hbSdYbHsTjinnYBz"
     },
     DELUXE: {
       monthly: "price_1SQbt1D8hbSdYbHsJozS17O9",
-      annual: "price_1SQcFsD8hbSdYbHs9i5dpPxc"
+      annual: "price_1SQcQBD8hbSdYbHsj4rd0w63"
     },
     PREMIUM: {
       monthly: "price_1SQbtID8hbSdYbHshDaNvnEd",
-      annual: "price_1SQcG5D8hbSdYbHspJTXbJ4r"
+      annual: "price_1SQcQKD8hbSdYbHsbQ2nUaiq"
     },
   };
 
