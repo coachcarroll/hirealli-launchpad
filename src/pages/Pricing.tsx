@@ -325,7 +325,7 @@ const Pricing = () => {
                         {isAnnual && " + One-time Brand Scout Visit"}
                       </p>
                       <p className="text-xs text-primary mt-2">
-                        Saving ${getBundleSavings()}/mo included
+                        Up to ${voicePrices[1] + leadPrices[1]}/mo value included
                       </p>
                     </div>
                   )}
