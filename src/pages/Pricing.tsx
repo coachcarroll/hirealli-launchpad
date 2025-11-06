@@ -40,7 +40,7 @@ const Pricing = () => {
 
   const tiers: Tier[] = [
     {
-      name: "Platinum",
+      name: "Pro",
       subtitle: "Maximum Scale",
       monthlyPrice: 1485,
       annualPrice: 15000,
@@ -69,7 +69,7 @@ const Pricing = () => {
       },
     },
     {
-      name: "Gold",
+      name: "Growth",
       subtitle: "Most Popular",
       monthlyPrice: 595,
       annualPrice: 6000,
@@ -94,7 +94,7 @@ const Pricing = () => {
       },
     },
     {
-      name: "Silver",
+      name: "Starter",
       subtitle: "Essential Growth",
       monthlyPrice: 295,
       annualPrice: 3000,
