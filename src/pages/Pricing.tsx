@@ -278,10 +278,16 @@ const Pricing = () => {
                   <CardTitle className="text-2xl mb-2">{tier.name}</CardTitle>
                   <CardDescription className="text-sm mb-4">{tier.subtitle}</CardDescription>
                   <div className="mb-2">
-                    <span className="text-4xl font-bold">
-                      ${displayPrice}
-                    </span>
-                    <span className="text-muted-foreground">/mo</span>
+                    {tier.monthlyPrice === 0 ? (
+                      <span className="text-4xl font-bold">Free</span>
+                    ) : (
+                      <>
+                        <span className="text-4xl font-bold">
+                          ${displayPrice}
+                        </span>
+                        <span className="text-muted-foreground">/mo</span>
+                      </>
+                    )}
                   </div>
                   {isAnnual && tier.annualPrice > 0 && (
                     <p className="text-xs text-muted-foreground">
