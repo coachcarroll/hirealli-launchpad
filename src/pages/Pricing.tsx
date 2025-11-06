@@ -42,7 +42,7 @@ const Pricing = () => {
     {
       name: "Pro",
       subtitle: "Maximum Scale",
-      monthlyPrice: 1485,
+      monthlyPrice: 1495,
       annualPrice: 15000,
       description: "Unlimited power for serious growth",
       cta: "Get Started",
@@ -71,8 +71,8 @@ const Pricing = () => {
     {
       name: "Growth",
       subtitle: "Most Popular",
-      monthlyPrice: 595,
-      annualPrice: 6000,
+      monthlyPrice: 695,
+      annualPrice: 7500,
       description: "Complete AI automation suite",
       cta: "Get Started",
       highlighted: true,
