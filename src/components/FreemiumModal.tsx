@@ -16,7 +16,6 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
     email: "",
     company: "",
     website: "",
-    zapierWebhook: "",
   });
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -26,7 +25,7 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
     setIsLoading(true);
 
     try {
-      const webhookUrl = formData.zapierWebhook || "YOUR_DEFAULT_ZAPIER_WEBHOOK_URL";
+      const webhookUrl = "YOUR_DEFAULT_ZAPIER_WEBHOOK_URL";
       
       const response = await fetch(webhookUrl, {
         method: "POST",
@@ -54,7 +53,6 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
         email: "",
         company: "",
         website: "",
-        zapierWebhook: "",
       });
     } catch (error) {
       console.error("Error submitting freemium signup:", error);
@@ -119,19 +117,6 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
               onChange={(e) => setFormData({ ...formData, website: e.target.value })}
               placeholder="https://example.com"
             />
-          </div>
-          <div>
-            <Label htmlFor="zapierWebhook">Zapier Webhook URL (Optional)</Label>
-            <Input
-              id="zapierWebhook"
-              type="url"
-              value={formData.zapierWebhook}
-              onChange={(e) => setFormData({ ...formData, zapierWebhook: e.target.value })}
-              placeholder="https://hooks.zapier.com/..."
-            />
-            <p className="text-xs text-muted-foreground mt-1">
-              Connect your Zapier webhook to automate your lead workflow
-            </p>
           </div>
           <Button type="submit" className="w-full" disabled={isLoading}>
             {isLoading ? "Setting Up..." : "Start Free Trial"}
