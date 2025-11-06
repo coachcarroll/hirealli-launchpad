@@ -456,66 +456,43 @@ const Pricing = () => {
                     <Button 
                       className="w-full" 
                       size="lg"
-                      onClick={async () => {
-                        if (isFreemiumOnly) {
-                          setShowFreemiumModal(true);
-                        } else {
-                          try {
-                            // Build line items based on selected configuration
-                            const lineItems = [];
-                            
-                            // Add Lead Detection if selected
-                            if (leadLevel > 0 && !(isPremiumBundle && leadLevel === 1)) {
-                              const leadPriceIds = ['', 'price_1RjR4hD8hbSdYbHsAxCjSBX2', 'price_1RlaGiD8hbSdYbHs3EXxOVA9', 'price_1S5BFkD8hbSdYbHsNDAb4uOt'];
-                              if (leadPriceIds[leadLevel]) {
-                                lineItems.push({ price: leadPriceIds[leadLevel], quantity: 1 });
-                              }
-                            }
-                            
-                            // Add AI Voice if selected
-                            if (voiceLevel > 0 && !(isPremiumBundle && voiceLevel === 1)) {
-                              const voicePriceIds = ['', 'price_1Ro99pD8hbSdYbHsb0wNv2Y2', 'price_1S6AVrD8hbSdYbHsiEddvMfw', 'price_1RydCaD8hbSdYbHspgsdhKbM'];
-                              if (voicePriceIds[voiceLevel]) {
-                                lineItems.push({ price: voicePriceIds[voiceLevel], quantity: 1 });
-                              }
-                            }
-                            
-                            // Add Social Posts if selected
-                            if (socialPosts > 0) {
-                              const socialPriceIds = ['', 'price_1RZaotD8hbSdYbHsbUWstuJn', 'price_1RZbQWD8hbSdYbHsmFgRS1Ro', 'price_1RZbKXD8hbSdYbHsdk95rNNo', 'price_1RZbF1D8hbSdYbHsMbGF9B1m'];
-                              if (socialPriceIds[socialPosts]) {
-                                lineItems.push({ price: socialPriceIds[socialPosts], quantity: 1 });
-                              }
-                            }
-                            
-                            // Add Ads if selected
-                            if (adsLevel > 0) {
-                              const adsPriceIds = ['', 'price_1RZapFD8hbSdYbHs5hj2JD8c', 'price_1RZapUD8hbSdYbHsGmCqNUFE', 'price_1RnN5ED8hbSdYbHsXCkOAXZ7'];
-                              if (adsPriceIds[adsLevel]) {
-                                lineItems.push({ price: adsPriceIds[adsLevel], quantity: 1 });
-                              }
-                            }
+      onClick={async () => {
+        if (isFreemiumOnly) {
+          setShowFreemiumModal(true);
+        } else {
+          try {
+            const { data: { session } } = await supabase.auth.getSession();
+            
+            if (!session) {
+              toast.error("Please sign in to subscribe");
+              return;
+            }
 
-                            if (lineItems.length === 0) {
-                              toast.error("Please select at least one service");
-                              return;
-                            }
+            const monthlyAmount = getMonthlyPrice();
+            
+            if (monthlyAmount === 0) {
+              toast.error("Please select at least one service");
+              return;
+            }
 
-                            const { data, error } = await supabase.functions.invoke('create-checkout', {
-                              body: { lineItems, isAnnual }
-                            });
+            const { data, error } = await supabase.functions.invoke('create-checkout', {
+              body: { 
+                monthlyAmount,
+                isAnnual 
+              }
+            });
 
-                            if (error) throw error;
-
-                            if (data?.url) {
-                              window.open(data.url, '_blank');
-                            }
-                          } catch (error) {
-                            console.error('Checkout error:', error);
-                            toast.error("Failed to create checkout session");
-                          }
-                        }
-                      }}
+            if (error) throw error;
+            
+            if (data?.url) {
+              window.open(data.url, '_blank');
+            }
+          } catch (error) {
+            console.error('Checkout error:', error);
+            toast.error("Failed to create checkout session");
+          }
+        }
+      }}
                     >
                       {isFreemiumOnly ? "Start Free Trial" : "Get Started"}
                     </Button>

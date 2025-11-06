@@ -24,11 +24,11 @@ serve(async (req) => {
     if (!stripeKey) throw new Error("STRIPE_SECRET_KEY is not set");
     logStep("Stripe key verified");
 
-    const { lineItems, isAnnual } = await req.json();
-    logStep("Received request", { lineItems, isAnnual });
+    const { monthlyAmount, isAnnual } = await req.json();
+    logStep("Received request", { monthlyAmount, isAnnual });
 
-    if (!lineItems || lineItems.length === 0) {
-      throw new Error("No line items provided");
+    if (!monthlyAmount || monthlyAmount <= 0) {
+      throw new Error("Invalid monthly amount provided");
     }
 
     // Try to get authenticated user, but allow guest checkout
@@ -61,19 +61,40 @@ serve(async (req) => {
       }
     }
 
-    // Create checkout session
+    // Create a price on the fly
+    const unitAmount = isAnnual 
+      ? Math.round((monthlyAmount * 12 * 0.83) * 100) // Annual with 17% discount, in cents
+      : Math.round(monthlyAmount * 100); // Monthly in cents
+    
+    logStep("Creating price", { unitAmount, isAnnual });
+
+    // Create checkout session with inline price
     const session = await stripe.checkout.sessions.create({
       customer: customerId,
       customer_email: customerId ? undefined : userEmail,
-      line_items: lineItems,
+      line_items: [{
+        price_data: {
+          currency: 'usd',
+          unit_amount: unitAmount,
+          recurring: {
+            interval: isAnnual ? 'year' : 'month'
+          },
+          product_data: {
+            name: isAnnual ? 'Alli Services (Annual)' : 'Alli Services (Monthly)',
+            description: `Custom Alli subscription - $${monthlyAmount}/mo${isAnnual ? ' (billed annually with 17% savings)' : ''}`
+          }
+        },
+        quantity: 1
+      }],
       mode: "subscription",
       success_url: `${req.headers.get("origin")}/pricing?success=true`,
       cancel_url: `${req.headers.get("origin")}/pricing?canceled=true`,
-      subscription_data: isAnnual ? {
+      subscription_data: {
         metadata: {
-          billing_cycle: 'annual'
+          billing_cycle: isAnnual ? 'annual' : 'monthly',
+          monthly_amount: monthlyAmount.toString()
         }
-      } : undefined,
+      },
     });
 
     logStep("Checkout session created", { sessionId: session.id, url: session.url });
