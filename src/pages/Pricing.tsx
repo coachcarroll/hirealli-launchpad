@@ -61,8 +61,6 @@ const Pricing = () => {
         spamDetection: { included: true },
         customKnowledge: { included: true },
         afterCallSummary: { included: true },
-        outboundVoice: { included: true },
-        outboundText: { included: true },
         appointmentSetting: { included: true },
         automatedIntake: { included: true },
         crmIntegration: { included: true },
