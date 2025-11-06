@@ -6,6 +6,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge";
 import { Check, X, Info } from "lucide-react";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 import {
   Dialog,
   DialogContent,
@@ -55,6 +57,47 @@ interface SocialMediaTier {
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
+  const { toast } = useToast();
+
+  // Price IDs for main tiers
+  const tierPriceIds = {
+    Pro: "price_1SQbpiD8hbSdYbHsvBh5A0rx",
+    Growth: "price_1SQbqFD8hbSdYbHsugPmFVuX",
+    Starter: "price_1SQbshD8hbSdYbHszfqz8EAR",
+  };
+
+  // Price IDs for social media add-ons
+  const socialMediaPriceIds = {
+    STANDARD: "price_1SQbstD8hbSdYbHsmWlbcbll",
+    DELUXE: "price_1SQbt1D8hbSdYbHsJozS17O9",
+    PREMIUM: "price_1SQbtID8hbSdYbHshDaNvnEd",
+  };
+
+  const handleCheckout = async (priceId: string, tierName: string) => {
+    try {
+      const { data, error } = await supabase.functions.invoke('create-checkout', {
+        body: { priceId }
+      });
+
+      if (error) throw error;
+
+      if (data?.url) {
+        window.open(data.url, '_blank');
+      }
+    } catch (error) {
+      console.error('Checkout error:', error);
+      toast({
+        title: "Error",
+        description: "Failed to start checkout. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handleContactSales = () => {
+    window.location.href = "mailto:sales@example.com?subject=Custom Social Media Package Inquiry";
+  };
+
 
   const tiers: Tier[] = [
     {
@@ -395,6 +438,16 @@ const Pricing = () => {
                         : ""
                     }`}
                     variant={tier.highlighted ? "default" : "outline"}
+                    onClick={() => {
+                      if (tier.name === "Freemium") {
+                        toast({
+                          title: "Coming Soon",
+                          description: "Free trial signup will be available soon!",
+                        });
+                      } else {
+                        handleCheckout(tierPriceIds[tier.name as keyof typeof tierPriceIds], tier.name);
+                      }
+                    }}
                   >
                     {tier.cta}
                   </Button>
@@ -570,6 +623,13 @@ const Pricing = () => {
                     <Button
                       className="w-full group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-accent group-hover:text-primary-foreground transition-all duration-300"
                       variant="outline"
+                      onClick={() => {
+                        if (tier.isCustom) {
+                          handleContactSales();
+                        } else {
+                          handleCheckout(socialMediaPriceIds[tier.name as keyof typeof socialMediaPriceIds], tier.name);
+                        }
+                      }}
                     >
                       {tier.isCustom ? "Contact Sales" : "Add to Plan"}
                     </Button>
