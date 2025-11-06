@@ -35,6 +35,24 @@ interface Tier {
   features: TierFeatures;
 }
 
+interface SocialMediaTier {
+  name: string;
+  monthlyPrice: number;
+  annualPrice: number;
+  description: string;
+  features: {
+    brandedAdsPerQuarter: string;
+    videoAdsPerQuarter: string;
+    monthlyAdSpend: string;
+    socialPostsPerWeek: string;
+    organicContent: string;
+    fbInstagramStoryAds: boolean;
+    bootcampGuide: boolean;
+    analyticsDashboard: boolean;
+  };
+  isCustom?: boolean;
+}
+
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
 
@@ -169,6 +187,74 @@ const Pricing = () => {
         support: { included: true, detail: "Email support" },
         onboarding: { included: false },
         guarantee: { included: false },
+      },
+    },
+  ];
+
+  const socialMediaTiers: SocialMediaTier[] = [
+    {
+      name: "STANDARD",
+      monthlyPrice: 397,
+      annualPrice: Math.round(397 * 12 * 0.8),
+      description: "Essential social media presence with AI-powered ads",
+      features: {
+        brandedAdsPerQuarter: "3",
+        videoAdsPerQuarter: "-",
+        monthlyAdSpend: "$100",
+        socialPostsPerWeek: "-",
+        organicContent: "-",
+        fbInstagramStoryAds: false,
+        bootcampGuide: true,
+        analyticsDashboard: true,
+      },
+    },
+    {
+      name: "DELUXE",
+      monthlyPrice: 897,
+      annualPrice: Math.round(897 * 12 * 0.8),
+      description: "Comprehensive social strategy with video content",
+      features: {
+        brandedAdsPerQuarter: "3",
+        videoAdsPerQuarter: "2",
+        monthlyAdSpend: "$400",
+        socialPostsPerWeek: "5",
+        organicContent: "Industry",
+        fbInstagramStoryAds: true,
+        bootcampGuide: true,
+        analyticsDashboard: true,
+      },
+    },
+    {
+      name: "PREMIUM",
+      monthlyPrice: 1497,
+      annualPrice: Math.round(1497 * 12 * 0.8),
+      description: "Maximum impact with custom organic content",
+      features: {
+        brandedAdsPerQuarter: "3",
+        videoAdsPerQuarter: "2",
+        monthlyAdSpend: "$500",
+        socialPostsPerWeek: "5",
+        organicContent: "Custom",
+        fbInstagramStoryAds: true,
+        bootcampGuide: true,
+        analyticsDashboard: true,
+      },
+    },
+    {
+      name: "CUSTOM PACKAGE",
+      monthlyPrice: 0,
+      annualPrice: 0,
+      description: "Tailored solution for enterprise-level social media",
+      isCustom: true,
+      features: {
+        brandedAdsPerQuarter: "Unlimited",
+        videoAdsPerQuarter: "Unlimited",
+        monthlyAdSpend: "$1000+",
+        socialPostsPerWeek: "TBD",
+        organicContent: "✓",
+        fbInstagramStoryAds: true,
+        bootcampGuide: true,
+        analyticsDashboard: true,
       },
     },
   ];
@@ -372,6 +458,117 @@ const Pricing = () => {
               </div>
             </DialogContent>
           </Dialog>
+        </div>
+
+        {/* Social Media Add-On Section */}
+        <div className="py-16 border-t border-border">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Enrich Your Plan with Social Media Management
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-2">
+              Already have social media covered? No problem! Our core tiers focus on Lead Detection and AI Receptionist.
+            </p>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Want us to handle your social media too? Add one of these packages to any tier above.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {socialMediaTiers.map((tier) => {
+              const displayPrice = tier.isCustom 
+                ? null 
+                : (isAnnual ? Math.round(tier.annualPrice / 12) : tier.monthlyPrice);
+              
+              return (
+                <Card
+                  key={tier.name}
+                  className="border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 bg-card/50 backdrop-blur-sm"
+                >
+                  <CardHeader className="text-center pb-6">
+                    <Badge variant="outline" className="mb-3 mx-auto w-fit">
+                      Add-On
+                    </Badge>
+                    <CardTitle className="text-xl mb-2">{tier.name}</CardTitle>
+                    <div className="mb-2">
+                      {tier.isCustom ? (
+                        <span className="text-3xl font-bold">Custom</span>
+                      ) : (
+                        <>
+                          <span className="text-3xl font-bold">
+                            ${displayPrice}
+                          </span>
+                          <span className="text-muted-foreground">/mo</span>
+                        </>
+                      )}
+                    </div>
+                    {isAnnual && !tier.isCustom && (
+                      <p className="text-xs text-muted-foreground">
+                        Billed annually at ${tier.annualPrice}
+                      </p>
+                    )}
+                    <p className="text-sm text-muted-foreground mt-2">{tier.description}</p>
+                  </CardHeader>
+
+                  <CardContent className="space-y-2 text-sm">
+                    <div className="flex justify-between py-1.5 border-b border-border/50">
+                      <span className="text-muted-foreground">Branded 2D Ads</span>
+                      <span className="font-medium">{tier.features.brandedAdsPerQuarter}/qtr</span>
+                    </div>
+                    <div className="flex justify-between py-1.5 border-b border-border/50">
+                      <span className="text-muted-foreground">Branded Video Ads</span>
+                      <span className="font-medium">{tier.features.videoAdsPerQuarter}/qtr</span>
+                    </div>
+                    <div className="flex justify-between py-1.5 border-b border-border/50">
+                      <span className="text-muted-foreground">Monthly Ad Spend</span>
+                      <span className="font-medium">{tier.features.monthlyAdSpend}</span>
+                    </div>
+                    <div className="flex justify-between py-1.5 border-b border-border/50">
+                      <span className="text-muted-foreground">Social Posts/Week</span>
+                      <span className="font-medium">{tier.features.socialPostsPerWeek}</span>
+                    </div>
+                    <div className="flex justify-between py-1.5 border-b border-border/50">
+                      <span className="text-muted-foreground">Organic Content</span>
+                      <span className="font-medium">{tier.features.organicContent}</span>
+                    </div>
+                    <div className="flex items-center gap-2 py-1.5">
+                      {tier.features.fbInstagramStoryAds ? (
+                        <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                      ) : (
+                        <X className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                      )}
+                      <span className="text-muted-foreground">FB & Instagram Story Ads</span>
+                    </div>
+                    <div className="flex items-center gap-2 py-1.5">
+                      {tier.features.bootcampGuide ? (
+                        <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                      ) : (
+                        <X className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                      )}
+                      <span className="text-muted-foreground">Bootcamp & Guide Book</span>
+                    </div>
+                    <div className="flex items-center gap-2 py-1.5">
+                      {tier.features.analyticsDashboard ? (
+                        <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                      ) : (
+                        <X className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                      )}
+                      <span className="text-muted-foreground">Analytics Dashboard</span>
+                    </div>
+                  </CardContent>
+
+                  <CardFooter className="pt-4">
+                    <Button
+                      className="w-full"
+                      variant="outline"
+                    >
+                      {tier.isCustom ? "Contact Sales" : "Add to Plan"}
+                    </Button>
+                  </CardFooter>
+                </Card>
+              );
+            })}
+          </div>
         </div>
 
         {/* Trust Section */}
