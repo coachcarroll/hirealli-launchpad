@@ -461,13 +461,6 @@ const Pricing = () => {
           setShowFreemiumModal(true);
         } else {
           try {
-            const { data: { session } } = await supabase.auth.getSession();
-            
-            if (!session) {
-              toast.error("Please sign in to subscribe");
-              return;
-            }
-
             const monthlyAmount = getMonthlyPrice();
             
             if (monthlyAmount === 0) {

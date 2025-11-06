@@ -87,6 +87,10 @@ serve(async (req) => {
         quantity: 1
       }],
       mode: "subscription",
+      billing_address_collection: "required",
+      phone_number_collection: {
+        enabled: true,
+      },
       success_url: `${req.headers.get("origin")}/pricing?success=true`,
       cancel_url: `${req.headers.get("origin")}/pricing?canceled=true`,
       subscription_data: {
