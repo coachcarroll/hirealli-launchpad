@@ -443,7 +443,9 @@ const Pricing = () => {
                   <div className="pt-4 border-t border-border">
                     <div className="flex justify-between items-center">
                       <span className="text-lg font-semibold">Monthly Total</span>
-                      <span className="text-3xl font-bold">${getMonthlyPrice().toLocaleString()}</span>
+                      <span className="text-3xl font-bold">
+                        ${isAnnual ? Math.round(calculateTotal() / 12).toLocaleString() : getMonthlyPrice().toLocaleString()}
+                      </span>
                     </div>
                   </div>
 
