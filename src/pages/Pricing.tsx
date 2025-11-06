@@ -274,7 +274,7 @@ const Pricing = () => {
               <Card>
                 <CardHeader>
                   <CardTitle>Social Media</CardTitle>
-                  <CardDescription>Plan, capture, publish, and optimize—optionally with a Brand Scout on-site</CardDescription>
+                  <CardDescription>Never worry about managing your social media again.</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div>
