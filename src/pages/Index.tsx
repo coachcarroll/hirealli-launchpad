@@ -24,7 +24,7 @@ const Index = () => {
       "IT & Tech Support",
       "Financial Planning",
       "Human Resources",
-      "Architecture & Engineering"
+      "Architecture & Engineering",
     ],
     "Home Services": [
       "Plumbing",
@@ -34,8 +34,8 @@ const Index = () => {
       "Landscaping & Lawn Care",
       "Pest Control",
       "Home Remodeling",
-      "Roofing"
-    ]
+      "Roofing",
+    ],
   };
 
   const handleCategorySelect = (category: string) => {
@@ -46,7 +46,7 @@ const Index = () => {
     setSelectedIndustry(industry);
     setIndustryDialogOpen(false);
     setSelectedCategory(null);
-    
+
     // Map industry names to routes
     const industryRoutes: { [key: string]: string } = {
       "Legal Services": "/industries/legal-services",
@@ -57,16 +57,16 @@ const Index = () => {
       "Financial Planning": "/industries/financial-planning",
       "Human Resources": "/industries/human-resources",
       "Architecture & Engineering": "/industries/architecture-engineering",
-      "Plumbing": "/industries/plumbing",
-      "Electrical": "/industries/electrical",
+      Plumbing: "/industries/plumbing",
+      Electrical: "/industries/electrical",
       "HVAC (Heating & Cooling)": "/industries/hvac",
       "Cleaning & Housekeeping": "/industries/cleaning",
       "Landscaping & Lawn Care": "/industries/landscaping",
       "Pest Control": "/industries/pest-control",
       "Home Remodeling": "/industries/home-remodeling",
-      "Roofing": "/industries/roofing"
+      Roofing: "/industries/roofing",
     };
-    
+
     navigate(industryRoutes[industry]);
   };
 
@@ -80,7 +80,7 @@ const Index = () => {
   ];
 
   const outcomes = [
-    { icon: CheckCircle2, text: "30% increase to pipeline in 30 days" },
+    { icon: CheckCircle2, text: "30% increase to Pipeline in 30 days" },
     { icon: CheckCircle2, text: "24/7 reception with zero missed calls" },
     { icon: CheckCircle2, text: "Saves countless hours for founder and team" },
     { icon: CheckCircle2, text: "Consistent content without hiring" },
@@ -94,7 +94,7 @@ const Index = () => {
       <section className="pt-32 pb-20 px-4 relative overflow-hidden bg-gradient-to-b from-background via-primary/5 to-background">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-primary-glow/5 to-transparent pointer-events-none" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl opacity-20 pointer-events-none" />
-        
+
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
             <div className="text-center md:text-left order-2 md:order-1">
@@ -102,32 +102,27 @@ const Index = () => {
                 <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
                 Live Demo Available Now
               </div>
-              
+
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 Service Businesses: Increase your pipeline by <span className="text-accent">30%</span> in 30 days
               </h1>
-              
+
               <p className="text-xl md:text-2xl text-muted-foreground mb-8">
                 Hire Alli today so you can start working smarter and make more money!
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-6">
-              <Button size="lg" className="bg-gradient-to-r from-primary to-primary-glow text-lg" asChild>
-                <a href="tel:+1234567890">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call Alli Live
-                </a>
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="text-lg"
-                onClick={() => setIndustryDialogOpen(true)}
-              >
-                Select Your Industry
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </div>
+                <Button size="lg" className="bg-gradient-to-r from-primary to-primary-glow text-lg" asChild>
+                  <a href="tel:+1234567890">
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call Alli Live
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" className="text-lg" onClick={() => setIndustryDialogOpen(true)}>
+                  Select Your Industry
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </div>
 
               <p className="text-sm text-muted-foreground mb-8">
                 Try Alli for 30 days. If you don't feel it paid for itself in new business, get a full refund.
@@ -138,9 +133,9 @@ const Index = () => {
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary via-primary-glow to-primary rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-primary-glow/30 rounded-2xl blur-xl animate-pulse" />
-                <img 
-                  src={alliHeadshot} 
-                  alt="Meet Alli - Your AI Team Member" 
+                <img
+                  src={alliHeadshot}
+                  alt="Meet Alli - Your AI Team Member"
                   className="relative rounded-2xl shadow-2xl max-w-sm w-full ring-1 ring-primary/10 transition-transform duration-300 group-hover:scale-[1.02]"
                 />
               </div>
@@ -154,15 +149,13 @@ const Index = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-destructive/10 via-destructive/5 to-transparent" />
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-destructive/30 to-transparent" />
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-destructive/30 to-transparent" />
-        
+
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-2 rounded-full bg-destructive/10 border border-destructive/20 text-destructive text-sm font-medium mb-4">
               The Hidden Revenue Drains
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Stop Losing Money to These Silent Killers
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Stop Losing Money to These Silent Killers</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Every day without Alli, you're bleeding opportunities
             </p>
@@ -176,13 +169,14 @@ const Index = () => {
                 <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
                   <Search className="w-8 h-8 text-destructive-foreground" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">Ghost Traffic You Can&apos;t Capture</h3>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">
+                  Ghost Traffic You Can&apos;t Capture
+                </h3>
                 <p className="text-muted-foreground leading-relaxed mb-3">
-                  97% of your website visitors leave anonymous. That&apos;s pipeline walking away because you can&apos;t identify ready buyers.
+                  97% of your website visitors leave anonymous. That&apos;s pipeline walking away because you can&apos;t
+                  identify ready buyers.
                 </p>
-                <p className="text-sm font-semibold text-primary">
-                  Alli turns web traffic into real opportunities.
-                </p>
+                <p className="text-sm font-semibold text-primary">Alli turns web traffic into real opportunities.</p>
               </div>
             </div>
 
@@ -193,13 +187,14 @@ const Index = () => {
                 <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
                   <Phone className="w-8 h-8 text-destructive-foreground" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">Missed Calls = Lost Revenue</h3>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">
+                  Missed Calls = Lost Revenue
+                </h3>
                 <p className="text-muted-foreground leading-relaxed mb-3">
-                  Every unanswered call is a prospect choosing your competitor. Most small businesses lose up to 40% of potential leads because of missed calls or slow follow-up.
+                  Every unanswered call is a prospect choosing your competitor. Most small businesses lose up to 40% of
+                  potential leads because of missed calls or slow follow-up.
                 </p>
-                <p className="text-sm font-semibold text-primary">
-                  Alli makes sure that never happens.
-                </p>
+                <p className="text-sm font-semibold text-primary">Alli makes sure that never happens.</p>
               </div>
             </div>
 
@@ -210,9 +205,12 @@ const Index = () => {
                 <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
                   <Share2 className="w-8 h-8 text-destructive-foreground" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">Invisible When Buyers Are Looking</h3>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">
+                  Invisible When Buyers Are Looking
+                </h3>
                 <p className="text-muted-foreground leading-relaxed mb-3">
-                  Inconsistent content means prospects never see you. Your team&apos;s too busy to post, so deals go to whoever stayed visible.
+                  Inconsistent content means prospects never see you. Your team&apos;s too busy to post, so deals go to
+                  whoever stayed visible.
                 </p>
                 <p className="text-sm font-semibold text-primary">
                   Alli keeps your business top-of-mind when customers are ready to buy.
@@ -227,12 +225,8 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              How Alli Works in Your Business
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Three roles. One AI teammate. Zero new hires.
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">How Alli Works in Your Business</h2>
+            <p className="text-xl text-muted-foreground">Three roles. One AI teammate. Zero new hires.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -280,7 +274,7 @@ const Index = () => {
       <section className="py-24 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary-glow/5 to-accent/5" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl opacity-30" />
-        
+
         <div className="container mx-auto max-w-5xl relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium mb-4">
@@ -290,15 +284,13 @@ const Index = () => {
             <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
               Outcomes That Matter
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Real metrics that transform your business
-            </p>
+            <p className="text-xl text-muted-foreground">Real metrics that transform your business</p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-6">
             {outcomes.map((outcome, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="group relative flex items-start gap-5 p-8 rounded-2xl bg-card/80 backdrop-blur-sm border-2 border-accent/20 hover:border-accent/50 transition-all duration-500 hover:shadow-[0_20px_50px_-12px_hsl(var(--accent)/0.25)] hover:-translate-y-1 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -316,11 +308,10 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <div className="p-8 md:p-12 rounded-2xl bg-gradient-to-br from-secondary/10 to-secondary/5 border-2 border-secondary/20">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              30-Day Money-Back Guarantee
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">30-Day Money-Back Guarantee</h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Try Alli for 30 days. If you don't feel it paid for itself in new business, get a full refund. No questions asked.
+              Try Alli for 30 days. If you don't feel it paid for itself in new business, get a full refund. No
+              questions asked.
             </p>
             <Button size="lg" className="bg-gradient-to-r from-primary to-primary-glow text-lg" asChild>
               <Link to="/pricing">
@@ -338,13 +329,9 @@ const Index = () => {
       <Dialog open={industryDialogOpen} onOpenChange={setIndustryDialogOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle>
-              {selectedCategory ? selectedCategory : "Select Your Industry"}
-            </DialogTitle>
+            <DialogTitle>{selectedCategory ? selectedCategory : "Select Your Industry"}</DialogTitle>
             <DialogDescription>
-              {selectedCategory 
-                ? "Choose your specific service type" 
-                : "Choose your industry category to get started"}
+              {selectedCategory ? "Choose your specific service type" : "Choose your industry category to get started"}
             </DialogDescription>
           </DialogHeader>
 
