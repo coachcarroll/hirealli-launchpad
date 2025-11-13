@@ -30,7 +30,7 @@ All colors MUST be HSL.
     --muted-foreground: 220 9% 46%;
 
     /* Success green for metrics */
-    --accent: 142 76% 36%;
+    --accent: 161 96% 44%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -79,7 +79,7 @@ All colors MUST be HSL.
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 142 76% 36%;
+    --accent: 161 96% 44%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
