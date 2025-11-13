@@ -80,7 +80,7 @@ const Index = () => {
   ];
 
   const outcomes = [
-    { icon: CheckCircle2, text: "30% more qualified leads in 30 days" },
+    { icon: CheckCircle2, text: "30% increase to pipeline in 30 days" },
     { icon: CheckCircle2, text: "24/7 reception with zero missed calls" },
     { icon: CheckCircle2, text: "Hidden buyers turned into pipeline" },
     { icon: CheckCircle2, text: "Consistent content without hiring" },
