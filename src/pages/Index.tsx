@@ -132,12 +132,6 @@ const Index = () => {
               <p className="text-sm text-muted-foreground mb-8">
                 Try Alli for 30 days. If you don't feel it paid for itself in new business, get a full refund.
               </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto md:mx-0">
-                <ProofChip metric="30%" label="more qualified leads in 30 days" variant="success" />
-                <ProofChip metric="30%" label="junk calls eliminated" />
-                <ProofChip metric="60%" label="increase in profile visits" variant="success" />
-              </div>
             </div>
 
             <div className="order-1 md:order-2 flex justify-center">
