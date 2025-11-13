@@ -104,7 +104,7 @@ const Index = () => {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Service Businesses: Increase your pipeline by <span className="text-primary">30%</span> in 30 days - Hire Alli today!
+                Service Businesses: Increase your pipeline by <span className="text-accent">30%</span> in 30 days - Hire Alli today!
               </h1>
               
               <p className="text-xl md:text-2xl text-muted-foreground mb-8">
