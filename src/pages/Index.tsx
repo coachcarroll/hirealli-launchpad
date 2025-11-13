@@ -104,11 +104,11 @@ const Index = () => {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Service Businesses: Increase your pipeline by <span className="text-accent">30%</span> in 30 days - Hire Alli today!
+                Service Businesses: Increase your pipeline by <span className="text-accent">30%</span> in 30 days
               </h1>
               
               <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-                Lead Detection, Voice, and Social Media that help service businesses convert every contact into revenue.
+                Hire Alli today so you can start working smarter and make more money!
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-6">
