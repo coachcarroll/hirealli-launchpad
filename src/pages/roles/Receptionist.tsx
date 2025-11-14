@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import ProofChip from "@/components/ProofChip";
-import alliPhone from "@/assets/alli-phone.png";
+import receptionistHero from "@/assets/receptionist-hero.png";
 
 const Receptionist = () => {
   const workflow = [
@@ -157,7 +157,7 @@ const Receptionist = () => {
               <div className="relative mb-8">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-glow/20 rounded-2xl blur-2xl" />
                 <img 
-                  src={alliPhone} 
+                  src={receptionistHero} 
                   alt="Alli AI Receptionist" 
                   className="relative rounded-2xl shadow-2xl w-full"
                 />
