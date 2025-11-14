@@ -3,6 +3,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import alliThumbsUp from "@/assets/alli-thumbsup.png";
 
@@ -18,6 +19,7 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
     phone: "",
     company: "",
     website: "",
+    smsConsent: false,
   });
   const [isLoading, setIsLoading] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
@@ -68,6 +70,7 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
         phone: "",
         company: "",
         website: "",
+        smsConsent: false,
       });
     }, 300);
   };
@@ -136,6 +139,21 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
                   onChange={(e) => setFormData({ ...formData, website: e.target.value })}
                   placeholder="https://example.com"
                 />
+              </div>
+              <div className="flex items-center space-x-2">
+                <Checkbox
+                  id="smsConsent"
+                  checked={formData.smsConsent}
+                  onCheckedChange={(checked) => 
+                    setFormData({ ...formData, smsConsent: checked as boolean })
+                  }
+                />
+                <Label 
+                  htmlFor="smsConsent"
+                  className="text-sm font-normal cursor-pointer"
+                >
+                  Check this so Alli can text you
+                </Label>
               </div>
               <Button type="submit" className="w-full" disabled={isLoading}>
                 {isLoading ? "Setting Up..." : "Start Free Trial"}
