@@ -15,6 +15,7 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     company: "",
     website: "",
   });
@@ -64,6 +65,7 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
       setFormData({
         name: "",
         email: "",
+        phone: "",
         company: "",
         website: "",
       });
@@ -101,6 +103,17 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="john@example.com"
+                />
+              </div>
+              <div>
+                <Label htmlFor="phone">Phone Number *</Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  required
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  placeholder="(555) 123-4567"
                 />
               </div>
               <div>
