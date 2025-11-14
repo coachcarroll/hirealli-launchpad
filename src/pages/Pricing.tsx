@@ -62,16 +62,16 @@ const Pricing = () => {
   // Price IDs for main tiers
   const tierPriceIds = {
     Pro: {
-      monthly: "price_1SQbpiD8hbSdYbHsvBh5A0rx",
-      annual: "price_1SQcI8D8hbSdYbHsx5B0W5QN"
+      monthly: "price_1STAhyD8hbSdYbHszW2XZgQp",
+      annual: "price_1STAi9D8hbSdYbHs5wWR0ddg"
     },
     Growth: {
-      monthly: "price_1SQbqFD8hbSdYbHsugPmFVuX",
-      annual: "price_1SQcNtD8hbSdYbHsQbQCSS3i"
+      monthly: "price_1STAiND8hbSdYbHst0j2wH5c",
+      annual: "price_1STAibD8hbSdYbHsBshYng1W"
     },
     Starter: {
-      monthly: "price_1SQbshD8hbSdYbHszfqz8EAR",
-      annual: "price_1SQcPMD8hbSdYbHssmczBQeS"
+      monthly: "price_1STAiyD8hbSdYbHsZLFM97kR",
+      annual: "price_1STAjED8hbSdYbHs0Bx2m5U4"
     },
   };
 
