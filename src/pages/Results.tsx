@@ -33,7 +33,7 @@ const Results = () => {
     {
       category: "voice",
       title: "Zero Missed Calls for 90 Days",
-      description: "Legal practice achieved 100% call coverage during business expansion.",
+      description: "Exterior cleaning company achieved 100% call coverage during a big marketing campaign.",
       metric: "100%",
       timeframe: "90 days",
     },
