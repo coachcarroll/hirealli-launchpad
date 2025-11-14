@@ -109,7 +109,7 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
                 />
               </div>
               <div>
-                <Label htmlFor="phone">Phone Number *</Label>
+                <Label htmlFor="phone">Cell Phone Number *</Label>
                 <Input
                   id="phone"
                   type="tel"
@@ -118,6 +118,21 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="(555) 123-4567"
                 />
+              </div>
+              <div className="flex items-center space-x-2">
+                <Checkbox
+                  id="smsConsent"
+                  checked={formData.smsConsent}
+                  onCheckedChange={(checked) => 
+                    setFormData({ ...formData, smsConsent: checked as boolean })
+                  }
+                />
+                <Label 
+                  htmlFor="smsConsent"
+                  className="text-sm font-normal cursor-pointer"
+                >
+                  Check this so Alli can text you
+                </Label>
               </div>
               <div>
                 <Label htmlFor="company">Company Name *</Label>
@@ -139,21 +154,6 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
                   onChange={(e) => setFormData({ ...formData, website: e.target.value })}
                   placeholder="https://example.com"
                 />
-              </div>
-              <div className="flex items-center space-x-2">
-                <Checkbox
-                  id="smsConsent"
-                  checked={formData.smsConsent}
-                  onCheckedChange={(checked) => 
-                    setFormData({ ...formData, smsConsent: checked as boolean })
-                  }
-                />
-                <Label 
-                  htmlFor="smsConsent"
-                  className="text-sm font-normal cursor-pointer"
-                >
-                  Check this so Alli can text you
-                </Label>
               </div>
               <Button type="submit" className="w-full" disabled={isLoading}>
                 {isLoading ? "Setting Up..." : "Start Free Trial"}
