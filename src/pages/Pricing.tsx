@@ -79,15 +79,15 @@ const Pricing = () => {
   const socialMediaPriceIds = {
     STANDARD: {
       monthly: "price_1SQbstD8hbSdYbHsmWlbcbll",
-      annual: "price_1SQcPcD8hbSdYbHsTjinnYBz"
+      annual: "price_1STAuFD8hbSdYbHsaI3D7r6n"
     },
     DELUXE: {
       monthly: "price_1SQbt1D8hbSdYbHsJozS17O9",
-      annual: "price_1SQcQBD8hbSdYbHsj4rd0w63"
+      annual: "price_1STAuhD8hbSdYbHsuxmsekDE"
     },
     PREMIUM: {
       monthly: "price_1SQbtID8hbSdYbHshDaNvnEd",
-      annual: "price_1SQcQKD8hbSdYbHsbQ2nUaiq"
+      annual: "price_1STAusD8hbSdYbHsOk7tpQSl"
     },
   };
 
