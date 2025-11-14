@@ -256,7 +256,7 @@ const Pricing = () => {
     {
       name: "STANDARD",
       monthlyPrice: 397,
-      annualPrice: Math.round(397 * 12 * 0.8),
+      annualPrice: Math.round((297 * 0.83 * 12) + (100 * 12)), // 17% discount on $297 fee only, not on $100 ad spend
       description: "Essential social media presence with AI-powered ads",
       features: {
         brandedAdsPerQuarter: "3",
@@ -272,7 +272,7 @@ const Pricing = () => {
     {
       name: "DELUXE",
       monthlyPrice: 897,
-      annualPrice: Math.round(897 * 12 * 0.8),
+      annualPrice: Math.round((497 * 0.83 * 12) + (400 * 12)), // 17% discount on $497 fee only, not on $400 ad spend
       description: "Comprehensive social strategy with video content",
       features: {
         brandedAdsPerQuarter: "3",
@@ -288,7 +288,7 @@ const Pricing = () => {
     {
       name: "PREMIUM",
       monthlyPrice: 1497,
-      annualPrice: Math.round(1497 * 12 * 0.8),
+      annualPrice: Math.round((997 * 0.83 * 12) + (500 * 12)), // 17% discount on $997 fee only, not on $500 ad spend
       description: "Maximum impact with custom organic content",
       features: {
         brandedAdsPerQuarter: "3",
