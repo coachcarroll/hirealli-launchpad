@@ -148,11 +148,11 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
                 <Label htmlFor="website">Website *</Label>
                 <Input
                   id="website"
-                  type="url"
+                  type="text"
                   required
                   value={formData.website}
                   onChange={(e) => setFormData({ ...formData, website: e.target.value })}
-                  placeholder="https://example.com"
+                  placeholder="example.com"
                 />
               </div>
               <Button type="submit" className="w-full" disabled={isLoading}>
