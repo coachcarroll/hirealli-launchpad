@@ -8,6 +8,7 @@ import { Check, X, Info } from "lucide-react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { FreemiumModal } from "@/components/FreemiumModal";
 import {
   Dialog,
   DialogContent,
@@ -57,6 +58,7 @@ interface SocialMediaTier {
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
+  const [showFreemiumModal, setShowFreemiumModal] = useState(false);
   const { toast } = useToast();
 
   // Price IDs for main tiers
@@ -458,10 +460,7 @@ const Pricing = () => {
                     variant={tier.highlighted ? "default" : "outline"}
                     onClick={() => {
                       if (tier.name === "Freemium") {
-                        toast({
-                          title: "Coming Soon",
-                          description: "Free trial signup will be available soon!",
-                        });
+                        setShowFreemiumModal(true);
                       } else {
                         const priceId = isAnnual 
                           ? tierPriceIds[tier.name as keyof typeof tierPriceIds].annual
@@ -686,6 +685,11 @@ const Pricing = () => {
       </main>
 
       <Footer />
+      
+      <FreemiumModal 
+        open={showFreemiumModal} 
+        onOpenChange={setShowFreemiumModal}
+      />
     </div>
   );
 };
