@@ -39,10 +39,10 @@ const Results = () => {
     },
     {
       category: "leads",
-      title: "$50K Pipeline from Anonymous Traffic",
-      description: "B2B service provider identified and closed deals from previously unknown visitors.",
-      metric: "$50K",
-      timeframe: "90 days",
+      title: "206 New Leads in 7 Days",
+      description: "A health insurance company identified over two hundred new prospects to their pipeline in the first week of installing Alli.",
+      metric: "206 Leads",
+      timeframe: "7 days",
     },
     {
       category: "social",
