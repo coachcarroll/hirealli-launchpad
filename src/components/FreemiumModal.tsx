@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import alliThumbsUp from "@/assets/alli-thumbsup.png";
 
 interface FreemiumModalProps {
   open: boolean;
@@ -18,6 +19,7 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
     website: "",
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -25,7 +27,7 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
     setIsLoading(true);
 
     try {
-      const webhookUrl = "YOUR_DEFAULT_ZAPIER_WEBHOOK_URL";
+      const webhookUrl = "https://hooks.zapier.com/hooks/catch/1738439/uyva94r/";
       
       const response = await fetch(webhookUrl, {
         method: "POST",
@@ -42,18 +44,7 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
         }),
       });
 
-      toast({
-        title: "Welcome to Alli!",
-        description: "Your freemium account has been set up. We'll be in touch shortly!",
-      });
-      
-      onOpenChange(false);
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        website: "",
-      });
+      setShowThankYou(true);
     } catch (error) {
       console.error("Error submitting freemium signup:", error);
       toast({
@@ -66,62 +57,91 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
     }
   };
 
+  const handleClose = () => {
+    onOpenChange(false);
+    setTimeout(() => {
+      setShowThankYou(false);
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        website: "",
+      });
+    }, 300);
+  };
+
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={open} onOpenChange={handleClose}>
       <DialogContent className="sm:max-w-[500px]">
-        <DialogHeader>
-          <DialogTitle>Start Your Freemium Trial</DialogTitle>
-          <DialogDescription>
-            Get 10 free leads per month to start. No credit card required.
-          </DialogDescription>
-        </DialogHeader>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <Label htmlFor="name">Full Name *</Label>
-            <Input
-              id="name"
-              required
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              placeholder="John Doe"
+        {!showThankYou ? (
+          <>
+            <DialogHeader>
+              <DialogTitle>Start Your Freemium Trial</DialogTitle>
+              <DialogDescription>
+                Get 10 free leads per month to start. No credit card required.
+              </DialogDescription>
+            </DialogHeader>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <Label htmlFor="name">Full Name *</Label>
+                <Input
+                  id="name"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  placeholder="John Doe"
+                />
+              </div>
+              <div>
+                <Label htmlFor="email">Email *</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  placeholder="john@example.com"
+                />
+              </div>
+              <div>
+                <Label htmlFor="company">Company Name *</Label>
+                <Input
+                  id="company"
+                  required
+                  value={formData.company}
+                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                  placeholder="Acme Inc."
+                />
+              </div>
+              <div>
+                <Label htmlFor="website">Website *</Label>
+                <Input
+                  id="website"
+                  type="url"
+                  required
+                  value={formData.website}
+                  onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                  placeholder="https://example.com"
+                />
+              </div>
+              <Button type="submit" className="w-full" disabled={isLoading}>
+                {isLoading ? "Setting Up..." : "Start Free Trial"}
+              </Button>
+            </form>
+          </>
+        ) : (
+          <div className="flex flex-col items-center justify-center py-8 text-center">
+            <img 
+              src={alliThumbsUp} 
+              alt="Alli" 
+              className="w-48 h-48 object-cover rounded-full mb-6"
             />
+            <h3 className="text-2xl font-bold mb-4">Thanks for giving me a try!</h3>
+            <p className="text-lg text-muted-foreground">
+              I can't wait to work for you. Check your email for an invite to my platform.
+            </p>
           </div>
-          <div>
-            <Label htmlFor="email">Email *</Label>
-            <Input
-              id="email"
-              type="email"
-              required
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              placeholder="john@example.com"
-            />
-          </div>
-          <div>
-            <Label htmlFor="company">Company Name *</Label>
-            <Input
-              id="company"
-              required
-              value={formData.company}
-              onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-              placeholder="Acme Inc."
-            />
-          </div>
-          <div>
-            <Label htmlFor="website">Website *</Label>
-            <Input
-              id="website"
-              type="url"
-              required
-              value={formData.website}
-              onChange={(e) => setFormData({ ...formData, website: e.target.value })}
-              placeholder="https://example.com"
-            />
-          </div>
-          <Button type="submit" className="w-full" disabled={isLoading}>
-            {isLoading ? "Setting Up..." : "Start Free Trial"}
-          </Button>
-        </form>
+        )}
       </DialogContent>
     </Dialog>
   );
