@@ -169,6 +169,43 @@ const Receptionist = () => {
         </div>
       </section>
 
+      {/* Key Features */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Your Front Desk, Always Covered
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Every missed call is a missed opportunity. Alli ensures your business is always available—answering, qualifying, and booking—without adding payroll.
+            </p>
+          </div>
+
+          <ul className="space-y-4 mb-12 max-w-2xl mx-auto">
+            {features.map((feature) => (
+              <li key={feature} className="flex items-start gap-3">
+                <Check className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-lg">{feature}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {benefits.map((benefit) => (
+              <Card key={benefit.title} className="border-primary/20">
+                <CardContent className="pt-6 text-center">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <benefit.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="font-semibold mb-2">{benefit.title}</h4>
+                  <p className="text-sm text-muted-foreground">{benefit.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Tiers */}
       <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
