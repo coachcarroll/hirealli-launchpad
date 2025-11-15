@@ -84,40 +84,55 @@ const Receptionist = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
+      <section className="pt-32 pb-24 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary-glow/5 pointer-events-none" />
         
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
-              <Headphones className="w-4 h-4" />
-              AI Receptionist
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Never Miss a Call—Even When Your Team's Slammed
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Alli answers every call, qualifies leads, routes to the right person, and books appointments—24/7 without breaks, benefits, or training.
-            </p>
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <div className="space-y-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
+                <Headphones className="w-4 h-4" />
+                AI Receptionist
+              </div>
+              
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                Never Miss a Call
+              </h1>
+              
+              <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
+                Alli answers 24/7, qualifies leads, routes calls, and books appointments—no breaks, no training needed.
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Button size="lg" asChild>
-                <a href="tel:+1234567890">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call Alli Live Demo
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link to="/pricing">See Pricing</Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" asChild className="text-base">
+                  <a href="tel:+1234567890">
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call Alli Live Demo
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" asChild className="text-base">
+                  <Link to="/pricing">See Pricing</Link>
+                </Button>
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <ProofChip metric="+46%" label="answer rate" variant="success" />
+                <ProofChip metric="24/7" label="coverage" />
+                <ProofChip metric="<2s" label="pickup time" variant="success" />
+              </div>
             </div>
 
-            <div className="flex flex-wrap gap-4 justify-center">
-              <ProofChip metric="+46%" label="answer rate improvement" variant="success" />
-              <ProofChip metric="24/7" label="coverage, no breaks" />
-              <ProofChip metric="<2s" label="average pickup time" variant="success" />
+            {/* Right Image */}
+            <div className="relative lg:order-last">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-glow/20 blur-3xl rounded-full opacity-40" />
+              <div className="relative">
+                <img 
+                  src={receptionistHero} 
+                  alt="AI Receptionist Demo" 
+                  className="rounded-2xl shadow-2xl w-full"
+                />
+              </div>
             </div>
           </div>
         </div>
