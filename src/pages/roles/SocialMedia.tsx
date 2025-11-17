@@ -543,53 +543,6 @@ const SocialMedia = () => {
         </div>
       </section>
 
-      {/* Pricing Tiers */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Choose Your Level</h2>
-            <p className="text-xl text-muted-foreground">
-              Scale up or down based on your needs—combine with AI Ads for maximum impact
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-6">
-            {tiers.map((tier, index) => (
-              <Card key={tier.name} className={index === 3 ? "border-primary" : ""}>
-                <CardHeader>
-                  <CardTitle>{tier.name}</CardTitle>
-                  <CardDescription>{tier.frequency}</CardDescription>
-                  <div className="text-3xl font-bold mt-4">{tier.price}</div>
-                </CardHeader>
-                <CardContent>
-                  <div className="mb-4">
-                    <div className="text-sm font-medium text-muted-foreground mb-2">Content Type:</div>
-                    <div className="text-sm font-semibold">{tier.content}</div>
-                  </div>
-                  <ul className="space-y-2">
-                    {tier.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2 text-sm">
-                        <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-8">
-            <Button size="lg" asChild>
-              <Link to="/pricing">Build Your Complete Plan</Link>
-            </Button>
-            <p className="text-sm text-muted-foreground mt-4">
-              Add AI Ads starting at $397/mo for 20,000+ impressions
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Final CTA */}
       <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-4xl text-center">
