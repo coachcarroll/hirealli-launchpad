@@ -206,46 +206,6 @@ const Receptionist = () => {
         </div>
       </section>
 
-      {/* Pricing Tiers */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Choose Your Call Volume</h2>
-            <p className="text-xl text-muted-foreground">
-              Scale based on your inbound call traffic
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {tiers.map((tier, index) => (
-              <Card key={tier.name} className={index === 2 ? "border-primary" : ""}>
-                <CardHeader>
-                  <CardTitle>{tier.name}</CardTitle>
-                  <CardDescription>{tier.calls}</CardDescription>
-                  <div className="text-3xl font-bold mt-4">{tier.price}</div>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {tier.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-8">
-            <Button size="lg" asChild>
-              <Link to="/pricing">Build Your Plan</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Live Demo CTA */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
