@@ -191,9 +191,9 @@ const SocialMedia = () => {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <ProofChip metric="+62%" label="profile visits (28 days)" variant="success" />
-                <ProofChip metric="7x" label="exposures to build recognition" />
-                <ProofChip metric="10x" label="higher conversion with retargeting" variant="success" />
+                <ProofChip metric="237%" label="Average Increase in Website Visitors" variant="success" />
+                <ProofChip metric="10+" label="Hours Saved Per Month" />
+                <ProofChip metric="3x" label="Audience Engagement" variant="success" />
               </div>
             </div>
 
