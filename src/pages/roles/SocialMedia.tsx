@@ -8,7 +8,8 @@ import ProofChip from "@/components/ProofChip";
 import adExampleSquare1 from "@/assets/ad-example-square-1.png";
 import adExampleSquare2 from "@/assets/ad-example-square-2.png";
 import adExampleVertical1 from "@/assets/ad-example-vertical-1.png";
-import socialMediaHero from "@/assets/social-media-hero.png";
+// Temporarily using alli-phone.png until social-media-hero.png is uploaded
+import socialMediaHero from "@/assets/alli-phone.png";
 
 const SocialMedia = () => {
   const workflow = [
