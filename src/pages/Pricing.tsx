@@ -221,7 +221,7 @@ const Pricing = () => {
     },
     {
       name: "Freemium",
-      subtitle: "Your first 50 leads are free",
+      subtitle: "",
       monthlyPrice: 0,
       annualPrice: 0,
       description: "Perfect for testing Alli's capabilities",
