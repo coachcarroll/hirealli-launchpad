@@ -221,14 +221,14 @@ const Pricing = () => {
     },
     {
       name: "Freemium",
-      subtitle: "Try Before You Buy",
+      subtitle: "Your first 50 leads are free",
       monthlyPrice: 0,
       annualPrice: 0,
       description: "Perfect for testing Alli's capabilities",
       cta: "Start Free Trial",
       highlighted: false,
       features: {
-        leadDetection: { included: true, detail: "10 leads/month" },
+        leadDetection: { included: true, detail: "50 leads total" },
         instantLeadTracker: { included: true },
         instantNotification: { included: false },
         aiBootcamp: { included: false },
