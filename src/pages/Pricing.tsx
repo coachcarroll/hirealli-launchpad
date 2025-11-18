@@ -122,7 +122,7 @@ const Pricing = () => {
   const tiers: Tier[] = [
     {
       name: "Pro",
-      subtitle: "PLATINUM",
+      subtitle: "",
       monthlyPrice: 1495,
       annualPrice: 15000,
       description: "Maximum scale for serious growth",
@@ -155,7 +155,7 @@ const Pricing = () => {
     },
     {
       name: "Growth",
-      subtitle: "GOLD",
+      subtitle: "",
       monthlyPrice: 695,
       annualPrice: 7500,
       description: "Complete AI automation suite",
@@ -188,7 +188,7 @@ const Pricing = () => {
     },
     {
       name: "Starter",
-      subtitle: "SILVER",
+      subtitle: "",
       monthlyPrice: 295,
       annualPrice: 3000,
       description: "Automate leads and customer support",
