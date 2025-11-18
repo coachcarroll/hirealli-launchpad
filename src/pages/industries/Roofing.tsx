@@ -123,40 +123,17 @@ const Roofing = () => {
       </section>
 
       <section className="py-20 px-4 bg-gradient-to-br from-muted/30 to-muted/10">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold text-center mb-12">Roofing Success Story</h2>
           
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary-glow/10 rounded-2xl blur-xl" />
-              <img 
-                src={djPhoto} 
-                alt="DJ Carroll - Founder" 
-                className="relative rounded-2xl shadow-xl"
-              />
-            </div>
-            
-            <Card className="border-primary/20">
-              <CardContent className="p-8">
-                <div className="mb-6">
-                  <div className="text-4xl font-bold text-primary mb-2">2x</div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wider">Storm Season Revenue</div>
-                </div>
-                
-                <blockquote className="text-lg mb-6 leading-relaxed">
-                  "After discovering AI marketing strategies, we built a system that captures every emergency call and turns website visitors into paying customers. Roofing contractors now book twice as many jobs during storm season."
-                </blockquote>
-                
-                <div className="pt-6 border-t border-border">
-                  <div className="font-semibold text-lg">DJ Carroll</div>
-                  <div className="text-muted-foreground">Founder, Carroll.Media</div>
-                </div>
-                
-                <Button className="w-full mt-6" variant="outline" asChild>
-                  <Link to="/results">View More Results</Link>
-                </Button>
-              </CardContent>
-            </Card>
+          <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary-glow/10 blur-xl -z-10" />
+            <iframe
+              src="https://drive.google.com/file/d/1CU9j5sr7dI2q-5hCncmtksgXSKhFz-gk/preview"
+              className="w-full h-full"
+              allow="autoplay"
+              title="Roofing Success Story Video"
+            />
           </div>
         </div>
       </section>
