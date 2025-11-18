@@ -72,10 +72,30 @@ serve(async (req) => {
         quantity: 1
       }],
       mode: "subscription",
+      allow_promotion_codes: true,
       billing_address_collection: "required",
       phone_number_collection: {
         enabled: true,
       },
+      payment_method_collection: "always",
+      custom_fields: [
+        {
+          key: "business_name",
+          label: {
+            type: "custom",
+            custom: "Business Name",
+          },
+          type: "text",
+        },
+        {
+          key: "website_url",
+          label: {
+            type: "custom",
+            custom: "Website URL",
+          },
+          type: "text",
+        },
+      ],
       success_url: `${req.headers.get("origin")}/pricing?success=true`,
       cancel_url: `${req.headers.get("origin")}/pricing?canceled=true`,
     });
