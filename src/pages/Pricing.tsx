@@ -162,7 +162,7 @@ const Pricing = () => {
       cta: "Get Started",
       highlighted: true,
       features: {
-        leadDetection: { included: true, detail: "250 leads/month" },
+        leadDetection: { included: true, detail: "500 leads/month" },
         instantLeadTracker: { included: true },
         instantNotification: { included: true },
         aiBootcamp: { included: true },
