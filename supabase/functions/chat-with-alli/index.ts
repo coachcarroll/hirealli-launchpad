@@ -1,10 +1,16 @@
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
+
+const chatSchema = z.object({
+  message: z.string().trim().min(1, "Message cannot be empty").max(4000, "Message too long (max 4000 characters)"),
+  threadId: z.string().regex(/^thread_[a-zA-Z0-9_-]+$/).optional()
+});
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -12,7 +18,22 @@ serve(async (req) => {
   }
 
   try {
-    const { message, threadId } = await req.json();
+    const requestData = await req.json();
+    const validation = chatSchema.safeParse(requestData);
+    
+    if (!validation.success) {
+      const firstError = validation.error.errors[0];
+      console.error('Validation error:', firstError.message);
+      return new Response(
+        JSON.stringify({ error: firstError.message }), 
+        { 
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        }
+      );
+    }
+
+    const { message, threadId } = validation.data;
     const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY');
     const ASSISTANT_ID = 'asst_GXDigVMXFqoB88Y988WR0sDu';
 
