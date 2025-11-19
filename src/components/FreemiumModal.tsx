@@ -6,6 +6,19 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import alliThumbsUp from "@/assets/alli-thumbsup.png";
+import { z } from "zod";
+
+const freemiumSchema = z.object({
+  name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  phone: z.string().regex(/^\+?[1-9]\d{1,14}$/, "Invalid phone number format"),
+  company: z.string().trim().min(1, "Company name is required").max(100, "Company name must be less than 100 characters"),
+  website: z.string().max(255, "Website must be less than 255 characters").refine(
+    (val) => !val || val === '' || /^https?:\/\/.+\..+/.test(val),
+    { message: "Invalid website URL" }
+  ),
+  smsConsent: z.boolean()
+});
 
 interface FreemiumModalProps {
   open: boolean;
@@ -27,6 +40,19 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form data
+    const validation = freemiumSchema.safeParse(formData);
+    if (!validation.success) {
+      const firstError = validation.error.errors[0];
+      toast({
+        title: "Validation Error",
+        description: firstError.message,
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsLoading(true);
 
     try {
@@ -39,7 +65,7 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
         },
         mode: "no-cors",
         body: JSON.stringify({
-          ...formData,
+          ...validation.data,
           plan: "freemium",
           leads_per_month: 10,
           timestamp: new Date().toISOString(),
