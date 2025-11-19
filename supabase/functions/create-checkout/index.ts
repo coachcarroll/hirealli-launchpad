@@ -31,24 +31,42 @@ serve(async (req) => {
       throw new Error("Price ID is required");
     }
 
-    // Try to get authenticated user, but allow guest checkout
+    // Require authenticated user
     const supabaseClient = createClient(
       Deno.env.get("SUPABASE_URL") ?? "",
       Deno.env.get("SUPABASE_ANON_KEY") ?? ""
     );
 
     const authHeader = req.headers.get("Authorization");
-    let userEmail: string | undefined;
-    let customerId: string | undefined;
-
-    if (authHeader) {
-      const token = authHeader.replace("Bearer ", "");
-      const { data: userData } = await supabaseClient.auth.getUser(token);
-      userEmail = userData.user?.email;
-      logStep("User authenticated", { email: userEmail });
-    } else {
-      logStep("Guest checkout - no auth header");
+    if (!authHeader) {
+      logStep("ERROR: No authorization header");
+      return new Response(
+        JSON.stringify({ error: "Authentication required" }),
+        { 
+          status: 401, 
+          headers: { ...corsHeaders, "Content-Type": "application/json" } 
+        }
+      );
     }
+
+    const token = authHeader.replace("Bearer ", "");
+    const { data: userData, error: authError } = await supabaseClient.auth.getUser(token);
+    
+    if (authError || !userData.user?.email) {
+      logStep("ERROR: Invalid authentication", { error: authError?.message });
+      return new Response(
+        JSON.stringify({ error: "Invalid authentication" }),
+        { 
+          status: 401, 
+          headers: { ...corsHeaders, "Content-Type": "application/json" } 
+        }
+      );
+    }
+
+    const userEmail = userData.user.email;
+    logStep("User authenticated", { email: userEmail });
+
+    let customerId: string | undefined;
 
     const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });
 
