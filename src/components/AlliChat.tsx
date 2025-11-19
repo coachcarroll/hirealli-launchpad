@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { MessageCircle, X, Send, Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 import ReactMarkdown from 'react-markdown';
 import alliLogo from '@/assets/alli-logo.png';
 import alliHeadshot from '@/assets/alli-headshot.jpg';
@@ -15,6 +16,7 @@ interface Message {
 }
 
 export const AlliChat = () => {
+  const { toast } = useToast();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
@@ -32,18 +34,31 @@ export const AlliChat = () => {
     if (!input.trim() || isLoading) return;
 
     const userMessage = input.trim();
+    
+    // Client-side validation
+    if (userMessage.length > 4000) {
+      toast({
+        title: "Message too long",
+        description: "Please keep your message under 4000 characters",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setInput('');
     setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
     setIsLoading(true);
 
     try {
+      const { data: { session } } = await supabase.auth.getSession();
+      
       const response = await fetch(
         `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/chat-with-alli`,
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`
+            'Authorization': `Bearer ${session?.access_token || import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`
           },
           body: JSON.stringify({
             message: userMessage,
@@ -53,7 +68,8 @@ export const AlliChat = () => {
       );
 
       if (!response.ok) {
-        throw new Error('Failed to send message');
+        const errorData = await response.json().catch(() => ({ error: 'Failed to send message' }));
+        throw new Error(errorData.error || 'Failed to send message');
       }
 
       const reader = response.body?.getReader();
@@ -115,10 +131,13 @@ export const AlliChat = () => {
       }
     } catch (error) {
       console.error('Error sending message:', error);
-      setMessages(prev => [...prev, { 
-        role: 'assistant', 
-        content: 'Sorry, I encountered an error. Please try again.' 
-      }]);
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : 'Failed to send message. Please try again.',
+        variant: "destructive",
+      });
+      // Remove the user message on error
+      setMessages(prev => prev.slice(0, -1));
     } finally {
       setIsLoading(false);
     }
