@@ -73,7 +73,7 @@ const Index = () => {
   };
   const outcomes = [
     { icon: CheckCircle2, text: "Identify up to ~30% of anonymous visitors" },
-    { icon: CheckCircle2, text: "1,000+ leads uncovered for Dan Martell in 10 days" },
+    { icon: CheckCircle2, text: "1,000+ leads uncovered for a coaching business in 10 days" },
     { icon: CheckCircle2, text: "Email-ready contact lists delivered automatically" },
     { icon: CheckCircle2, text: "Retargeting-ready audiences without extra pixel work" },
   ];
@@ -214,7 +214,7 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">How Alli Works</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Lead detection is the front door. Retargeting and voice stay as upsells once you see value inside the app.</p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Three steps to transform anonymous traffic into email-ready, compliant contacts.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -333,7 +333,7 @@ const Index = () => {
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wide">
                   Case Study
                 </div>
-                <h3 className="text-3xl font-bold">Dan Martell identified 1,000+ leads in 10 days</h3>
+                <h3 className="text-3xl font-bold">A coaching business identified 1,000+ leads in 10 days</h3>
                 <p className="text-lg text-muted-foreground">
                   Alli unlocked more than a thousand contacts from existing traffic in under two weeks — before any upsells.
                 </p>
