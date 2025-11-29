@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import alliHeadshot from "@/assets/alli-headshot.jpg";
+import alliDetectionHero from "@/assets/alli-detection-hero.png";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -115,9 +115,6 @@ const Index = () => {
                 </Button>
               </div>
 
-              <p className="text-sm text-muted-foreground mb-2">
-                Phone numbers are provided for match-back only. TCPA-compliant outreach is email-first.
-              </p>
               <p className="text-sm text-muted-foreground">
                 Try Alli for 30 days. If you don't feel it paid for itself in new business, get a full refund.
               </p>
@@ -128,8 +125,8 @@ const Index = () => {
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary via-primary-glow to-primary rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-primary-glow/30 rounded-2xl blur-xl animate-pulse" />
                 <img
-                  src={alliHeadshot}
-                  alt="Meet Alli - Your AI Team Member"
+                  src={alliDetectionHero}
+                  alt="AI Lead Detection - Discover Hidden Buyers"
                   className="relative rounded-2xl shadow-2xl max-w-sm w-full ring-1 ring-primary/10 transition-transform duration-300 group-hover:scale-[1.02]"
                 />
               </div>
