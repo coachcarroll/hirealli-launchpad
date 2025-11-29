@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, Search, ShieldCheck, Share2, MailCheck, ChevronRight } from "lucide-react";
+import { ArrowRight, CheckCircle2, Search, ShieldCheck, Share2, MailCheck, ChevronRight, BarChart3, Ghost, Database } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -220,6 +220,47 @@ const Index = () => {
                   TCPA forbids calling or texting anonymous visitors. Alli keeps you compliant with email-first outreach and phone numbers for match-back only.
                 </p>
                 <p className="text-sm font-semibold text-primary">Stay safe while you scale.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* The Visibility Gap */}
+          <div className="mt-20 pt-16 border-t border-border/20">
+            <h3 className="text-3xl md:text-4xl font-bold text-center mb-12">
+              The Visibility Gap
+            </h3>
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {/* Analytics Card */}
+              <div className="relative rounded-2xl bg-gradient-to-br from-card/80 to-muted/40 border border-border/50 p-8 text-center">
+                <div className="mb-6 flex justify-center">
+                  <div className="w-32 h-32 rounded-xl bg-gradient-to-br from-background to-muted flex items-center justify-center">
+                    <BarChart3 className="w-16 h-16 text-muted-foreground" />
+                  </div>
+                </div>
+                <h4 className="text-xl font-bold mb-3 text-foreground">Analytics</h4>
+                <p className="text-muted-foreground">Shows you anonymous numbers.</p>
+              </div>
+
+              {/* The GAP Card */}
+              <div className="relative rounded-2xl bg-gradient-to-br from-card/80 to-muted/40 border border-border/50 p-8 text-center">
+                <div className="mb-6 flex justify-center">
+                  <div className="w-32 h-32 rounded-xl bg-gradient-to-br from-background to-muted flex items-center justify-center">
+                    <Ghost className="w-16 h-16 text-destructive" />
+                  </div>
+                </div>
+                <h4 className="text-xl font-bold mb-3 text-foreground">The GAP</h4>
+                <p className="text-destructive font-semibold">You can't close people you can't see.</p>
+              </div>
+
+              {/* CRM Card */}
+              <div className="relative rounded-2xl bg-gradient-to-br from-card/80 to-muted/40 border border-border/50 p-8 text-center">
+                <div className="mb-6 flex justify-center">
+                  <div className="w-32 h-32 rounded-xl bg-gradient-to-br from-background to-muted flex items-center justify-center">
+                    <Database className="w-16 h-16 text-muted-foreground" />
+                  </div>
+                </div>
+                <h4 className="text-xl font-bold mb-3 text-foreground">CRM</h4>
+                <p className="text-muted-foreground">Shows you closed deals.</p>
               </div>
             </div>
           </div>
