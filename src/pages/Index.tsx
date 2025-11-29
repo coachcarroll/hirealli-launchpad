@@ -92,25 +92,25 @@ const Index = () => {
             <div className="text-center md:text-left order-2 md:order-1">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
                 <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                AI Lead Detection for Service Businesses
+                More leads from your existing traffic. No extra ad spend.
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Turn anonymous website visitors into revenue — without adding headcount
+                Turn anonymous visitors into email‑ready buyers in 30 days with AI lead detection
               </h1>
 
               <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-                Alli identifies up to ~30% of your traffic and delivers email-ready contacts so you can follow up fast and stay compliant.
+                Alli reveals the people behind up to 30% of your website traffic and enriches them with verified, compliant business emails, so your team can follow up fast from the tools they already use without adding headcount.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-6">
                 <Button size="lg" className="bg-gradient-to-r from-primary to-primary-glow text-lg" asChild>
                   <Link to="/pricing">
-                    Start free detection
+                    See your hidden buyers
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" className="text-lg" onClick={() => setIndustryDialogOpen(true)}>
-                  See if Alli fits your industry
+                  Or call Alli live
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </div>
