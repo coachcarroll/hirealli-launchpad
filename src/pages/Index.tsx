@@ -177,23 +177,6 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-destructive/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative">
                 <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-                  <Search className="w-8 h-8 text-destructive-foreground" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">
-                  Anonymous Traffic = Lost Pipeline
-                </h3>
-                <p className="text-muted-foreground leading-relaxed mb-3">
-                  97% of visitors leave without filling a form. Alli identifies up to ~30% so you can follow up.
-                </p>
-                <p className="text-sm font-semibold text-primary">Know exactly who's on your site.</p>
-              </div>
-            </div>
-
-            <div className="group relative p-8 rounded-2xl bg-card/50 backdrop-blur-sm border-2 border-destructive/20 hover:border-destructive/50 transition-all duration-500 hover:shadow-[0_20px_50px_-12px_hsl(var(--destructive)/0.3)] hover:-translate-y-2 overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-destructive via-destructive to-destructive/50 rounded-t-2xl" />
-              <div className="absolute inset-0 bg-gradient-to-br from-destructive/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
                   <Share2 className="w-8 h-8 text-destructive-foreground" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">
@@ -211,15 +194,32 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-destructive/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative">
                 <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-                  <ShieldCheck className="w-8 h-8 text-destructive-foreground" />
+                  <Search className="w-8 h-8 text-destructive-foreground" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">
-                  Compliance Missteps Are Costly
+                  Anonymous Traffic = Lost Pipeline
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-3">
-                  TCPA forbids calling or texting anonymous visitors. Alli keeps you compliant with email-first outreach and phone numbers for match-back only.
+                  97% of visitors leave without filling a form. Alli identifies up to ~30% so you can follow up.
                 </p>
-                <p className="text-sm font-semibold text-primary">Stay safe while you scale.</p>
+                <p className="text-sm font-semibold text-primary">Know exactly who's on your site.</p>
+              </div>
+            </div>
+
+            <div className="group relative p-8 rounded-2xl bg-card/50 backdrop-blur-sm border-2 border-destructive/20 hover:border-destructive/50 transition-all duration-500 hover:shadow-[0_20px_50px_-12px_hsl(var(--destructive)/0.3)] hover:-translate-y-2 overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-destructive via-destructive to-destructive/50 rounded-t-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-destructive/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-destructive to-destructive/70 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
+                  <MailCheck className="w-8 h-8 text-destructive-foreground" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-destructive transition-colors">
+                  Your Sales Team Follows Up Too Late
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-3">
+                  By the time a lead fills a form, they've already visited 3 competitors. Alli lets you reach them while they're still shopping.
+                </p>
+                <p className="text-sm font-semibold text-primary">Strike while the iron's hot.</p>
               </div>
             </div>
           </div>

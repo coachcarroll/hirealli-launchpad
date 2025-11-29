@@ -427,6 +427,39 @@ const Pricing = () => {
             </div>
           </div>
         </div>
+
+        {/* FAQ Section */}
+        <div className="py-16 border-t border-border">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Is Alli TCPA-compliant?</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Yes. TCPA forbids calling or texting anonymous visitors. Alli keeps you compliant with email-first outreach and provides phone numbers for match-back only. You can use detected contacts for verified email campaigns and retargeting audiences, but never for cold calling or texting anonymized visitors.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">What makes Alli different from other visitor identification tools?</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Alli focuses on email-ready, compliant contact enrichment. We don't just give you company names or IP addresses—we provide verified individual contacts with business emails so you can actually follow up. Plus, our compliance guidance keeps you safe while you scale.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">How quickly will I see results?</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Most customers start seeing detected leads within hours of installing the tracking snippet. Your first batch of email-ready contacts typically arrives within 24-48 hours, depending on your traffic volume.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">What if I don't see ROI in 30 days?</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  We offer a money-back guarantee on paid plans. If Alli hasn't paid for itself in detected leads within 30 days, we'll refund your first month—no questions asked.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
 
       <Footer />
