@@ -4,7 +4,6 @@ import alliLogo from "@/assets/alli-logo.png";
 const Footer = () => {
   const footerLinks = {
     Product: [
-      { name: "Roles & Responsibilities", path: "/roles" },
       { name: "Pricing", path: "/pricing" },
       { name: "Results", path: "/results" },
       { name: "Why Alli", path: "/why-alli" },
@@ -31,7 +30,7 @@ const Footer = () => {
               <span className="text-xl font-bold">HireAlli</span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              Scale without adding payroll. Your AI team member for reception, lead detection, and social media.
+              Alli identifies anonymous website visitors so service businesses can turn existing traffic into revenue without adding headcount.
             </p>
           </div>
 

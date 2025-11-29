@@ -13,22 +13,22 @@ const WhyAlli = () => {
     {
       icon: Zap,
       title: "Works in Hours, Not Weeks",
-      description: "Most clients see their first result within 48 hours of onboarding.",
+      description: "Most clients see their first detected leads within 48 hours of installing the script.",
     },
     {
       icon: TrendingUp,
       title: "Measurable ROI",
-      description: "Every module tracks clear outcomes: calls answered, leads identified, content published.",
+      description: "Detection-first metrics: traffic coverage, contacts delivered, email-ready lists created.",
     },
     {
       icon: Clock,
-      title: "24/7 Coverage",
-      description: "Alli doesn't take breaks, sick days, or vacations. Your business runs round-the-clock.",
+      title: "Always On",
+      description: "Alli watches every visit so you never miss high-intent traffic again.",
     },
     {
       icon: DollarSign,
       title: "Fraction of the Cost",
-      description: "Get multiple team members for less than one full-time hire. No benefits, no overhead.",
+      description: "Turn existing ad spend into revenue without adding headcount.",
     },
     {
       icon: Users,
@@ -48,7 +48,7 @@ const WhyAlli = () => {
               Why Choose <span className="text-primary">Alli</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Not just another AI tool. A real teammate that grows your business without growing your payroll.
+              Alli is your AI lead detection teammate — the front door that unlocks compliant outreach and pipeline growth.
             </p>
           </div>
 
@@ -72,25 +72,25 @@ const WhyAlli = () => {
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <p className="text-lg">
-                  <strong>Scale without adding payroll.</strong> Every role Alli fills is one you don't have to hire for.
+              <strong>Scale without adding payroll.</strong> Turn anonymous traffic into leads without hiring SDRs.
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <p className="text-lg">
-                  <strong>Measurable outcomes, not vague promises.</strong> We track concrete metrics: calls answered, leads identified, content published, and ad impressions.
+              <strong>Measurable outcomes, not vague promises.</strong> We track detected visitors, coverage rate, and email-ready contacts delivered.
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <p className="text-lg">
-                  <strong>Risk-free guarantee.</strong> Try Alli for 30 days. If it doesn't pay for itself, get your money back.
+              <strong>Risk-free guarantee.</strong> Try Alli for 30 days. If it doesn't pay for itself, get your money back.
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <p className="text-lg">
-                  <strong>Product-first, not sales-first.</strong> We lead with live demos and proof because the product speaks for itself.
+              <strong>Product-first, not sales-first.</strong> We lead with detection proof and real metrics because the product speaks for itself.
                 </p>
               </div>
             </div>
@@ -101,7 +101,7 @@ const WhyAlli = () => {
               See Alli in Action
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Call our live demo line right now. No actors. No edits. Just Alli doing what Alli does.
+              Start with the freemium plan to see detection results on your own traffic. Upsells for retargeting and voice live inside the app once you see value.
             </p>
           </div>
         </div>
