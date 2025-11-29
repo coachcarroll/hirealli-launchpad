@@ -6,7 +6,7 @@ const Results = () => {
   const proofItems = [
     {
       title: "1,000+ Leads in 10 Days",
-      description: "Dan Martell used Alli to surface over a thousand contacts from existing traffic before any upsells.",
+      description: "A coaching business used Alli to surface over a thousand contacts from existing traffic before any upsells.",
       metric: "1,000+",
       timeframe: "10 days",
     },
