@@ -316,6 +316,39 @@ const Pricing = () => {
           })}
         </div>
 
+        {/* What happens next */}
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
+          <Card className="border-border bg-card/70">
+            <CardHeader>
+              <CardTitle>1. Pick your plan</CardTitle>
+              <CardDescription>Freemium works to test detection on your own traffic.</CardDescription>
+            </CardHeader>
+            <CardContent className="text-sm text-muted-foreground">
+              We generate your tracking snippet and share quick install instructions.
+            </CardContent>
+          </Card>
+
+          <Card className="border-border bg-card/70">
+            <CardHeader>
+              <CardTitle>2. Install & watch leads roll in</CardTitle>
+              <CardDescription>Detection begins within hours on live traffic.</CardDescription>
+            </CardHeader>
+            <CardContent className="text-sm text-muted-foreground">
+              Alli emails you compliant, email-ready contacts. Phone numbers are match-back only — no texting or calling anonymized visitors.
+            </CardContent>
+          </Card>
+
+          <Card className="border-border bg-card/70">
+            <CardHeader>
+              <CardTitle>3. Activate with email or retargeting</CardTitle>
+              <CardDescription>Stay compliant and convert more of your spend.</CardDescription>
+            </CardHeader>
+            <CardContent className="text-sm text-muted-foreground">
+              Sync to your CRM or export CSV. In-app prompts unlock retargeting and voice upsells once you see detection value.
+            </CardContent>
+          </Card>
+        </div>
+
         {/* Compare Plans Section */}
         <div className="text-center py-8 mb-12">
           <Dialog>
