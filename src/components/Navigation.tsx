@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import alliLogo from "@/assets/alli-logo.png";
 
@@ -10,7 +10,6 @@ const Navigation = () => {
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Roles & Responsibilities", path: "/roles" },
     { name: "Pricing", path: "/pricing" },
     { name: "Results", path: "/results" },
     { name: "Why Alli", path: "/why-alli" },
@@ -47,10 +46,9 @@ const Navigation = () => {
                 <a href="https://app.carroll.media" target="_blank" rel="noopener noreferrer">Login</a>
               </Button>
               <Button size="sm" className="bg-gradient-to-r from-primary to-primary-glow" asChild>
-                <a href="tel:+1234567890">
-                  <Phone className="w-4 h-4 mr-2" />
-                  Call Alli Live
-                </a>
+                <Link to="/pricing">
+                  Start free detection
+                </Link>
               </Button>
             </div>
 
@@ -87,10 +85,9 @@ const Navigation = () => {
                   <a href="https://app.carroll.media" target="_blank" rel="noopener noreferrer">Login</a>
                 </Button>
                 <Button size="sm" className="w-full bg-gradient-to-r from-primary to-primary-glow" asChild>
-                  <a href="tel:+1234567890">
-                    <Phone className="w-4 h-4 mr-2" />
-                    Call Alli Live
-                  </a>
+                  <Link to="/pricing">
+                    Start free detection
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -101,14 +98,11 @@ const Navigation = () => {
       {/* Sticky CTA Strip */}
       <div className="fixed bottom-0 left-0 right-0 z-40 bg-card border-t border-border shadow-lg md:hidden">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-2">
-          <Button size="sm" variant="outline" asChild className="flex-1 text-xs">
-            <a href="tel:+1234567890">Call Live</a>
-          </Button>
           <Button size="sm" asChild className="flex-1 text-xs bg-gradient-to-r from-primary to-primary-glow">
-            <Link to="/pricing">Build Plan</Link>
+            <Link to="/pricing">Start free detection</Link>
           </Button>
           <Button size="sm" variant="outline" asChild className="flex-1 text-xs">
-            <Link to="/demo">Book Demo</Link>
+            <Link to="/results">See proof</Link>
           </Button>
         </div>
       </div>
