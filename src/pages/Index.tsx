@@ -90,17 +90,29 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
             <div className="text-center md:text-left order-2 md:order-1">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
-                <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                More leads from your existing traffic. No extra ad spend.
+              <div className="inline-block mb-6">
+                <p className="text-sm font-semibold text-primary uppercase tracking-wider bg-primary/5 px-4 py-2 rounded-full border border-primary/20">
+                  More leads from your existing traffic. No extra ad spend.
+                </p>
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Turn anonymous visitors into email‑ready buyers in 30 days with AI lead detection
+                <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
+                  Turn anonymous visitors into email‑ready buyers
+                </span>
+                {" "}
+                <span className="text-foreground">in</span>
+                {" "}
+                <span className="text-accent font-extrabold">30 days</span>
+                {" "}
+                <span className="text-foreground">with AI lead detection</span>
               </h1>
 
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-                Alli reveals the people behind up to 30% of your website traffic and enriches them with verified, compliant business emails, so your team can follow up fast from the tools they already use without adding headcount.
+              <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+                Alli reveals the people behind up to{" "}
+                <span className="font-bold text-accent">30%</span> of your website traffic and enriches them with{" "}
+                <span className="font-semibold text-foreground">verified, compliant business emails</span>, so your team can follow up fast from the tools they already use{" "}
+                <span className="font-semibold text-secondary">without adding headcount</span>.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-6">
@@ -142,13 +154,20 @@ const Index = () => {
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-destructive/30 to-transparent" />
 
         <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center mb-12">
-            <div className="inline-block px-4 py-2 rounded-full bg-destructive/10 border border-destructive/20 text-destructive text-sm font-medium mb-4">
+          <div className="text-center mb-12 space-y-4">
+            <div className="inline-block px-4 py-2 rounded-full bg-destructive/10 border border-destructive/20 text-destructive text-sm font-semibold mb-4 uppercase tracking-wide">
               The Hidden Revenue Drains
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Stop losing the visitors you already paid for</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-foreground">Stop losing the</span>
+              {" "}
+              <span className="bg-gradient-to-r from-destructive to-destructive/70 bg-clip-text text-transparent">
+                visitors you already paid for
+              </span>
+            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Alli surfaces the buyers hiding in your SEO, paid ads, and social traffic.
+              Alli surfaces the{" "}
+              <span className="font-bold text-foreground">buyers hiding</span> in your SEO, paid ads, and social traffic.
             </p>
           </div>
 
@@ -209,9 +228,20 @@ const Index = () => {
       {/* How Alli Works */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">How Alli Works</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Three steps to transform anonymous traffic into email-ready, compliant contacts.</p>
+          <div className="text-center mb-12 space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold">
+              <span className="text-foreground">Three steps to transform</span>
+              {" "}
+              <span className="bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
+                anonymous traffic
+              </span>
+              {" "}
+              <span className="text-foreground">into email-ready, compliant contacts</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-medium">
+              No integrations. No setup calls.{" "}
+              <span className="text-accent font-bold">Just results.</span>
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -268,15 +298,23 @@ const Index = () => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl opacity-30" />
 
         <div className="container mx-auto max-w-5xl relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium mb-4">
               <CheckCircle2 className="w-4 h-4" />
               Proven Results
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
-              Outcomes That Matter
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              <span className="text-accent font-extrabold">Real results,</span>
+              {" "}
+              <span className="bg-gradient-to-r from-primary via-primary-glow to-secondary bg-clip-text text-transparent">
+                real fast
+              </span>
             </h2>
-            <p className="text-xl text-muted-foreground">Real metrics that transform your business</p>
+            <p className="text-xl text-muted-foreground">
+              Customers who focus on lead detection first see{" "}
+              <span className="font-bold text-foreground">measurable outcomes</span> within the{" "}
+              <span className="font-bold text-accent">first month</span>.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -341,11 +379,11 @@ const Index = () => {
                 </ul>
               </div>
               <div className="flex-1 bg-gradient-to-br from-primary/10 to-primary-glow/10 border border-primary/20 rounded-xl p-6 space-y-4">
-                <div className="text-4xl font-bold text-primary">1,000+</div>
-                <p className="text-muted-foreground">leads uncovered in 10 days</p>
-                <div className="text-2xl font-semibold">30%</div>
-                <p className="text-muted-foreground">traffic visibility target</p>
-                <div className="text-lg font-medium">Email-first, TCPA-safe outreach</div>
+                <div className="text-5xl font-extrabold bg-gradient-to-br from-primary to-primary-glow bg-clip-text text-transparent">1,000+</div>
+                <p className="text-muted-foreground font-medium">leads uncovered in 10 days</p>
+                <div className="text-3xl font-bold text-accent">30%</div>
+                <p className="text-muted-foreground font-medium">traffic visibility target</p>
+                <div className="text-lg font-semibold text-foreground">Email-first, TCPA-safe outreach</div>
               </div>
             </div>
           </div>
@@ -355,11 +393,16 @@ const Index = () => {
       {/* Risk Reversal */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
-          <div className="p-8 md:p-12 rounded-2xl bg-gradient-to-br from-secondary/10 to-secondary/5 border-2 border-secondary/20">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">30-Day Money-Back Guarantee</h2>
+          <div className="p-8 md:p-12 rounded-2xl bg-gradient-to-br from-secondary/10 to-secondary/5 border-2 border-secondary/30">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-secondary to-secondary/70 bg-clip-text text-transparent">
+                30-Day Money-Back Guarantee
+              </span>
+            </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Try Alli for 30 days. If you don't feel it paid for itself in new business, get a full refund. No
-              questions asked.
+              Try Alli for 30 days. If you don't feel it{" "}
+              <span className="font-bold text-foreground">paid for itself</span> in new business, get a{" "}
+              <span className="font-bold text-secondary">full refund</span>. No questions asked.
             </p>
             <Button size="lg" className="bg-gradient-to-r from-primary to-primary-glow text-lg" asChild>
               <Link to="/pricing">
