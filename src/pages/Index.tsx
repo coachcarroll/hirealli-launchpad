@@ -131,7 +131,7 @@ const Index = () => {
                 />
               </div>
               <div className="inline-block">
-                <p className="text-sm font-semibold text-accent uppercase tracking-wider bg-accent/5 px-4 py-2 rounded-full border border-accent/20">
+                <p className="text-xs font-bold text-accent uppercase tracking-wider bg-accent/10 px-3 py-1.5 rounded-full border border-accent/30 shadow-[0_0_20px_rgba(34,197,94,0.3)]">
                   More leads from your existing traffic. No extra ad spend.
                 </p>
               </div>
