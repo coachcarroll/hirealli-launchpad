@@ -77,6 +77,7 @@ const Index = () => {
     { icon: CheckCircle2, text: "3X leads and saved $4,000/month in wasted ad spend for a dealership" },
     { icon: CheckCircle2, text: "5,000+ leads in 6 months for an online course creator" },
     { icon: CheckCircle2, text: "7,000+ leads identified for a moving company" },
+    { icon: CheckCircle2, text: "4 extra jobs sold at $2,500 average ticket by a holiday lighting company" },
   ];
 
   return (
