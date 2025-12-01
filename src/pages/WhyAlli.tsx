@@ -53,14 +53,6 @@ const WhyAlli = () => {
           </div>
 
           <div className="mb-16">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                See Alli in Action
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                Start with the freemium plan to see detection results on your own traffic. Upsells for retargeting and voice live inside the app once you see value.
-              </p>
-            </div>
             <div className="max-w-4xl mx-auto">
               <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                 <iframe
