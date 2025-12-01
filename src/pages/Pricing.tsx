@@ -266,7 +266,6 @@ const Pricing = () => {
                       Billed annually at ${tier.annualPrice}
                     </p>
                   )}
-                  <p className="text-sm text-muted-foreground mt-2">{tier.description}</p>
                 </CardHeader>
 
                 <CardContent className="space-y-3">
