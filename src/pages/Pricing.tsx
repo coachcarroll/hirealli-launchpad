@@ -174,11 +174,9 @@ const Pricing = () => {
 
   const allFeatures = [
     { key: "leadDetection", label: "AI Lead Detection" },
-    { key: "coverage", label: "Traffic coverage" },
     { key: "delivery", label: "Data delivery" },
     { key: "emailReady", label: "Email-ready contacts (TCPA-safe)" },
     { key: "crmSync", label: "CRM sync" },
-    { key: "alerts", label: "Alerts & summaries" },
     { key: "retargetingPrep", label: "Retargeting-ready audiences" },
     { key: "compliance", label: "Compliance guidance" },
     { key: "onboarding", label: "White-Glove Onboarding" },
@@ -248,7 +246,6 @@ const Pricing = () => {
                 
                 <CardHeader className="text-center pb-8">
                   <CardTitle className="text-2xl mb-2">{tier.name}</CardTitle>
-                  <CardDescription className="text-sm mb-4">{tier.subtitle}</CardDescription>
                   <div className="mb-2">
                     {tier.monthlyPrice === 0 ? (
                       <span className="text-4xl font-bold">Free</span>
