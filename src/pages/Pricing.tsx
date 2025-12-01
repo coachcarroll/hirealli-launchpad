@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, X, Info } from "lucide-react";
+import { Check, X, Info, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -317,36 +317,56 @@ const Pricing = () => {
         </div>
 
         {/* What happens next */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
-          <Card className="border-border bg-card/70">
-            <CardHeader>
-              <CardTitle>1. Pick your plan</CardTitle>
-              <CardDescription>Freemium works to test detection on your own traffic.</CardDescription>
-            </CardHeader>
-            <CardContent className="text-sm text-muted-foreground">
-              We generate your tracking snippet and share quick install instructions.
-            </CardContent>
-          </Card>
+        <div className="relative mb-16">
+          <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
+          <div className="grid md:grid-cols-3 gap-6 relative">
+            {/* Arrow connectors for desktop */}
+            <div className="hidden md:block absolute top-1/2 left-1/3 w-1/6 -translate-y-1/2 -translate-x-1/2 z-0">
+              <ArrowRight className="w-full h-12 text-primary/40" strokeWidth={1.5} />
+            </div>
+            <div className="hidden md:block absolute top-1/2 left-2/3 w-1/6 -translate-y-1/2 -translate-x-1/2 z-0">
+              <ArrowRight className="w-full h-12 text-primary/40" strokeWidth={1.5} />
+            </div>
 
-          <Card className="border-border bg-card/70">
-            <CardHeader>
-              <CardTitle>2. Install & watch leads roll in</CardTitle>
-              <CardDescription>Detection begins within hours on live traffic.</CardDescription>
-            </CardHeader>
-            <CardContent className="text-sm text-muted-foreground">
-              Alli emails you compliant, email-ready contacts. Phone numbers are match-back only — no texting or calling anonymized visitors.
-            </CardContent>
-          </Card>
+            <Card className="border-border bg-card/70 hover:border-primary/50 transition-all duration-300 relative z-10">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center mb-4 text-primary-foreground font-bold text-xl">
+                  1
+                </div>
+                <CardTitle>Pick your plan</CardTitle>
+                <CardDescription>Freemium works to test detection on your own traffic.</CardDescription>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                We generate your tracking snippet and share quick install instructions.
+              </CardContent>
+            </Card>
 
-          <Card className="border-border bg-card/70">
-            <CardHeader>
-              <CardTitle>3. Activate with email or retargeting</CardTitle>
-              <CardDescription>Stay compliant and convert more of your spend.</CardDescription>
-            </CardHeader>
-            <CardContent className="text-sm text-muted-foreground">
-              Sync to your CRM or export CSV. In-app prompts unlock retargeting and voice upsells once you see detection value.
-            </CardContent>
-          </Card>
+            <Card className="border-border bg-card/70 hover:border-primary/50 transition-all duration-300 relative z-10">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center mb-4 text-primary-foreground font-bold text-xl">
+                  2
+                </div>
+                <CardTitle>Install & watch leads roll in</CardTitle>
+                <CardDescription>Detection begins within hours on live traffic.</CardDescription>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Alli emails you compliant, email-ready contacts. Phone numbers are match-back only — no texting or calling anonymized visitors.
+              </CardContent>
+            </Card>
+
+            <Card className="border-border bg-card/70 hover:border-primary/50 transition-all duration-300 relative z-10">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center mb-4 text-primary-foreground font-bold text-xl">
+                  3
+                </div>
+                <CardTitle>Activate with email or retargeting</CardTitle>
+                <CardDescription>Stay compliant and convert more of your spend.</CardDescription>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground">
+                Sync to your CRM or export CSV. In-app prompts unlock retargeting and voice upsells once you see detection value.
+              </CardContent>
+            </Card>
+          </div>
         </div>
 
         {/* Compare Plans Section */}
@@ -455,6 +475,42 @@ const Pricing = () => {
                 <h3 className="text-xl font-semibold mb-3">What if I don't see ROI in 30 days?</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   We offer a money-back guarantee on paid plans. If Alli hasn't paid for itself in detected leads within 30 days, we'll refund your first month—no questions asked.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">What kind of traffic works best with Alli?</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Alli performs best with steady organic SEO traffic, paid search campaigns, and social media traffic. Service businesses with 500+ monthly visitors see the most value. B2B and high-ticket service providers typically see higher identification rates than pure ecommerce.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Can I upgrade or downgrade my plan?</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Yes, absolutely. You can upgrade or downgrade at any time. Upgrades take effect immediately, and downgrades will apply at your next billing cycle. Your detected contacts quota will adjust accordingly.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">How does the Freemium plan work?</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  The Freemium plan gives you 50 detected contacts total—not per month. This is perfect for testing Alli's detection accuracy on your actual traffic before committing to a paid plan. Once you hit 50 detections, you'll need to upgrade to continue receiving new leads.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">What's included with CRM sync?</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  CRM sync (available on Growth and Pro plans) automatically pushes your detected leads into your CRM as new contacts or enriches existing records. We support major CRMs including HubSpot, Salesforce, Pipedrive, and more. Setup takes just a few minutes with our guided integration flow.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">How do retargeting-ready audiences work?</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Retargeting-ready audiences (Growth and Pro plans) let you build custom audiences from your detected leads for Facebook, Google, and LinkedIn ads. Alli formats your contact lists for easy upload to ad platforms, helping you stay top-of-mind with warm prospects who've already visited your site.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">What types of businesses benefit most from Alli?</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Service businesses with longer sales cycles see the biggest impact—think consultants, agencies, home services, legal firms, financial advisors, and B2B SaaS. Any business where leads research before buying and where identifying early-stage prospects provides a competitive advantage will see strong ROI.
                 </p>
               </div>
             </div>
