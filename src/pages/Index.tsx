@@ -368,62 +368,6 @@ const Index = () => {
         </div>
       </section>
 
-
-      {/* Compliance & Activation */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-5xl">
-          <div className="bg-card/70 border border-border rounded-2xl p-8 md:p-10 shadow-lg">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-              <div>
-                <h3 className="text-2xl font-bold mb-2">Stay compliant while you follow up</h3>
-                <p className="text-muted-foreground max-w-3xl">
-                  Alli delivers email-ready contacts with match-back phone numbers. TCPA rules mean outreach is email-first — no texting or calling anonymous visitors.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button asChild className="bg-gradient-to-r from-primary to-primary-glow">
-                  <Link to="/pricing">Start free detection</Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link to="/results">See proof</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Case Study */}
-      <section className="py-16 px-4 bg-gradient-to-br from-primary/5 via-accent/5 to-background">
-        <div className="container mx-auto max-w-5xl">
-          <div className="bg-card/80 border border-primary/20 rounded-2xl p-8 md:p-12 shadow-xl">
-            <div className="flex flex-col md:flex-row md:items-center gap-8">
-              <div className="flex-1 space-y-3">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wide">
-                  Case Study
-                </div>
-                <h3 className="text-3xl font-bold">A coaching business identified 1,000+ leads in 10 days</h3>
-                <p className="text-lg text-muted-foreground">
-                  Alli unlocked more than a thousand contacts from existing traffic in under two weeks — before any upsells.
-                </p>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>Instant visibility into high-intent visitors.</li>
-                  <li>Email-ready delivery kept outreach compliant.</li>
-                  <li>Retargeting audiences created automatically for later activation.</li>
-                </ul>
-              </div>
-              <div className="flex-1 bg-gradient-to-br from-primary/10 to-primary-glow/10 border border-primary/20 rounded-xl p-6 space-y-4">
-                <div className="text-5xl font-extrabold bg-gradient-to-br from-primary to-primary-glow bg-clip-text text-transparent">1,000+</div>
-                <p className="text-muted-foreground font-medium">leads uncovered in 10 days</p>
-                <div className="text-3xl font-bold text-accent">30%</div>
-                <p className="text-muted-foreground font-medium">traffic visibility target</p>
-                <div className="text-lg font-semibold text-foreground">Email-first, TCPA-safe outreach</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Risk Reversal */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
