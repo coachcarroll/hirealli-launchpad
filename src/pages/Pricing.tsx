@@ -95,7 +95,7 @@ const Pricing = () => {
         coverage: { included: true, detail: "Up to ~30% of traffic" },
         delivery: { included: true, detail: "Google Sheet + CSV + API" },
         emailReady: { included: true, detail: "Compliance notes included" },
-        crmSync: { included: true },
+        crmSync: { included: false },
         alerts: { included: true, detail: "Daily summaries" },
         retargetingPrep: { included: true },
         compliance: { included: true },
@@ -117,8 +117,8 @@ const Pricing = () => {
         coverage: { included: true, detail: "Up to ~30% of traffic" },
         delivery: { included: true, detail: "Google Sheet + CSV + CRM sync" },
         emailReady: { included: true },
-        crmSync: { included: true },
-        alerts: { included: true, detail: "Weekly summaries" },
+        crmSync: { included: false },
+        alerts: { included: false },
         retargetingPrep: { included: true },
         compliance: { included: true },
         onboarding: { included: true },
@@ -140,7 +140,7 @@ const Pricing = () => {
         delivery: { included: true, detail: "Google Sheet" },
         emailReady: { included: true },
         crmSync: { included: false },
-        alerts: { included: true, detail: "Weekly summaries" },
+        alerts: { included: false },
         retargetingPrep: { included: false },
         compliance: { included: true },
         onboarding: { included: true },
@@ -220,10 +220,6 @@ const Pricing = () => {
               <Badge variant="secondary" className="ml-2">Save up to 15%</Badge>
             )}
           </div>
-
-          <p className="text-sm text-muted-foreground mt-2">
-            Need custom pricing? <Link to="/configurator" className="text-primary hover:underline">Try our advanced configurator</Link>
-          </p>
         </div>
 
         {/* Pricing Cards */}
