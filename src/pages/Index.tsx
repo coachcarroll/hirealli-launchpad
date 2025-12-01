@@ -92,21 +92,13 @@ const Index = () => {
             <div className="text-center md:text-left order-2 md:order-1">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
-                  Turn anonymous visitors into email‑ready buyers
+                  See who visited. Get their emails.
                 </span>
-                {" "}
-                <span className="text-foreground">in</span>
-                {" "}
-                <span className="text-accent font-extrabold">30 days</span>
-                {" "}
-                <span className="text-foreground">with AI lead detection</span>
+                {" "}Close more deals.
               </h1>
 
               <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-                Alli reveals the people behind up to{" "}
-                <span className="font-bold text-accent">30%</span> of your website traffic and enriches them with{" "}
-                <span className="font-semibold text-foreground">verified, compliant business emails</span>, so your team can follow up fast from the tools they already use{" "}
-                <span className="font-semibold text-secondary">without adding headcount</span>.
+                Alli identifies up to <span className="font-bold text-accent">30%</span> of your anonymous visitors and delivers <span className="font-semibold text-foreground">verified business emails</span>—so your team follows up immediately. <span className="font-semibold text-foreground">Zero extra headcount.</span>
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-6">
