@@ -93,10 +93,9 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
             <div className="text-center md:text-left order-2 md:order-1">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
-                  See who visited. Get their emails.
-                </span>
-                {" "}Close more deals.
+                <span className="text-primary">See who visited.</span>{" "}
+                <span className="text-foreground">Get their contact info.</span>{" "}
+                <span className="text-accent">Close more deals.</span>
               </h1>
 
               <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
