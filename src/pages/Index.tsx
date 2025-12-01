@@ -90,12 +90,6 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
             <div className="text-center md:text-left order-2 md:order-1">
-              <div className="inline-block mb-6">
-                <p className="text-sm font-semibold text-primary uppercase tracking-wider bg-primary/5 px-4 py-2 rounded-full border border-primary/20">
-                  More leads from your existing traffic. No extra ad spend.
-                </p>
-              </div>
-
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
                   Turn anonymous visitors into email‑ready buyers
@@ -132,7 +126,7 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="order-1 md:order-2 flex justify-center">
+            <div className="order-1 md:order-2 flex flex-col items-center gap-6">
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary via-primary-glow to-primary rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-primary-glow/30 rounded-2xl blur-xl animate-pulse" />
@@ -141,6 +135,11 @@ const Index = () => {
                   alt="AI Lead Detection - Discover Hidden Buyers"
                   className="relative rounded-2xl shadow-2xl max-w-sm w-full ring-1 ring-primary/10 transition-transform duration-300 group-hover:scale-[1.02]"
                 />
+              </div>
+              <div className="inline-block">
+                <p className="text-sm font-semibold text-primary uppercase tracking-wider bg-primary/5 px-4 py-2 rounded-full border border-primary/20">
+                  More leads from your existing traffic. No extra ad spend.
+                </p>
               </div>
             </div>
           </div>
