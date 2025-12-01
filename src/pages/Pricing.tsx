@@ -87,7 +87,7 @@ const Pricing = () => {
       subtitle: "For teams with heavy inbound traffic",
       monthlyPrice: 1495,
       annualPrice: 15000,
-      description: "",
+      description: "2,500 detected contacts/month",
       cta: "Get Started",
       highlighted: false,
       features: {
@@ -109,7 +109,7 @@ const Pricing = () => {
       subtitle: "Best for scaling service businesses",
       monthlyPrice: 695,
       annualPrice: 7500,
-      description: "",
+      description: "1,000 detected contacts/month",
       cta: "Get Started",
       highlighted: true,
       features: {
@@ -131,7 +131,7 @@ const Pricing = () => {
       subtitle: "Great for testing on steady traffic",
       monthlyPrice: 295,
       annualPrice: 3000,
-      description: "",
+      description: "250 detected contacts/month",
       cta: "Get Started",
       highlighted: false,
       features: {
@@ -153,7 +153,7 @@ const Pricing = () => {
       subtitle: "Try Alli on your traffic",
       monthlyPrice: 0,
       annualPrice: 0,
-      description: "",
+      description: "50 detected contacts total",
       cta: "Start Free Trial",
       highlighted: false,
       features: {
@@ -266,6 +266,7 @@ const Pricing = () => {
                       Billed annually at ${tier.annualPrice}
                     </p>
                   )}
+                  <p className="text-sm text-muted-foreground mt-2">{tier.description}</p>
                 </CardHeader>
 
                 <CardContent className="space-y-3">
