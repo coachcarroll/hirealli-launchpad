@@ -188,7 +188,7 @@ const Pricing = () => {
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <Navigation />
       
-      <main className="container mx-auto px-4 py-16">
+      <main className="container mx-auto px-4 pt-32 pb-16">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
