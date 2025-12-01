@@ -130,11 +130,6 @@ const Index = () => {
                   className="relative rounded-2xl shadow-2xl max-w-sm w-full ring-1 ring-primary/10 transition-transform duration-300 group-hover:scale-[1.02]"
                 />
               </div>
-              <div className="inline-block">
-                <p className="text-xs font-bold text-accent uppercase tracking-wider bg-accent/10 px-3 py-1.5 rounded-full border border-accent/30 shadow-[0_0_20px_rgba(34,197,94,0.3)]">
-                  More leads from your existing traffic. No extra ad spend.
-                </p>
-              </div>
             </div>
           </div>
         </div>
