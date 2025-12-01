@@ -98,7 +98,7 @@ const Index = () => {
               </h1>
 
               <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-                Alli identifies up to <span className="font-bold text-accent">30%</span> of your anonymous visitors and delivers <span className="font-semibold text-foreground">verified business emails</span>—so your team follows up immediately. <span className="font-semibold text-foreground">Zero extra headcount.</span>
+                Alli identifies up to <span className="font-bold text-accent">30%</span> of your anonymous visitors and delivers <span className="font-semibold text-foreground">verified personal emails</span>—so your team follows up immediately. <span className="font-semibold text-foreground">Zero extra headcount.</span>
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-6">
