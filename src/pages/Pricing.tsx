@@ -109,11 +109,11 @@ const Pricing = () => {
       subtitle: "Best for scaling service businesses",
       monthlyPrice: 695,
       annualPrice: 7500,
-      description: "500 detected contacts/month",
+      description: "1,000 detected contacts/month",
       cta: "Get Started",
       highlighted: true,
       features: {
-        leadDetection: { included: true, detail: "500 detected contacts/month" },
+        leadDetection: { included: true, detail: "1,000 detected contacts/month" },
         coverage: { included: true, detail: "Up to ~30% of traffic" },
         delivery: { included: true, detail: "Google Sheet + CSV + CRM sync" },
         emailReady: { included: true },
