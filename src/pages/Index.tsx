@@ -267,8 +267,7 @@ const Index = () => {
               <span className="text-foreground">No extra ad spend.</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-medium">
-              No integrations. No setup calls.{" "}
-              <span className="text-accent font-bold">Just results.</span>
+              <span className="text-accent font-bold">Onboard in Minutes. Not Months.</span>
             </p>
           </div>
 
