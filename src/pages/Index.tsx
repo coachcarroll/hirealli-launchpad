@@ -296,9 +296,8 @@ const Index = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-3">Deliver & Sync</h3>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li>Email-ready contacts with clear compliance notes.</li>
-                  <li>CSV downloads plus CRM sync so you can activate quickly.</li>
-                  <li>Phone numbers are for match-back only; outreach is email-first.</li>
+                  <li>Email-ready contacts with CSV downloads or CRM sync so you can activate quickly.</li>
+                  <li>See insights you've never had before.</li>
                 </ul>
               </div>
             </div>
