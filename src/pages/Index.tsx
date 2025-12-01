@@ -72,10 +72,10 @@ const Index = () => {
     setSelectedCategory(null);
   };
   const outcomes = [
-    { icon: CheckCircle2, text: "Identify up to ~30% of anonymous visitors" },
     { icon: CheckCircle2, text: "1,000+ leads uncovered for a coaching business in 10 days" },
-    { icon: CheckCircle2, text: "Email-ready contact lists delivered automatically" },
-    { icon: CheckCircle2, text: "Retargeting-ready audiences without extra pixel work" },
+    { icon: CheckCircle2, text: "500 leads in 20 days for a local event" },
+    { icon: CheckCircle2, text: "3X leads and saved $4,000/month in wasted ad spend for a dealership" },
+    { icon: CheckCircle2, text: "5,000+ leads in 6 months for a coaching business" },
   ];
 
   return (
