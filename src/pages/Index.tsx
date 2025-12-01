@@ -384,56 +384,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Getting Started */}
-      <section className="py-16 px-4 bg-gradient-to-b from-muted/30 via-background to-background">
-        <div className="container mx-auto max-w-5xl">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-3">What to do next</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Follow these steps to launch AI lead detection and stay compliant.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl border border-border bg-card/70 shadow-sm">
-              <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold mb-4">
-                1
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Start your free detection</h3>
-              <p className="text-muted-foreground">
-                Pick a plan on the pricing page (freemium works) and get your unique tracking snippet.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl border border-border bg-card/70 shadow-sm">
-              <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold mb-4">
-                2
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Install the script</h3>
-              <p className="text-muted-foreground">
-                Drop the snippet on your site. Alli starts detecting within hours and emails you as contacts arrive.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl border border-border bg-card/70 shadow-sm">
-              <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold mb-4">
-                3
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Email-first follow-up</h3>
-              <p className="text-muted-foreground">
-                Phone numbers are match-back only. Use email to reach out, or sync to your CRM and run retargeting audiences.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-10 text-center">
-            <Button size="lg" className="bg-gradient-to-r from-primary to-primary-glow" asChild>
-              <Link to="/pricing">Go to pricing</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       <Footer />
 
       {/* Industry Selector Dialog */}
