@@ -87,13 +87,13 @@ const Pricing = () => {
       subtitle: "For teams with heavy inbound traffic",
       monthlyPrice: 1495,
       annualPrice: 15000,
-      description: "Maximum visibility with advanced delivery",
+      description: "2,500 detected contacts/month",
       cta: "Get Started",
       highlighted: false,
       features: {
         leadDetection: { included: true, detail: "2,500 detected contacts/month" },
         coverage: { included: true, detail: "Up to ~30% of traffic" },
-        delivery: { included: true, detail: "Dashboard + CSV + API" },
+        delivery: { included: true, detail: "Google Sheet + CSV + API" },
         emailReady: { included: true, detail: "Compliance notes included" },
         crmSync: { included: true },
         alerts: { included: true, detail: "Daily summaries" },
@@ -109,13 +109,13 @@ const Pricing = () => {
       subtitle: "Best for scaling service businesses",
       monthlyPrice: 695,
       annualPrice: 7500,
-      description: "Detection plus CRM sync and retargeting-ready lists",
+      description: "500 detected contacts/month",
       cta: "Get Started",
       highlighted: true,
       features: {
         leadDetection: { included: true, detail: "500 detected contacts/month" },
         coverage: { included: true, detail: "Up to ~30% of traffic" },
-        delivery: { included: true, detail: "Dashboard + CSV" },
+        delivery: { included: true, detail: "Google Sheet + CSV + CRM sync" },
         emailReady: { included: true },
         crmSync: { included: true },
         alerts: { included: true, detail: "Weekly summaries" },
@@ -131,13 +131,13 @@ const Pricing = () => {
       subtitle: "Great for testing on steady traffic",
       monthlyPrice: 295,
       annualPrice: 3000,
-      description: "Core detection with email-ready delivery",
+      description: "250 detected contacts/month",
       cta: "Get Started",
       highlighted: false,
       features: {
         leadDetection: { included: true, detail: "250 detected contacts/month" },
         coverage: { included: true, detail: "Up to ~25% of traffic" },
-        delivery: { included: true, detail: "Dashboard" },
+        delivery: { included: true, detail: "Google Sheet" },
         emailReady: { included: true },
         crmSync: { included: false },
         alerts: { included: true, detail: "Weekly summaries" },
@@ -153,13 +153,13 @@ const Pricing = () => {
       subtitle: "Try Alli on your traffic",
       monthlyPrice: 0,
       annualPrice: 0,
-      description: "Perfect for testing Alli's capabilities",
+      description: "50 detected contacts total",
       cta: "Start Free Trial",
       highlighted: false,
       features: {
         leadDetection: { included: true, detail: "50 detected contacts total" },
         coverage: { included: true, detail: "Limited sample" },
-        delivery: { included: true, detail: "Dashboard" },
+        delivery: { included: true, detail: "Google Sheet" },
         emailReady: { included: true },
         crmSync: { included: false },
         alerts: { included: false },
@@ -173,8 +173,6 @@ const Pricing = () => {
   ];
 
   const allFeatures = [
-    { key: "leadDetection", label: "AI Lead Detection" },
-    { key: "coverage", label: "Traffic coverage target" },
     { key: "delivery", label: "Data delivery" },
     { key: "emailReady", label: "Email-ready contacts (TCPA-safe)" },
     { key: "crmSync", label: "CRM sync" },
@@ -274,19 +272,22 @@ const Pricing = () => {
                 </CardHeader>
 
                 <CardContent className="space-y-3">
-                  {Object.entries(tier.features).slice(0, 6).map(([key, feature]) => (
-                    feature.included && (
-                      <div key={key} className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">
-                          {allFeatures.find(f => f.key === key)?.label}
-                          {feature.detail && (
-                            <span className="text-muted-foreground"> - {feature.detail}</span>
-                          )}
-                        </span>
-                      </div>
-                    )
-                  ))}
+                  {Object.entries(tier.features)
+                    .filter(([key]) => key !== 'leadDetection' && key !== 'coverage')
+                    .slice(0, 6)
+                    .map(([key, feature]) => (
+                      feature.included && (
+                        <div key={key} className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span className="text-sm text-foreground">
+                            {allFeatures.find(f => f.key === key)?.label}
+                            {feature.detail && (
+                              <span className="text-foreground"> - {feature.detail}</span>
+                            )}
+                          </span>
+                        </div>
+                      )
+                    ))}
                 </CardContent>
 
                 <CardFooter className="pt-4">
