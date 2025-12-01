@@ -314,7 +314,7 @@ const Pricing = () => {
         </div>
 
         {/* What happens next */}
-        <div className="relative mb-16">
+        <div className="relative mb-16 pt-16">
           <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
           <div className="grid md:grid-cols-3 gap-6 relative">
             {/* Arrow connectors for desktop */}
