@@ -264,13 +264,13 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12 space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold">
-              <span className="text-foreground">Three steps to transform</span>
+              <span className="text-foreground">Three steps to get</span>
               {" "}
               <span className="bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
-                anonymous traffic
+                More leads from your existing traffic.
               </span>
               {" "}
-              <span className="text-foreground">into email-ready, compliant contacts</span>
+              <span className="text-foreground">No extra ad spend.</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-medium">
               No integrations. No setup calls.{" "}
