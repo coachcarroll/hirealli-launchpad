@@ -311,8 +311,8 @@ const Index = () => {
                 <h3 className="text-xl font-bold mb-3">Activate & Upsell</h3>
                 <ul className="space-y-2 text-muted-foreground">
                   <li>Send campaigns from your existing tools or let us guide messaging.</li>
-                  <li>Retargeting ads and voice live as in-app upsells after you see results.</li>
-                  <li>Lifecycle prompts (30/60/90 days) keep new revenue opportunities in front of you.</li>
+                  <li>Retargeting ads and voice available upgrades in app.</li>
+                  <li>Lifecycle prompts, special announcements, customer service check ins... the possibilities are endless with Alli</li>
                 </ul>
               </div>
             </div>
