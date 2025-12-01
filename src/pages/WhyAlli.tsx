@@ -96,13 +96,25 @@ const WhyAlli = () => {
             </div>
           </div>
 
-          <div className="mt-16 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              See Alli in Action
-            </h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              Start with the freemium plan to see detection results on your own traffic. Upsells for retargeting and voice live inside the app once you see value.
-            </p>
+          <div className="mt-16">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                See Alli in Action
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Start with the freemium plan to see detection results on your own traffic. Upsells for retargeting and voice live inside the app once you see value.
+              </p>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  src="https://drive.google.com/file/d/1QgQB1VuKsm2XvophLs6itmKRje0sR3-W/preview"
+                  className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+                  allow="autoplay"
+                  allowFullScreen
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
