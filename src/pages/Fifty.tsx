@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import alliThumbsUp from "@/assets/alli-thumbsup.png";
-import alliLogo from "@/assets/alli-logo.png";
+import Navigation from "@/components/Navigation";
 import { z } from "zod";
 import { CheckCircle, Users, Mail, Zap } from "lucide-react";
 
@@ -90,15 +90,10 @@ const Fifty = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-muted/20 to-background">
-      {/* Header */}
-      <header className="py-6 px-4">
-        <div className="container mx-auto max-w-6xl flex justify-center">
-          <img src={alliLogo} alt="Alli" className="h-10" />
-        </div>
-      </header>
+      <Navigation />
 
       {/* Main Content */}
-      <main className="py-12 px-4">
+      <main className="pt-24 pb-12 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Value Prop */}
