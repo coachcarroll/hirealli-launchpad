@@ -33,6 +33,7 @@ import HomeRemodeling from "./pages/industries/HomeRemodeling";
 import Roofing from "./pages/industries/Roofing";
 import GenerateAlliImages from "./pages/GenerateAlliImages";
 import Elite from "./pages/Elite";
+import Fifty from "./pages/Fifty";
 
 const queryClient = new QueryClient();
 
@@ -72,6 +73,7 @@ const App = () => (
           <Route path="/industries/roofing" element={<Roofing />} />
           <Route path="/generate-alli-images" element={<GenerateAlliImages />} />
           <Route path="/elite" element={<Elite />} />
+          <Route path="/50" element={<Fifty />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
