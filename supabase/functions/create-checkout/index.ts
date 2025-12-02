@@ -1,6 +1,5 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import Stripe from "https://esm.sh/stripe@18.5.0";
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -31,60 +30,12 @@ serve(async (req) => {
       throw new Error("Price ID is required");
     }
 
-    // Require authenticated user
-    const supabaseClient = createClient(
-      Deno.env.get("SUPABASE_URL") ?? "",
-      Deno.env.get("SUPABASE_ANON_KEY") ?? ""
-    );
-
-    const authHeader = req.headers.get("Authorization");
-    if (!authHeader) {
-      logStep("ERROR: No authorization header");
-      return new Response(
-        JSON.stringify({ error: "Authentication required" }),
-        { 
-          status: 401, 
-          headers: { ...corsHeaders, "Content-Type": "application/json" } 
-        }
-      );
-    }
-
-    const token = authHeader.replace("Bearer ", "");
-    const { data: userData, error: authError } = await supabaseClient.auth.getUser(token);
-    
-    if (authError || !userData.user?.email) {
-      logStep("ERROR: Invalid authentication", { error: authError?.message });
-      return new Response(
-        JSON.stringify({ error: "Invalid authentication" }),
-        { 
-          status: 401, 
-          headers: { ...corsHeaders, "Content-Type": "application/json" } 
-        }
-      );
-    }
-
-    const userEmail = userData.user.email;
-    logStep("User authenticated", { email: userEmail });
-
-    let customerId: string | undefined;
-
     const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });
-
-    // If we have a user email, check for existing customer
-    if (userEmail) {
-      const customers = await stripe.customers.list({ email: userEmail, limit: 1 });
-      if (customers.data.length > 0) {
-        customerId = customers.data[0].id;
-        logStep("Found existing customer", { customerId });
-      }
-    }
 
     logStep("Creating checkout session with price", { priceId });
 
-    // Create checkout session with price ID
+    // Create checkout session - guest checkout allowed
     const session = await stripe.checkout.sessions.create({
-      customer: customerId,
-      customer_email: customerId ? undefined : userEmail,
       line_items: [{
         price: priceId,
         quantity: 1

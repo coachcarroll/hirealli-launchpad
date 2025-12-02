@@ -4,7 +4,7 @@ project_id = "iacqjjkxxcbwpkvmlojn"
 verify_jwt = true
 
 [functions.create-checkout]
-verify_jwt = true
+verify_jwt = false
 
 [functions.generate-alli-image]
 verify_jwt = true
