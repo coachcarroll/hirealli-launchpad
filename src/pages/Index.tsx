@@ -108,10 +108,6 @@ const Index = () => {
                     See your hidden buyers
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" className="text-lg" onClick={() => setIndustryDialogOpen(true)}>
-                  Or call Alli live
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
               </div>
 
               <p className="text-sm text-muted-foreground">
