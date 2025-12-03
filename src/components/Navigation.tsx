@@ -11,7 +11,7 @@ const Navigation = () => {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Pricing", path: "/pricing" },
-    { name: "Results", path: "/results" },
+    { name: "Results", path: "/case-studies" },
     { name: "Why Alli", path: "/why-alli" },
   ];
 
@@ -102,7 +102,7 @@ const Navigation = () => {
             <Link to="/pricing">Start free detection</Link>
           </Button>
           <Button size="sm" variant="outline" asChild className="flex-1 text-xs">
-            <Link to="/results">See proof</Link>
+            <Link to="/case-studies">See proof</Link>
           </Button>
         </div>
       </div>
