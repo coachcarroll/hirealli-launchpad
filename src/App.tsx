@@ -34,6 +34,12 @@ import Roofing from "./pages/industries/Roofing";
 import GenerateAlliImages from "./pages/GenerateAlliImages";
 import Elite from "./pages/Elite";
 import Fifty from "./pages/Fifty";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import DataNotice from "./pages/DataNotice";
+import Templates from "./pages/Templates";
+import CaseStudies from "./pages/CaseStudies";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -74,6 +80,13 @@ const App = () => (
           <Route path="/generate-alli-images" element={<GenerateAlliImages />} />
           <Route path="/elite" element={<Elite />} />
           <Route path="/50" element={<Fifty />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/data-notice" element={<DataNotice />} />
+          <Route path="/templates" element={<Templates />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/contact" element={<Contact />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
