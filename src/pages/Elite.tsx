@@ -94,14 +94,6 @@ const Elite = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
             The Invisible Pipeline:<br />Stop Paying for Ghosts
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Today I'll show you a tool that will increase your pipeline 30% in the next 30 days!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6" asChild>
-              <a href="#proof">See The Proof</a>
-            </Button>
-          </div>
         </div>
       </section>
 
