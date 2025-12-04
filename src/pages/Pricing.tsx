@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, X, Info, ArrowRight } from "lucide-react";
+import { Check, X, Info, ArrowRight, Users, Headphones } from "lucide-react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -424,20 +424,28 @@ const Pricing = () => {
         </div>
 
         {/* Trust Section */}
-        <div className="text-center py-12 border-t border-border">
-          <h2 className="text-2xl font-bold mb-4">Every Plan Includes</h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-            <div>
-              <h3 className="font-semibold mb-2">White-Glove Onboarding</h3>
-              <p className="text-sm text-muted-foreground">
-                Personalized setup and training for your team
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2">Priority Support</h3>
-              <p className="text-sm text-muted-foreground">
-                In-app support with quick response times
-              </p>
+        <div className="py-16 border-t border-border">
+          <div className="bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 rounded-2xl p-8 md:p-12 text-center">
+            <h2 className="text-2xl font-bold mb-8">Every Plan Includes</h2>
+            <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                  <Users className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-semibold">White-Glove Onboarding</h3>
+                <p className="text-sm text-muted-foreground">
+                  Personalized setup and training for your team
+                </p>
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
+                  <Headphones className="w-6 h-6 text-accent" />
+                </div>
+                <h3 className="font-semibold">Priority Support</h3>
+                <p className="text-sm text-muted-foreground">
+                  In-app support with quick response times
+                </p>
+              </div>
             </div>
           </div>
         </div>
