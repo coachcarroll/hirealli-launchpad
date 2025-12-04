@@ -103,7 +103,7 @@ const Elite = () => {
           <Card className="bg-gradient-to-br from-primary/10 via-background to-primary-glow/10 border-2 border-primary">
             <CardContent className="pt-8 text-center">
               <p className="text-sm text-muted-foreground mb-2">TOTAL VALUE</p>
-              <p className="text-3xl text-muted-foreground line-through mb-4">$11,800+</p>
+              <p className="text-3xl text-muted-foreground line-through mb-4">$13,300</p>
               
               <div className="mb-6">
                 <p className="text-lg font-semibold mb-2">Early Adopter Elite Member Special!</p>
