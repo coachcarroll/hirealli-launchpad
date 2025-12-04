@@ -1,6 +1,6 @@
-import { Check, TrendingUp, Users, Zap, Award, Rocket } from "lucide-react";
+import { Shield, Sparkles, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { supabase } from "@/integrations/supabase/client";
@@ -35,83 +35,87 @@ const Elite = () => {
     }
   };
 
-  const valueStack = [
-    { item: "12-Month Alli License", value: "$7,500" },
-    { item: "AI Bootcamp + Playbook", value: "$800" },
-    { item: "Done-For-You CRM Sync", value: "$1,000" },
-    { item: "Bonuses (Training, Access, Advisory)", value: "$2,500" },
-  ];
-
-  const bonuses = [
-    {
-      icon: Users,
-      title: "Conversion Playbook Training",
-      description: "Behind-the-scenes training with the Martell Media team on 'How to Convert Visitor Intelligence into Revenue — Legally & Effectively.'",
-      value: "$1,500 Value"
-    },
-    {
-      icon: Rocket,
-      title: "Early Access Tools",
-      description: "Get early access to our upcoming engagement tools before the market sees them.",
-      value: "$500 Value"
-    },
-    {
-      icon: Award,
-      title: "Advisory Board Access",
-      description: "Quarterly client advisory calls where you help shape Alli's roadmap.",
-      value: "$500 Value"
-    }
-  ];
-
-  const benefits = [
-    "Name & Email",
-    "Location & Intent",
-    "Visit History",
-    "Automatic CRM Sync"
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 bg-gradient-to-br from-primary/10 via-background to-background">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary font-semibold mb-6">
-            Dan Martell's Elite Coaching Group Exclusive
+      <section className="pt-32 pb-8 px-6 relative overflow-hidden">
+        {/* Background effects */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5" />
+        <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary/10 border border-primary/20 rounded-full text-primary font-semibold mb-8 animate-fade-in">
+            <Sparkles className="w-4 h-4" />
+            <span>Dan Martell's Elite Coaching Group Exclusive</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-            The Invisible Pipeline:<br />Stop Paying for Ghosts
+          
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <span className="bg-gradient-to-r from-primary via-primary to-primary-glow bg-clip-text text-transparent">
+              The Invisible Pipeline:
+            </span>
+            <br />
+            <span className="text-foreground">Stop Paying for Ghosts</span>
           </h1>
         </div>
       </section>
 
-      {/* Pricing CTA - Moved to Top */}
-      <section className="py-16 px-6 bg-muted/30">
-        <div className="max-w-3xl mx-auto">
-          <Card className="bg-gradient-to-br from-primary/10 via-background to-primary-glow/10 border-2 border-primary">
-            <CardContent className="pt-8 text-center">
-              <p className="text-sm text-muted-foreground mb-2">TOTAL VALUE</p>
-              <p className="text-3xl text-muted-foreground line-through mb-4">$13,300</p>
+      {/* Pricing Card */}
+      <section className="py-8 pb-20 px-6 relative">
+        <div className="max-w-xl mx-auto">
+          <Card className="relative overflow-hidden border-2 border-primary/50 shadow-2xl shadow-primary/20 animate-scale-in">
+            {/* Gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/5" />
+            
+            {/* Glow effect */}
+            <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-40 h-40 bg-primary/30 rounded-full blur-3xl" />
+            
+            <CardContent className="pt-10 pb-8 px-8 text-center relative z-10">
+              {/* Total Value */}
+              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Total Value</p>
+              <p className="text-2xl text-muted-foreground/70 line-through mb-6">$13,300</p>
               
-              <div className="mb-6">
-                <p className="text-lg font-semibold mb-2">Early Adopter Elite Member Special!</p>
-                <p className="text-6xl font-bold text-primary mb-2">$4,997</p>
-                <p className="text-sm text-destructive font-semibold">Limited to First 10 People Only</p>
+              {/* Special offer */}
+              <div className="mb-8">
+                <p className="text-base font-semibold text-foreground mb-3">
+                  Early Adopter Elite Member Special!
+                </p>
+                <p className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-3">
+                  $4,997
+                </p>
+                <p className="text-sm font-semibold text-destructive">
+                  Limited to First 10 People Only
+                </p>
               </div>
 
+              {/* CTA Button */}
               <Button 
                 size="lg" 
-                className="text-xl px-12 py-6 mb-6"
+                className="w-full max-w-sm text-lg py-7 mb-8 group transition-all duration-300 hover:shadow-lg hover:shadow-primary/30"
                 onClick={handleCheckout}
                 disabled={isLoading}
               >
-                {isLoading ? "Loading..." : "Claim Your Spot Now"}
+                {isLoading ? (
+                  "Loading..."
+                ) : (
+                  <>
+                    Claim Your Spot Now
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </>
+                )}
               </Button>
 
-              <div className="pt-6 border-t border-border">
-                <p className="text-lg font-semibold mb-4">30-Day Unconditional Money-Back Guarantee</p>
-                <p className="text-muted-foreground">
+              {/* Guarantee */}
+              <div className="pt-6 border-t border-border/50">
+                <div className="flex items-center justify-center gap-2 mb-3">
+                  <Shield className="w-5 h-5 text-accent" />
+                  <p className="text-base font-semibold text-foreground">
+                    30-Day Unconditional Money-Back Guarantee
+                  </p>
+                </div>
+                <p className="text-sm text-muted-foreground max-w-md mx-auto">
                   Install Alli. Let it run. If you don't feel massive value, you get 100% back. No conditions.
                 </p>
               </div>
