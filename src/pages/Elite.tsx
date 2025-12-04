@@ -14,17 +14,6 @@ const Elite = () => {
   const handleCheckout = async () => {
     setIsLoading(true);
     try {
-      const { data: { session } } = await supabase.auth.getSession();
-      
-      if (!session) {
-        toast({
-          title: "Authentication Required",
-          description: "Please sign in to continue with checkout.",
-          variant: "destructive",
-        });
-        return;
-      }
-
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: { priceId: 'price_1SXSvcD8hbSdYbHswiziKUKJ' }
       });
