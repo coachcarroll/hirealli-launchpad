@@ -40,6 +40,7 @@ import DataNotice from "./pages/DataNotice";
 import Templates from "./pages/Templates";
 import CaseStudies from "./pages/CaseStudies";
 import Contact from "./pages/Contact";
+import Go from "./pages/Go";
 
 const queryClient = new QueryClient();
 
@@ -86,6 +87,7 @@ const App = () => (
           <Route path="/templates" element={<Templates />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/go" element={<Go />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
