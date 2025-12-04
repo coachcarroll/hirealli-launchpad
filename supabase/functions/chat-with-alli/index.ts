@@ -9,7 +9,7 @@ const corsHeaders = {
 
 const chatSchema = z.object({
   message: z.string().trim().min(1, "Message cannot be empty").max(4000, "Message too long (max 4000 characters)"),
-  threadId: z.string().regex(/^thread_[a-zA-Z0-9_-]+$/).optional()
+  threadId: z.string().regex(/^thread_[a-zA-Z0-9_-]+$/).nullish()
 });
 
 serve(async (req) => {
