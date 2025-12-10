@@ -6,6 +6,9 @@ verify_jwt = true
 [functions.create-checkout]
 verify_jwt = false
 
+[functions.create-freemium-subscription]
+verify_jwt = false
+
 [functions.generate-alli-image]
 verify_jwt = true
 

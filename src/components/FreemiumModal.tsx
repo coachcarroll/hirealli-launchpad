@@ -5,16 +5,17 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import alliThumbsUp from "@/assets/alli-thumbsup.png";
 import { z } from "zod";
 
 const freemiumSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
   email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
-  phone: z.string().regex(/^\+?[1-9]\d{1,14}$/, "Invalid phone number format"),
+  phone: z.string().min(10, "Phone number must be at least 10 digits").max(20, "Phone number is too long"),
   company: z.string().trim().min(1, "Company name is required").max(100, "Company name must be less than 100 characters"),
   website: z.string().max(255, "Website must be less than 255 characters").refine(
-    (val) => !val || val === '' || /^https?:\/\/.+\..+/.test(val),
+    (val) => !val || val === '' || /^https?:\/\/.+\..+/.test(val) || /^[a-zA-Z0-9][-a-zA-Z0-9]*\.[a-zA-Z]{2,}/.test(val),
     { message: "Invalid website URL" }
   ),
   smsConsent: z.boolean()
@@ -56,29 +57,24 @@ export const FreemiumModal = ({ open, onOpenChange }: FreemiumModalProps) => {
     setIsLoading(true);
 
     try {
-      const webhookUrl = "https://hooks.zapier.com/hooks/catch/1738439/uyva94r/";
-      
-      const response = await fetch(webhookUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "no-cors",
-        body: JSON.stringify({
-          ...validation.data,
-          plan: "freemium",
-          leads_per_month: 10,
-          timestamp: new Date().toISOString(),
-          triggered_from: window.location.origin,
-        }),
+      const { data, error } = await supabase.functions.invoke('create-freemium-subscription', {
+        body: validation.data,
       });
+
+      if (error) {
+        throw new Error(error.message || "Failed to create subscription");
+      }
+
+      if (data?.error) {
+        throw new Error(data.error);
+      }
 
       setShowThankYou(true);
     } catch (error) {
       console.error("Error submitting freemium signup:", error);
       toast({
         title: "Error",
-        description: "Failed to submit. Please try again or contact support.",
+        description: error instanceof Error ? error.message : "Failed to submit. Please try again or contact support.",
         variant: "destructive",
       });
     } finally {
