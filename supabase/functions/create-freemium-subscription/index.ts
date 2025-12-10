@@ -89,12 +89,10 @@ serve(async (req) => {
       });
     }
 
-    // Create subscription with the freemium price
+    // Create subscription with the freemium price (no payment required for $0)
     const subscription = await stripe.subscriptions.create({
       customer: customer.id,
       items: [{ price: "price_1SZd0BD8hbSdYbHs5cFUEiWr" }],
-      payment_behavior: "default_incomplete",
-      payment_settings: { save_default_payment_method: "on_subscription" },
       expand: ["latest_invoice"],
     });
 
