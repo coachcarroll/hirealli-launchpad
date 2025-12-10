@@ -89,10 +89,14 @@ serve(async (req) => {
       });
     }
 
-    // Create subscription with the freemium price (no payment required for $0)
+    // Create subscription with the freemium price and 90-day trial (no card required)
     const subscription = await stripe.subscriptions.create({
       customer: customer.id,
       items: [{ price: "price_1SZd0BD8hbSdYbHs5cFUEiWr" }],
+      trial_period_days: 90,
+      payment_settings: {
+        save_default_payment_method: "off",
+      },
       expand: ["latest_invoice"],
     });
 
