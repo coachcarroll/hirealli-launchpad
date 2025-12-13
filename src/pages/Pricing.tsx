@@ -157,7 +157,7 @@ const Pricing = () => {
   ];
 
   const allFeatures = [
-    { key: "leadDetection", label: "Lead Detection" },
+    { key: "leadDetection", label: "" },
     { key: "identification", label: "" },
     { key: "delivery", label: "Data Delivery" },
     { key: "crmSync", label: "CRM Sync" },
