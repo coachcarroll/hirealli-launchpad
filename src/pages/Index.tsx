@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, Search, ShieldCheck, Share2, MailCheck, ChevronRight, BarChart3, Ghost, Database } from "lucide-react";
+import { ArrowRight, CheckCircle2, Search, ShieldCheck, Share2, MailCheck, ChevronRight, BarChart3, Ghost, Database, Eye, Brain, Send, Target } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -249,68 +249,123 @@ const Index = () => {
           </div>
         </div>
       </section>
-      {/* How Alli Works */}
-      <section className="py-20 px-4">
+      {/* How Alli Works - 4 Step Flow */}
+      <section className="py-20 px-4 bg-gradient-to-b from-background via-primary/5 to-background">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12 space-y-6">
+          <div className="text-center mb-16 space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold">
-              <span className="text-foreground">Three steps to get</span>
-              {" "}
-              <span className="bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
-                More leads from your existing traffic.
-              </span>
-              {" "}
-              <span className="text-foreground">No extra ad spend.</span>
+              <span className="text-foreground">How Alli Works</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-medium">
-              <span className="text-accent font-bold">Onboard in Minutes. Not Months.</span>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              From anonymous visitor to closed deal in four simple steps
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="group relative p-8 rounded-2xl bg-card/60 backdrop-blur-sm border border-border hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-2 transition-all duration-300 shadow-lg">
-                  <Search className="w-7 h-7 text-primary-foreground" />
-                </div>
-                <h3 className="text-xl font-bold mb-3">Identify & Enrich</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>Install one script; detect up to ~30% of anonymous visitors.</li>
-                  <li>Built for service businesses with SEO, paid, or social traffic.</li>
-                  <li>Includes firmographic enrichment and match-back phone numbers.</li>
-                </ul>
+          <div className="grid md:grid-cols-4 gap-6 relative">
+            {/* Connecting arrows for desktop */}
+            <div className="hidden md:block absolute top-1/2 left-[12.5%] w-[25%] -translate-y-1/2 z-0 px-4">
+              <div className="h-0.5 bg-gradient-to-r from-primary/60 to-primary/30 relative">
+                <ArrowRight className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 text-primary/60" />
+              </div>
+            </div>
+            <div className="hidden md:block absolute top-1/2 left-[37.5%] w-[25%] -translate-y-1/2 z-0 px-4">
+              <div className="h-0.5 bg-gradient-to-r from-primary/60 to-primary/30 relative">
+                <ArrowRight className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 text-primary/60" />
+              </div>
+            </div>
+            <div className="hidden md:block absolute top-1/2 left-[62.5%] w-[25%] -translate-y-1/2 z-0 px-4">
+              <div className="h-0.5 bg-gradient-to-r from-primary/60 to-accent/60 relative">
+                <ArrowRight className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 text-accent/60" />
               </div>
             </div>
 
-            <div className="group relative p-8 rounded-2xl bg-card/60 backdrop-blur-sm border border-border hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+            {/* Step 1: Recognize */}
+            <div className="group relative p-6 rounded-2xl bg-card/60 backdrop-blur-sm border border-border hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden z-10">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-2 transition-all duration-300 shadow-lg">
-                  <MailCheck className="w-7 h-7 text-primary-foreground" />
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center text-primary-foreground font-bold text-lg shadow-lg">
+                    1
+                  </div>
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Eye className="w-6 h-6 text-primary" />
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-3">Deliver & Sync</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>Email-ready contacts with CSV downloads or CRM sync so you can activate quickly.</li>
-                  <li>See insights you've never had before.</li>
-                </ul>
+                <h3 className="text-xl font-bold mb-2 text-primary">Recognize</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Alli identifies up to <span className="font-semibold text-foreground">30%</span> of your anonymous website visitors and obtains their contact info.
+                </p>
               </div>
             </div>
 
-            <div className="group relative p-8 rounded-2xl bg-card/60 backdrop-blur-sm border border-border hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+            {/* Step 2: Learn */}
+            <div className="group relative p-6 rounded-2xl bg-card/60 backdrop-blur-sm border border-border hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden z-10">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-2 transition-all duration-300 shadow-lg">
-                  <Share2 className="w-7 h-7 text-primary-foreground" />
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center text-primary-foreground font-bold text-lg shadow-lg">
+                    2
+                  </div>
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Brain className="w-6 h-6 text-primary" />
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-3">Activate & Upsell</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>Send campaigns from your existing tools or let us guide messaging.</li>
-                  <li>Retargeting ads and voice available upgrades in app.</li>
-                  <li>Lifecycle prompts, special announcements, customer service check ins... the possibilities are endless with Alli</li>
-                </ul>
+                <h3 className="text-xl font-bold mb-2 text-primary">Learn</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  See what pages they visited, where they came from, and <span className="font-semibold text-foreground">how often they return</span>. Spot your highest-intent leads.
+                </p>
               </div>
             </div>
+
+            {/* Step 3: Reach Out */}
+            <div className="group relative p-6 rounded-2xl bg-card/60 backdrop-blur-sm border border-border hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden z-10">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center text-primary-foreground font-bold text-lg shadow-lg">
+                    3
+                  </div>
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Send className="w-6 h-6 text-primary" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-primary">Reach Out</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Contacts delivered to your <span className="font-semibold text-foreground">Google Sheet or CRM</span>. Ready for outreach while they're still shopping.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 4: Convert */}
+            <div className="group relative p-6 rounded-2xl bg-card/60 backdrop-blur-sm border border-accent/30 hover:border-accent/60 transition-all duration-500 hover:-translate-y-2 overflow-hidden z-10">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center text-accent-foreground font-bold text-lg shadow-lg">
+                    4
+                  </div>
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Target className="w-6 h-6 text-accent" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-accent">Convert</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Send personalized follow-ups or build retargeting audiences. <span className="font-semibold text-accent">Beat competitors to the punch.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick CTA */}
+          <div className="text-center mt-12">
+            <p className="text-muted-foreground mb-4">
+              <span className="text-accent font-bold">Onboard in minutes. Not months.</span>
+            </p>
+            <Button size="lg" className="bg-gradient-to-r from-primary to-accent" asChild>
+              <Link to="/pricing">
+                Start detecting leads <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
