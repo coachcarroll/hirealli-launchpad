@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Lock, Eye, EyeOff, CheckCircle2, AlertTriangle, Phone, MessageSquare, Users, Shield, TrendingUp, BookOpen, ExternalLink, FileText } from "lucide-react";
+import { Lock, Eye, EyeOff, CheckCircle2, AlertTriangle, Phone, MessageSquare, Users, Shield, TrendingUp, BookOpen, ExternalLink, Palette } from "lucide-react";
 
 const PLAYBOOK_PASSWORD = "alli2025";
 
@@ -65,6 +65,7 @@ const Playbook = () => {
     { id: "section-3", label: "Workflow & SLA", icon: CheckCircle2 },
     { id: "section-4", label: "Escalation", icon: Phone },
     { id: "section-5", label: "Quality & Growth", icon: TrendingUp },
+    { id: "section-6", label: "Brand Blueprint", icon: Palette },
   ];
 
   if (!isAuthenticated) {
@@ -147,7 +148,7 @@ const Playbook = () => {
               target="_blank" 
               rel="noopener noreferrer"
             >
-              <FileText className="w-4 h-4" />
+              <Palette className="w-4 h-4" />
               Brand Blueprint
               <ExternalLink className="w-3 h-3" />
             </a>
@@ -566,6 +567,133 @@ I'll make sure they have the context before you meet."`}
                 <li><strong className="text-foreground">Monthly Calibration:</strong> Review escalations, update FAQ bank, identify training gaps</li>
                 <li><strong className="text-foreground">Quarterly Deep Dive:</strong> Full performance review tied to promotion criteria</li>
               </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 6: Brand Blueprint */}
+        <section id="section-6" className="playbook-section mb-12">
+          <h2 className="text-2xl font-bold text-primary border-b-2 border-accent pb-3 mb-6">
+            6. Brand Blueprint
+          </h2>
+
+          <div className="space-y-6">
+            {/* Purpose & Promise */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="border-primary/20 bg-card/50">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-base">Why Alli Exists</CardTitle>
+                </CardHeader>
+                <CardContent className="text-sm text-muted-foreground">
+                  <p>Alli exists to rescue and revive small businesses before they become another failed statistic. To empower small business owners with superhuman clarity, insight, and action.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-primary/20 bg-card/50">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-base">What Alli Delivers</CardTitle>
+                </CardHeader>
+                <CardContent className="text-sm text-muted-foreground space-y-1">
+                  <p>• Show up</p>
+                  <p>• Deliver clear, actionable insights</p>
+                  <p>• Uncover hidden value in your business</p>
+                  <p>• Work fast, accurately, and quietly in the background</p>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Positioning */}
+            <blockquote className="border-l-4 border-accent bg-accent/10 p-4 italic text-foreground">
+              Alli is your first AI team member. She's a 24/7 digital lead detective that identifies, tracks, and warms up your website visitors so your business never misses an opportunity. She's not just software — she's your smartest hire.
+            </blockquote>
+
+            {/* Brand Pillars */}
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-4">The Five Brand Pillars</h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[
+                  { title: "Results Without the Noise", desc: "She delivers outcomes, not complexity. Every action is in service of driving results you can actually see.", values: "Winning • Impact • Clarity" },
+                  { title: "Built to Be Trusted", desc: "She never sleeps, never slips, and never breaks your trust. The one part of your business you never second-guess.", values: "Dependability • Trust • Safety" },
+                  { title: "Always On. Always Accessible.", desc: "Speed, simplicity, and zero friction. The fastest path from chaos to clarity.", values: "Efficiency • Speed • Velocity" },
+                  { title: "Infinite Wisdom. Instant Insight.", desc: "A paradoxical mix of monk and MBA: both a guide and a go-getter.", values: "Vision • Intelligence • Wisdom" },
+                  { title: "Human at Heart", desc: "She might be code, but she connects like a colleague. Warm, direct, and supportive.", values: "Connection • Empathy • Presence" },
+                ].map((pillar) => (
+                  <Card key={pillar.title} className="border-border bg-card/50">
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-sm text-primary">{pillar.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="text-xs text-muted-foreground">
+                      <p className="mb-2">{pillar.desc}</p>
+                      <p className="text-accent font-medium">{pillar.values}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Voice */}
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">Alli's Voice</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <Card className="border-accent/30 bg-accent/5">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-sm text-accent">Alli IS:</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground space-y-1">
+                    <p>• Warm, not cute — like a teammate who wants you to win</p>
+                    <p>• Focused, not cold — no fluff, no noise, no jargon</p>
+                    <p>• Lightly playful, not distracting</p>
+                    <p>• Empowering, not patronizing</p>
+                    <p>• Timeless, not trendy</p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-border bg-card/50">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-sm">Voice Vibe</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground space-y-1">
+                    <p>• Oprah's grace</p>
+                    <p>• Ada Lovelace's brilliance</p>
+                    <p>• Morgan Freeman's wisdom</p>
+                    <p>• Kentucky hospitality layer</p>
+                    <p>• Feels like a friend, performs like a genius</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            {/* Phrases */}
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <h4 className="text-sm font-semibold text-accent mb-2">Phrases Alli Might Say</h4>
+                <div className="bg-primary/10 border-l-4 border-primary p-4 rounded-r-lg font-mono text-xs text-foreground space-y-1">
+                  <p>"Let's take a look."</p>
+                  <p>"I've got your back."</p>
+                  <p>"Here's what I found."</p>
+                  <p>"Want help with that?"</p>
+                  <p>"Ready when you are."</p>
+                </div>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold text-destructive mb-2">Phrases Alli Would Never Say</h4>
+                <div className="bg-destructive/10 border-l-4 border-destructive p-4 rounded-r-lg font-mono text-xs text-foreground space-y-1">
+                  <p>"Invalid user input detected."</p>
+                  <p>"Your CRM configuration does not support this integration."</p>
+                  <p>"We are experiencing higher-than-normal call volumes."</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Full PDF Link */}
+            <div className="text-center pt-4">
+              <Button asChild variant="outline" className="gap-2">
+                <a href="/alli-brand-blueprint.pdf" target="_blank" rel="noopener noreferrer">
+                  <Palette className="w-4 h-4" />
+                  View Full Brand Blueprint PDF
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </Button>
             </div>
           </div>
         </section>
