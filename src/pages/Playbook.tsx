@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Lock, Eye, EyeOff, CheckCircle2, AlertTriangle, Phone, MessageSquare, Users, Shield, TrendingUp, BookOpen, ExternalLink, Palette } from "lucide-react";
+import { Lock, Eye, EyeOff, CheckCircle2, AlertTriangle, Phone, MessageSquare, Users, Shield, TrendingUp, Palette } from "lucide-react";
 
 const PLAYBOOK_PASSWORD = "alli2025";
 
@@ -114,45 +114,13 @@ const Playbook = () => {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="bg-gradient-to-r from-primary to-primary-glow text-primary-foreground py-6">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div>
-            <h1 className="text-2xl md:text-3xl font-bold">
-              Alli Operator <span className="text-accent">Playbook</span>
-            </h1>
-            <p className="text-primary-foreground/80 text-sm mt-1">
-              Version: 1.0 | Owner: Carroll Media / Alli Platform
-            </p>
-          </div>
-          <Button
-            asChild
-            variant="secondary"
-            className="w-fit gap-2 bg-primary-foreground text-primary hover:bg-primary-foreground/90"
-          >
-            <a 
-              href="https://notebooklm.google.com/notebook/08d5d247-39a8-458c-9a5c-a2bd8f19e3e9" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              <BookOpen className="w-4 h-4" />
-              Training Notebook
-              <ExternalLink className="w-3 h-3" />
-            </a>
-          </Button>
-          <Button
-            asChild
-            variant="secondary"
-            className="w-fit gap-2 bg-primary-foreground text-primary hover:bg-primary-foreground/90"
-          >
-            <a 
-              href="/alli-brand-blueprint.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              <Palette className="w-4 h-4" />
-              Brand Blueprint
-              <ExternalLink className="w-3 h-3" />
-            </a>
-          </Button>
+        <div className="container mx-auto px-4">
+          <h1 className="text-2xl md:text-3xl font-bold">
+            Alli Operator <span className="text-accent">Playbook</span>
+          </h1>
+          <p className="text-primary-foreground/80 text-sm mt-1">
+            Version: 1.0 | Owner: Carroll Media / Alli Platform
+          </p>
         </div>
       </header>
 
@@ -685,16 +653,6 @@ I'll make sure they have the context before you meet."`}
               </div>
             </div>
 
-            {/* Full PDF Link */}
-            <div className="text-center pt-4">
-              <Button asChild variant="outline" className="gap-2">
-                <a href="/alli-brand-blueprint.pdf" target="_blank" rel="noopener noreferrer">
-                  <Palette className="w-4 h-4" />
-                  View Full Brand Blueprint PDF
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-              </Button>
-            </div>
           </div>
         </section>
 
