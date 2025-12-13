@@ -257,7 +257,7 @@ const Pricing = () => {
                           <span className="text-sm text-foreground">
                             {allFeatures.find(f => f.key === key)?.label}
                             {feature.detail && (
-                              <span className="text-foreground"> - {feature.detail}</span>
+                              <span className="text-foreground">{feature.detail}</span>
                             )}
                           </span>
                         </div>
