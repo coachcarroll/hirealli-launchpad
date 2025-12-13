@@ -41,6 +41,7 @@ import Templates from "./pages/Templates";
 import CaseStudies from "./pages/CaseStudies";
 import Contact from "./pages/Contact";
 import Go from "./pages/Go";
+import Playbook from "./pages/Playbook";
 
 const queryClient = new QueryClient();
 
@@ -88,6 +89,7 @@ const App = () => (
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/go" element={<Go />} />
+          <Route path="/playbook" element={<Playbook />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
