@@ -96,6 +96,7 @@ const Pricing = () => {
         delivery: { included: true },
         crmSync: { included: true },
         apiAccess: { included: true },
+        support: { included: true, detail: "Priority in-app + video calls" },
         compliance: { included: true },
       },
     },
@@ -113,6 +114,7 @@ const Pricing = () => {
         delivery: { included: true },
         crmSync: { included: true },
         apiAccess: { included: false },
+        support: { included: true, detail: "Priority in-app" },
         compliance: { included: true },
       },
     },
@@ -130,6 +132,7 @@ const Pricing = () => {
         delivery: { included: true },
         crmSync: { included: false },
         apiAccess: { included: false },
+        support: { included: true, detail: "In-app" },
         compliance: { included: true },
       },
     },
@@ -147,6 +150,7 @@ const Pricing = () => {
         delivery: { included: true },
         crmSync: { included: false },
         apiAccess: { included: false },
+        support: { included: true, detail: "In-app" },
         compliance: { included: true },
       },
     },
@@ -154,10 +158,11 @@ const Pricing = () => {
 
   const allFeatures = [
     { key: "leadDetection", label: "Lead Detection" },
-    { key: "identification", label: "Visitor Identification" },
+    { key: "identification", label: "" },
     { key: "delivery", label: "Data Delivery" },
     { key: "crmSync", label: "CRM Sync" },
     { key: "apiAccess", label: "API Access" },
+    { key: "support", label: "" },
     { key: "compliance", label: "Compliance Guidance" },
   ];
 
