@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Lock, Eye, EyeOff, CheckCircle2, AlertTriangle, Phone, MessageSquare, Users, Shield, TrendingUp, BookOpen, ExternalLink } from "lucide-react";
+import { Lock, Eye, EyeOff, CheckCircle2, AlertTriangle, Phone, MessageSquare, Users, Shield, TrendingUp, BookOpen, ExternalLink, FileText } from "lucide-react";
 
 const PLAYBOOK_PASSWORD = "alli2025";
 
@@ -134,6 +134,21 @@ const Playbook = () => {
             >
               <BookOpen className="w-4 h-4" />
               Training Notebook
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          </Button>
+          <Button
+            asChild
+            variant="secondary"
+            className="w-fit gap-2 bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+          >
+            <a 
+              href="/alli-brand-blueprint.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <FileText className="w-4 h-4" />
+              Brand Blueprint
               <ExternalLink className="w-3 h-3" />
             </a>
           </Button>
