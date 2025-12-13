@@ -93,11 +93,11 @@ const Pricing = () => {
       features: {
         leadDetection: { included: true, detail: "2,500 detected contacts/month" },
         identification: { included: true, detail: "Weekly re-identification + Social Retargeting" },
-        delivery: { included: true, detail: "Google Sheet" },
-        crmSync: { included: true, detail: "CRM sync" },
-        apiAccess: { included: true, detail: "API access" },
-        support: { included: true, detail: "Priority in-app support + video calls" },
-        compliance: { included: true, detail: "Compliance guidance" },
+        delivery: { included: true },
+        crmSync: { included: true },
+        apiAccess: { included: true },
+        support: { included: true, detail: "Priority in-app + video calls" },
+        compliance: { included: true },
       },
     },
     {
@@ -111,11 +111,11 @@ const Pricing = () => {
       features: {
         leadDetection: { included: true, detail: "1,000 detected contacts/month" },
         identification: { included: true, detail: "Weekly re-identification (high-intent tracking)" },
-        delivery: { included: true, detail: "Google Sheet" },
-        crmSync: { included: true, detail: "CRM sync" },
+        delivery: { included: true },
+        crmSync: { included: true },
         apiAccess: { included: false },
-        support: { included: true, detail: "Priority in-app support" },
-        compliance: { included: true, detail: "Compliance guidance" },
+        support: { included: true, detail: "Priority in-app" },
+        compliance: { included: true },
       },
     },
     {
@@ -129,11 +129,11 @@ const Pricing = () => {
       features: {
         leadDetection: { included: true, detail: "250 detected contacts/month" },
         identification: { included: true, detail: "One-time identification" },
-        delivery: { included: true, detail: "Google Sheet" },
+        delivery: { included: true },
         crmSync: { included: false },
         apiAccess: { included: false },
-        support: { included: true, detail: "In-app support" },
-        compliance: { included: true, detail: "Compliance guidance" },
+        support: { included: true, detail: "In-app" },
+        compliance: { included: true },
       },
     },
     {
@@ -147,11 +147,11 @@ const Pricing = () => {
       features: {
         leadDetection: { included: true, detail: "50 detected contacts total" },
         identification: { included: true, detail: "One-time identification" },
-        delivery: { included: true, detail: "Google Sheet" },
+        delivery: { included: true },
         crmSync: { included: false },
         apiAccess: { included: false },
-        support: { included: true, detail: "In-app support" },
-        compliance: { included: true, detail: "Compliance guidance" },
+        support: { included: true, detail: "In-app" },
+        compliance: { included: true },
       },
     },
   ];
