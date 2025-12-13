@@ -885,10 +885,8 @@ I'll make sure they have the context before you meet."`}
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
                 {[
                   { name: "Alli Detect", desc: "Anonymous visitor identification (current product)" },
-                  { name: "Alli Nurture", desc: "Automated follow-up (email, voicemail, SMS)" },
                   { name: "Alli Ads", desc: "Simple ad creation + targeting" },
-                  { name: "Alli Sync", desc: "CRM integration and data flow" },
-                  { name: "Alli Insights", desc: "Visual dashboards and recommendations" },
+                  { name: "Alli Voice", desc: "AI-powered voice receptionist and follow-up" },
                 ].map((module) => (
                   <Card key={module.name} className="border-primary/20 bg-primary/5">
                     <CardContent className="pt-4">
