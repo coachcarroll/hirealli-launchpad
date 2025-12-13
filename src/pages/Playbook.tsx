@@ -653,6 +653,294 @@ I'll make sure they have the context before you meet."`}
               </div>
             </div>
 
+            {/* Tone in Scenarios */}
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">Tone in Different Scenarios</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse text-sm">
+                  <thead>
+                    <tr className="bg-primary text-primary-foreground">
+                      <th className="border border-border p-3 text-left">Scenario</th>
+                      <th className="border border-border p-3 text-left">Tone Style</th>
+                      <th className="border border-border p-3 text-left">Example</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-card">
+                      <td className="border border-border p-3 text-foreground">Homepage / Marketing</td>
+                      <td className="border border-border p-3 text-foreground">Confident, clear, benefit-forward</td>
+                      <td className="border border-border p-3 text-muted-foreground italic">"Turn visitors into leads — without spending more on ads."</td>
+                    </tr>
+                    <tr className="bg-muted/50">
+                      <td className="border border-border p-3 text-foreground">Onboarding / Setup</td>
+                      <td className="border border-border p-3 text-foreground">Supportive, step-by-step, human</td>
+                      <td className="border border-border p-3 text-muted-foreground italic">"Let's get rolling. You'll be up and running in under 5 minutes."</td>
+                    </tr>
+                    <tr className="bg-card">
+                      <td className="border border-border p-3 text-foreground">Tooltips / Explainers</td>
+                      <td className="border border-border p-3 text-foreground">Lightly instructive, never condescending</td>
+                      <td className="border border-border p-3 text-muted-foreground italic">"A 'suspect' is someone who visited your site but didn't engage."</td>
+                    </tr>
+                    <tr className="bg-muted/50">
+                      <td className="border border-border p-3 text-foreground">Emails</td>
+                      <td className="border border-border p-3 text-foreground">Conversational, informative, helpful</td>
+                      <td className="border border-border p-3 text-muted-foreground italic">"Here's what I found this week — and what to do next."</td>
+                    </tr>
+                    <tr className="bg-card">
+                      <td className="border border-border p-3 text-foreground">SMS / Notifications</td>
+                      <td className="border border-border p-3 text-foreground">Friendly, concise, action-oriented</td>
+                      <td className="border border-border p-3 text-muted-foreground italic">"Nice! Alli just found 12 new suspects. Want to take a look?"</td>
+                    </tr>
+                    <tr className="bg-muted/50">
+                      <td className="border border-border p-3 text-foreground">Error States</td>
+                      <td className="border border-border p-3 text-foreground">Reassuring, direct, calm</td>
+                      <td className="border border-border p-3 text-muted-foreground italic">"Hmm. Looks like something didn't work. Let's fix it together."</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Language Principles */}
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">Language Principles</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse text-sm">
+                  <thead>
+                    <tr className="bg-primary text-primary-foreground">
+                      <th className="border border-border p-3 text-left">Do</th>
+                      <th className="border border-border p-3 text-left">Don't</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-card">
+                      <td className="border border-border p-3 text-foreground">Use contractions: "I'll help," "You're good to go"</td>
+                      <td className="border border-border p-3 text-foreground">Overformal: "You are now ready"</td>
+                    </tr>
+                    <tr className="bg-muted/50">
+                      <td className="border border-border p-3 text-foreground">Keep it short and scannable</td>
+                      <td className="border border-border p-3 text-foreground">Use long paragraphs or technical language</td>
+                    </tr>
+                    <tr className="bg-card">
+                      <td className="border border-border p-3 text-foreground">Show personality through helpfulness, not flair</td>
+                      <td className="border border-border p-3 text-foreground">Use humor that distracts or undercuts clarity</td>
+                    </tr>
+                    <tr className="bg-muted/50">
+                      <td className="border border-border p-3 text-foreground">Speak directly to the user ("you")</td>
+                      <td className="border border-border p-3 text-foreground">Refer to "the user" in third-person copy</td>
+                    </tr>
+                    <tr className="bg-card">
+                      <td className="border border-border p-3 text-foreground">Use strong verbs: track, guide, identify, connect</td>
+                      <td className="border border-border p-3 text-foreground">Passive or vague: "was generated," "may be of interest"</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Customer Journey */}
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">Customer Journey & Experience</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse text-sm">
+                  <thead>
+                    <tr className="bg-primary text-primary-foreground">
+                      <th className="border border-border p-3 text-left">Stage</th>
+                      <th className="border border-border p-3 text-left">Examples</th>
+                      <th className="border border-border p-3 text-left">Tone</th>
+                      <th className="border border-border p-3 text-left">Goal</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-card">
+                      <td className="border border-border p-3 text-foreground font-medium">Discovery</td>
+                      <td className="border border-border p-3 text-muted-foreground">Ad / Social / Landing Page</td>
+                      <td className="border border-border p-3 text-foreground">Confident + Clear</td>
+                      <td className="border border-border p-3 text-muted-foreground">Inspire curiosity, reduce risk</td>
+                    </tr>
+                    <tr className="bg-muted/50">
+                      <td className="border border-border p-3 text-foreground font-medium">Sign-Up</td>
+                      <td className="border border-border p-3 text-muted-foreground">$1 Offer, Setup Begins</td>
+                      <td className="border border-border p-3 text-foreground">Supportive</td>
+                      <td className="border border-border p-3 text-muted-foreground">Make onboarding feel easy</td>
+                    </tr>
+                    <tr className="bg-card">
+                      <td className="border border-border p-3 text-foreground font-medium">First Win</td>
+                      <td className="border border-border p-3 text-muted-foreground">She finds leads!</td>
+                      <td className="border border-border p-3 text-foreground">Celebratory</td>
+                      <td className="border border-border p-3 text-muted-foreground">Reinforce trust in value</td>
+                    </tr>
+                    <tr className="bg-muted/50">
+                      <td className="border border-border p-3 text-foreground font-medium">Conversion</td>
+                      <td className="border border-border p-3 text-muted-foreground">Subscription to $97/mo plan</td>
+                      <td className="border border-border p-3 text-foreground">Empowering</td>
+                      <td className="border border-border p-3 text-muted-foreground">Show ROI + next step</td>
+                    </tr>
+                    <tr className="bg-card">
+                      <td className="border border-border p-3 text-foreground font-medium">Engagement</td>
+                      <td className="border border-border p-3 text-muted-foreground">Insights, nudges, optimizations</td>
+                      <td className="border border-border p-3 text-foreground">Proactive</td>
+                      <td className="border border-border p-3 text-muted-foreground">Maintain momentum</td>
+                    </tr>
+                    <tr className="bg-muted/50">
+                      <td className="border border-border p-3 text-foreground font-medium">Expansion</td>
+                      <td className="border border-border p-3 text-muted-foreground">Upsells, integrations, CRM</td>
+                      <td className="border border-border p-3 text-foreground">Helpful</td>
+                      <td className="border border-border p-3 text-muted-foreground">Encourage stickiness</td>
+                    </tr>
+                    <tr className="bg-card">
+                      <td className="border border-border p-3 text-foreground font-medium">Advocacy</td>
+                      <td className="border border-border p-3 text-muted-foreground">Referrals, reviews, fans</td>
+                      <td className="border border-border p-3 text-foreground">Grateful + Confident</td>
+                      <td className="border border-border p-3 text-muted-foreground">Turn users into promoters</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Brand Architecture */}
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">Brand Architecture</h3>
+              <p className="text-muted-foreground mb-4">
+                Alli isn't just a product from Carroll Media — she's the new front door. She represents a product, a platform, and a brand in her own right.
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse text-sm">
+                  <thead>
+                    <tr className="bg-primary text-primary-foreground">
+                      <th className="border border-border p-3 text-left">Level</th>
+                      <th className="border border-border p-3 text-left">Brand</th>
+                      <th className="border border-border p-3 text-left">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-card">
+                      <td className="border border-border p-3 text-foreground">Corporate Brand</td>
+                      <td className="border border-border p-3 text-foreground font-medium">Carroll Media</td>
+                      <td className="border border-border p-3 text-muted-foreground">Creator, owner, operator of AI tech + future expansions</td>
+                    </tr>
+                    <tr className="bg-muted/50">
+                      <td className="border border-border p-3 text-foreground">Customer-Facing Brand</td>
+                      <td className="border border-border p-3 text-foreground font-medium">Alli</td>
+                      <td className="border border-border p-3 text-muted-foreground">First AI team member. Warm, visible, lovable</td>
+                    </tr>
+                    <tr className="bg-card">
+                      <td className="border border-border p-3 text-foreground">Platform Name</td>
+                      <td className="border border-border p-3 text-foreground font-medium">Alli OS / The Alli Platform</td>
+                      <td className="border border-border p-3 text-muted-foreground">Potential naming if the suite expands</td>
+                    </tr>
+                    <tr className="bg-muted/50">
+                      <td className="border border-border p-3 text-foreground">Product Features</td>
+                      <td className="border border-border p-3 text-foreground font-medium">Lead Detection, CRM Sync, etc.</td>
+                      <td className="border border-border p-3 text-muted-foreground">All powered by Alli, delivered under her name</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Brand Alignment */}
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">Brand Alignment: Carroll Media vs Alli</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse text-sm">
+                  <thead>
+                    <tr className="bg-primary text-primary-foreground">
+                      <th className="border border-border p-3 text-left">Category</th>
+                      <th className="border border-border p-3 text-left">Carroll Media</th>
+                      <th className="border border-border p-3 text-left">Alli</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-card">
+                      <td className="border border-border p-3 text-foreground font-medium">Voice</td>
+                      <td className="border border-border p-3 text-muted-foreground">Strategic, founder-led, results-focused</td>
+                      <td className="border border-border p-3 text-muted-foreground">Intuitive, warm, ever-present</td>
+                    </tr>
+                    <tr className="bg-muted/50">
+                      <td className="border border-border p-3 text-foreground font-medium">Role</td>
+                      <td className="border border-border p-3 text-muted-foreground">Infrastructure, roadmap, expertise</td>
+                      <td className="border border-border p-3 text-muted-foreground">Interface, delivery, relationship</td>
+                    </tr>
+                    <tr className="bg-card">
+                      <td className="border border-border p-3 text-foreground font-medium">Messaging</td>
+                      <td className="border border-border p-3 text-muted-foreground">"Proprietary systems to optimize marketing plans."</td>
+                      <td className="border border-border p-3 text-muted-foreground">"I help you turn visitors into customers."</td>
+                    </tr>
+                    <tr className="bg-muted/50">
+                      <td className="border border-border p-3 text-foreground font-medium">Customers See</td>
+                      <td className="border border-border p-3 text-muted-foreground">Support & innovation</td>
+                      <td className="border border-border p-3 text-muted-foreground">A lovable, powerful product they trust</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-muted-foreground mt-3 italic">Alli becomes the face of the brand — Carroll Media becomes the engine behind her.</p>
+            </div>
+
+            {/* Future Modules */}
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">Platform Evolution: Future Modules</h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+                {[
+                  { name: "Alli Detect", desc: "Anonymous visitor identification (current product)" },
+                  { name: "Alli Nurture", desc: "Automated follow-up (email, voicemail, SMS)" },
+                  { name: "Alli Ads", desc: "Simple ad creation + targeting" },
+                  { name: "Alli Sync", desc: "CRM integration and data flow" },
+                  { name: "Alli Insights", desc: "Visual dashboards and recommendations" },
+                ].map((module) => (
+                  <Card key={module.name} className="border-primary/20 bg-primary/5">
+                    <CardContent className="pt-4">
+                      <p className="font-semibold text-primary">{module.name}</p>
+                      <p className="text-xs text-muted-foreground">{module.desc}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Growth Plays */}
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">Brand Extensions & Growth Plays</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <Card className="border-border bg-card/50">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-sm">Affiliate & Referral Program</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground">
+                    <p>"If Alli helped you, imagine what she'll do for your friends."</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-border bg-card/50">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-sm">Alli Academy</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground">
+                    <p>Short trainings, scripts, checklists, and video walkthroughs. Positions Alli as a guide, not just a tool.</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-border bg-card/50">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-sm">"Ask Alli" Series</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground">
+                    <p>Micro-content on social answering common questions in her voice. Great top-of-funnel.</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-border bg-card/50">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-sm">Branded Swag Ideas</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground space-y-1">
+                    <p>• "Alli works while I sleep" mugs</p>
+                    <p>• "Powered by Alli" laptop stickers</p>
+                    <p>• "Not in HR's office. Ever." t-shirts</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
           </div>
         </section>
 
